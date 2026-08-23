@@ -1,0 +1,806 @@
+.page {
+  --ink: #201a2b;
+  --muted: #706878;
+  --paper: #f7f3ed;
+  --panel: #fffdf9;
+  --purple: #7553d8;
+  --purple-dark: #51349f;
+  --line: #ded6e5;
+  min-width: 0;
+  min-height: 100vh;
+  overflow-x: clip;
+  background: radial-gradient(circle at 84% -8%, rgba(158, 120, 230, 0.18), transparent 34rem),
+    linear-gradient(180deg, #fbf8f2 0, var(--paper) 42rem);
+  color: var(--ink);
+}
+
+.header {
+  position: sticky;
+  z-index: 20;
+  top: 0;
+  width: min(1280px, calc(100% - 56px));
+  height: 70px;
+  margin: auto;
+  border-bottom: 1px solid rgba(98, 75, 119, 0.16);
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) auto minmax(220px, 1fr);
+  align-items: center;
+  gap: 24px;
+  background: rgba(251, 248, 242, 0.86);
+  backdrop-filter: blur(16px);
+}
+
+.brand,
+.headerNav,
+.headerActions,
+.summaryStats,
+.continueHeading,
+.continueMeta,
+.sectionLead,
+.searchBox,
+.packCard footer,
+.courseHeading,
+.recentCourseBanner,
+.courseTools,
+.filterToggle,
+.courseCardTop,
+.courseFacts,
+.courseActions,
+.practiceUtility {
+  display: flex;
+  align-items: center;
+}
+
+.brand {
+  width: fit-content;
+  padding: 0;
+  border: 0;
+  background: none;
+  gap: 10px;
+  cursor: pointer;
+}
+.logoMark {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  border-radius: 11px 11px 11px 4px;
+  background: linear-gradient(145deg, #8d6de2, #5e40bb);
+  color: #fff;
+  display: inline-grid;
+  place-items: center;
+  font:
+    800 20px/1 Georgia,
+    serif;
+  box-shadow: 0 8px 18px rgba(82, 51, 150, 0.2);
+}
+.brandName {
+  font:
+    800 20px/1 Georgia,
+    serif;
+  letter-spacing: -0.025em;
+}
+.desktopBadge {
+  padding: 4px 7px;
+  border-radius: 99px;
+  background: #e9e0fb;
+  color: var(--purple-dark);
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 0.06em;
+}
+.headerNav {
+  justify-content: center;
+  gap: 4px;
+}
+.headerNav button {
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 8px;
+  background: none;
+  color: var(--muted);
+  font-size: 12px;
+  cursor: pointer;
+}
+.headerNav button:hover {
+  background: #eee7f8;
+  color: var(--purple-dark);
+}
+.headerContext {
+  max-width: 240px;
+  padding-left: 10px;
+  border-left: 1px solid var(--line);
+  overflow: hidden;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 750;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.headerActions {
+  justify-self: end;
+  justify-content: flex-end;
+  gap: 13px;
+}
+.localNote {
+  color: var(--muted);
+  font-size: 10px;
+}
+.deviceSwitch {
+  min-height: 40px;
+  padding: 8px 11px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.64);
+  color: var(--muted);
+  font-size: 11px;
+  cursor: pointer;
+}
+.deviceSwitch:hover {
+  border-color: #aa96db;
+  color: var(--purple-dark);
+}
+
+.homeHero {
+  width: min(1180px, calc(100% - 80px));
+  min-height: 480px;
+  margin: 54px auto 72px;
+  display: grid;
+  grid-template-columns: 1fr 0.92fr;
+  align-items: center;
+  gap: clamp(54px, 7vw, 105px);
+}
+.heroCopy h1 {
+  margin: 0 0 22px;
+  font:
+    800 clamp(54px, 6vw, 78px) / 1.01 Georgia,
+    "Songti SC",
+    serif;
+  letter-spacing: -0.055em;
+}
+.heroCopy > p {
+  max-width: 580px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.8;
+}
+.summaryStats {
+  margin-top: 30px;
+  gap: 38px;
+}
+.summaryStats div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.summaryStats strong {
+  font:
+    800 24px/1 Georgia,
+    serif;
+}
+.summaryStats span {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.continueCard,
+.startCard {
+  min-height: 300px;
+  padding: 32px;
+  border: 1px solid rgba(117, 83, 216, 0.25);
+  border-radius: 18px;
+  background: rgba(255, 253, 249, 0.88);
+  box-shadow: 0 18px 48px rgba(61, 39, 96, 0.1);
+}
+.continueHeading {
+  justify-content: space-between;
+  color: var(--purple);
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 0.1em;
+}
+.continueHeading small {
+  font:
+    800 15px/1 ui-monospace,
+    monospace;
+  letter-spacing: 0;
+}
+.continueCard > p {
+  margin: 46px 0 7px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.continueCard h2,
+.startCard h2 {
+  margin: 0;
+  font:
+    750 30px/1.25 Georgia,
+    "Songti SC",
+    serif;
+}
+.continueProgress {
+  height: 6px;
+  margin: 30px 0 16px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: #e7dfee;
+}
+.continueProgress span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #9675e5, var(--purple));
+}
+.continueMeta {
+  justify-content: space-between;
+  gap: 22px;
+  color: var(--muted);
+  font-size: 10px;
+}
+.continueMeta button,
+.startCard button,
+.recentCourseBanner button,
+.reviewEmpty button {
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--purple);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.startCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 18px;
+}
+.startCard > span:not(.logoMark) {
+  color: var(--muted);
+  font-size: 11px;
+}
+.startCard button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.librarySection,
+.coursePage {
+  width: min(1180px, calc(100% - 80px));
+  margin: 0 auto 80px;
+}
+.sectionLead {
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 24px;
+}
+.sectionLead h2 {
+  margin: 0;
+  font:
+    750 36px/1.15 Georgia,
+    "Songti SC",
+    serif;
+}
+.searchBox {
+  width: min(350px, 40vw);
+  min-height: 42px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.7);
+}
+.searchBox:focus-within {
+  border-color: #a78fe2;
+  box-shadow: 0 0 0 3px rgba(117, 83, 216, 0.08);
+}
+.searchBox > span:first-child {
+  color: var(--purple);
+  font-size: 17px;
+}
+.searchBox input {
+  min-width: 0;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: none;
+  font-size: 12px;
+}
+.searchBox button {
+  padding: 2px 5px;
+  border: 0;
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+}
+.packGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.packCard {
+  position: relative;
+  min-height: 276px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 253, 249, 0.88);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  cursor: pointer;
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+.packCard:hover {
+  transform: translateY(-4px);
+  border-color: #ab96df;
+  box-shadow: 0 17px 42px rgba(62, 40, 95, 0.1);
+}
+.packCard .logoMark {
+  width: 46px;
+  height: 46px;
+  margin: 14px 0 20px;
+  font-size: 25px;
+}
+.packNumber {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #9d94a4;
+  font:
+    750 10px/1 ui-monospace,
+    monospace;
+}
+.recentLabel {
+  width: fit-content;
+  padding: 4px 7px;
+  border-radius: 99px;
+  background: #e8f3ec;
+  color: #34795a;
+  font-size: 9px;
+  font-weight: 850;
+}
+.packCard > .recentLabel {
+  position: absolute;
+  top: 19px;
+  left: 79px;
+}
+.packCard h3 {
+  margin: 0 0 8px;
+  font:
+    750 20px/1.25 Georgia,
+    "Songti SC",
+    serif;
+}
+.packCard p {
+  margin: 0;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.packCard footer {
+  width: 100%;
+  margin-top: auto;
+  padding-top: 17px;
+  border-top: 1px solid #ebe5ee;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 10px;
+}
+.packCard footer strong {
+  color: var(--purple);
+}
+.recentPack {
+  border-color: #9fcbb1;
+}
+
+.coursePage {
+  padding-top: 34px;
+}
+.backButton {
+  min-height: 40px;
+  padding: 8px 0;
+  border: 0;
+  background: none;
+  color: var(--purple-dark);
+  font-size: 11px;
+  font-weight: 750;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+.courseHeading {
+  margin: 22px 0 28px;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+}
+.courseHeading h1 {
+  max-width: 880px;
+  margin: 8px 0 10px;
+  font:
+    800 clamp(42px, 5vw, 62px) / 1.06 Georgia,
+    "Songti SC",
+    serif;
+  letter-spacing: -0.045em;
+}
+.courseHeading p {
+  max-width: 760px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+.courseCount {
+  min-width: 105px;
+  padding: 16px;
+  border-radius: 15px;
+  background: #eae1fb;
+  display: flex;
+  flex-direction: column;
+}
+.courseCount strong {
+  font:
+    800 28px/1 Georgia,
+    serif;
+}
+.courseCount span {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 10px;
+}
+.recentCourseBanner {
+  margin-bottom: 16px;
+  padding: 15px 17px;
+  border: 1px solid #b5d5c2;
+  border-radius: 14px;
+  background: #f1f9f4;
+  justify-content: space-between;
+  gap: 20px;
+}
+.recentCourseBanner > div {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  gap: 10px;
+}
+.recentCourseBanner span {
+  color: #34795a;
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+}
+.recentCourseBanner strong {
+  font-size: 13px;
+}
+.recentCourseBanner small {
+  color: var(--muted);
+  font-size: 10px;
+}
+.courseTools {
+  margin-bottom: 14px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.46);
+  gap: 15px;
+}
+.courseTools .searchBox {
+  width: 310px;
+  min-height: 38px;
+  background: #fff;
+}
+.filterToggle {
+  gap: 6px;
+  color: var(--muted);
+  font-size: 11px;
+  cursor: pointer;
+}
+.filterToggle input {
+  accent-color: var(--purple);
+}
+.resultCount {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 10px;
+}
+.courseGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 11px;
+}
+.courseCard {
+  min-height: 190px;
+  padding: 17px;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: rgba(255, 253, 249, 0.86);
+  display: flex;
+  flex-direction: column;
+}
+.courseCard:hover {
+  border-color: #b4a2df;
+}
+.recentCourseCard {
+  border-color: #a9cfb8;
+}
+.courseCardTop {
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+.courseCardTop > div {
+  min-width: 0;
+}
+.courseCardTop h2 {
+  margin: 5px 0 4px;
+  overflow: hidden;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.courseCardTop p {
+  max-width: 420px;
+  margin: 0;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.courseCardTop > strong {
+  color: var(--purple-dark);
+  font:
+    800 13px/1 ui-monospace,
+    monospace;
+}
+.courseProgress {
+  height: 4px;
+  margin: 16px 0 10px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: #e8e1ed;
+}
+.courseProgress span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #a085e5, var(--purple));
+}
+.courseFacts {
+  gap: 11px;
+  color: var(--muted);
+  font-size: 9px;
+}
+.masteredFact {
+  color: #34795a;
+}
+.unfamiliarFact {
+  color: #9a681e;
+}
+.courseActions {
+  margin-top: auto;
+  padding-top: 13px;
+  justify-content: flex-end;
+  gap: 7px;
+}
+.courseActions button {
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--muted);
+  font-size: 10px;
+  cursor: pointer;
+}
+.courseActions button:hover {
+  border-color: #aa96dc;
+  color: var(--purple-dark);
+}
+.courseActions .startButton {
+  border-color: var(--purple);
+  background: var(--purple);
+  color: #fff;
+  font-weight: 800;
+}
+
+.practicePage {
+  --practice-header-height: 112px;
+  height: 100dvh;
+  min-height: 0;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% -25%, rgba(153, 114, 226, 0.2), transparent 36rem),
+    var(--paper);
+}
+.practiceUtility {
+  width: min(1080px, calc(100% - 80px));
+  min-height: 42px;
+  margin: 0 auto;
+  border-bottom: 1px solid rgba(98, 75, 119, 0.12);
+  justify-content: space-between;
+  gap: 20px;
+  color: var(--muted);
+  font-size: 10px;
+}
+.practiceUtilityActions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.practiceUtility button {
+  min-height: 36px;
+  padding: 5px 0;
+  border: 0;
+  background: none;
+  color: var(--purple-dark);
+  font-size: 11px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+.practiceUtility .recordLink {
+  font-weight: 850;
+}
+.practiceUtility .resetLink {
+  color: #9a919f;
+}
+.practiceUtility .resetLink:hover {
+  color: #9a5764;
+}
+.reviewEmpty {
+  width: min(600px, calc(100% - 80px));
+  margin: 15vh auto 0;
+  padding: 56px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: rgba(255, 253, 249, 0.84);
+  text-align: center;
+}
+.reviewEmpty h1 {
+  margin: 12px 0;
+  font:
+    750 38px/1.2 Georgia,
+    "Songti SC",
+    serif;
+}
+.reviewEmpty p {
+  margin: 0 0 25px;
+  color: var(--muted);
+}
+.emptyState {
+  width: min(1180px, calc(100% - 80px));
+  margin: 36px auto;
+  padding: 50px 20px;
+  border: 1px dashed var(--line);
+  border-radius: 16px;
+  color: var(--muted);
+  text-align: center;
+  font-size: 12px;
+}
+.footer {
+  padding: 24px 20px;
+  border-top: 1px solid rgba(98, 75, 119, 0.13);
+  color: var(--muted);
+  text-align: center;
+  font-size: 9px;
+}
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 1050px) {
+  .localNote {
+    display: none;
+  }
+  .homeHero {
+    gap: 45px;
+  }
+  .packGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .header {
+    width: calc(100% - 32px);
+    height: auto;
+    min-height: 68px;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+  }
+  .headerNav {
+    display: none;
+  }
+  .headerActions {
+    gap: 7px;
+  }
+  .brandName {
+    font-size: 18px;
+  }
+  .homeHero,
+  .librarySection,
+  .coursePage {
+    width: calc(100% - 40px);
+  }
+  .homeHero {
+    min-height: 0;
+    margin: 42px auto 54px;
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+  .heroCopy h1 {
+    font-size: clamp(46px, 9vw, 68px);
+  }
+  .continueCard,
+  .startCard {
+    min-height: 250px;
+  }
+  .sectionLead {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .searchBox {
+    width: 100%;
+  }
+  .courseHeading {
+    align-items: flex-start;
+  }
+  .courseTools {
+    align-items: stretch;
+    flex-wrap: wrap;
+  }
+  .courseTools .searchBox {
+    width: 100%;
+  }
+  .resultCount {
+    margin-left: 0;
+  }
+  .courseGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-height: 760px) and (min-width: 901px) {
+  .homeHero {
+    min-height: 390px;
+    margin-top: 32px;
+    margin-bottom: 48px;
+  }
+  .heroCopy h1 {
+    font-size: clamp(48px, 5.3vw, 68px);
+  }
+  .continueCard,
+  .startCard {
+    min-height: 260px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .packCard,
+  .continueProgress span,
+  .courseProgress span {
+    transition: none;
+  }
+}

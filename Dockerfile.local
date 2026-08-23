@@ -1,0 +1,17 @@
+FROM node:20-bookworm-slim
+
+ENV CI=true
+
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends socat \
+  && rm -rf /var/lib/apt/lists/* \
+  && corepack enable \
+  && corepack prepare pnpm@9.3.0 --activate
+
+WORKDIR /app
+
+COPY . .
+
+ENV CYPRESS_INSTALL_BINARY=0
+
+RUN pnpm install --frozen-lockfile

@@ -1,0 +1,243 @@
+.layer {
+  position: fixed;
+  z-index: 200;
+  inset: 0;
+  padding: 28px;
+  display: grid;
+  place-items: center;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: rgba(28, 20, 37, 0.54);
+  backdrop-filter: blur(8px);
+}
+
+.dialog {
+  position: relative;
+  width: min(720px, calc(100vw - 56px));
+  max-height: min(760px, calc(100dvh - 56px));
+  padding: 22px;
+  border: 1px solid rgba(153, 126, 205, 0.42);
+  border-radius: 20px;
+  color: #201a2b;
+  background: rgba(255, 253, 249, 0.98);
+  box-shadow: 0 28px 90px rgba(37, 24, 55, 0.28);
+  display: grid;
+  grid-template-rows: auto auto minmax(0, 1fr);
+  overflow: hidden;
+}
+
+.heading {
+  min-width: 0;
+  padding: 2px 2px 17px;
+  border-bottom: 1px solid #e6dfeb;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.heading > div {
+  min-width: 0;
+}
+.heading span {
+  color: #7553d8;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+}
+.heading h2 {
+  margin: 0 0 2px;
+  font:
+    750 28px/1.1 Georgia,
+    "Songti SC",
+    serif;
+}
+.heading p {
+  margin: 0;
+  overflow: hidden;
+  color: #706878;
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.closeButton {
+  width: 42px;
+  min-width: 42px;
+  height: 42px;
+  border: 1px solid #ded6e5;
+  border-radius: 10px;
+  color: #706878;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.summary {
+  padding: 13px 2px;
+  color: #706878;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  font-size: 10px;
+}
+
+.summary strong {
+  color: #51349f;
+  font:
+    850 12px/1 ui-monospace,
+    monospace;
+}
+
+.list {
+  min-height: 0;
+  padding-right: 5px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-color: #b9a8dd transparent;
+  scrollbar-width: thin;
+  display: grid;
+  align-content: start;
+  gap: 9px;
+}
+
+.item {
+  width: 100%;
+  min-height: 82px;
+  padding: 15px 16px;
+  border: 1px solid #e4ddea;
+  border-radius: 15px;
+  color: #2a2332;
+  background: #faf7f2;
+  text-align: left;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 18px;
+  cursor: pointer;
+  transition:
+    border-color 0.16s ease,
+    transform 0.16s ease,
+    box-shadow 0.16s ease;
+}
+
+.item:hover {
+  transform: translateY(-1px);
+  border-color: #aa95db;
+  box-shadow: 0 8px 20px rgba(73, 49, 111, 0.08);
+}
+
+.currentItem {
+  border-color: #8664df;
+  color: #fff;
+  background: linear-gradient(135deg, #6c4fc4, #397b8d);
+  box-shadow: 0 10px 26px rgba(73, 51, 139, 0.2);
+}
+
+.itemCopy {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.itemCopy strong {
+  font-size: 14px;
+  line-height: 1.35;
+}
+.itemCopy small {
+  color: #7d7484;
+  font-size: 11px;
+  line-height: 1.4;
+}
+.currentItem .itemCopy small {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.itemMeta {
+  min-width: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.itemMeta b {
+  color: #7553d8;
+  font:
+    850 11px/1 ui-monospace,
+    monospace;
+}
+.currentItem .itemMeta b {
+  color: #fff;
+}
+.itemMeta em {
+  padding: 4px 6px;
+  border-radius: 99px;
+  color: #6540bc;
+  background: #eee6ff;
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 850;
+}
+.itemMeta .mastered {
+  color: #2f7654;
+  background: #e4f4e9;
+}
+.itemMeta .unfamiliar {
+  color: #965361;
+  background: #f9e7e9;
+}
+
+@media (max-width: 680px) {
+  .layer {
+    padding: 0;
+    place-items: end center;
+  }
+  .dialog {
+    width: 100%;
+    max-height: calc(100dvh - 18px);
+    padding: 17px 14px calc(14px + env(safe-area-inset-bottom));
+    border-radius: 24px 24px 0 0;
+  }
+  .heading {
+    padding-bottom: 13px;
+  }
+  .heading h2 {
+    font-size: 25px;
+  }
+  .summary {
+    padding-block: 11px;
+    gap: 7px 13px;
+  }
+  .list {
+    padding-right: 2px;
+    gap: 8px;
+  }
+  .item {
+    min-height: 76px;
+    padding: 13px;
+    gap: 10px;
+  }
+  .itemCopy strong {
+    font-size: 13px;
+  }
+  .itemCopy small {
+    font-size: 10px;
+  }
+  .itemMeta {
+    min-width: 62px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .item {
+    transition: none;
+  }
+}

@@ -28,6 +28,11 @@
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "docs:dev": "pnpm -F docs docs:dev",
     "build:docs": "pnpm -F docs docs:build",
+    "desktop:dev": "pnpm -F @earthworm/desktop dev",
+    "desktop:build:mac": "pnpm -F @earthworm/desktop build:mac",
+    "desktop:build:win": "pnpm -F @earthworm/desktop build:win",
+    "website:dev": "pnpm -F @earthworm/website dev",
+    "website:build": "pnpm -F @earthworm/website build",
     "release": "tsx --env-file=.env scripts/release.ts"
   },
   "keywords": [],

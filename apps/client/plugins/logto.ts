@@ -3,10 +3,15 @@ import type { LogtoConfig } from "@logto/vue";
 import { createLogto, UserScope } from "@logto/vue";
 import { defineNuxtPlugin, useRuntimeConfig } from "nuxt/app";
 
-import { setupAuth } from "~/services/auth";
+import { setupAuth, setupStandaloneAuth } from "~/services/auth";
 
 export default defineNuxtPlugin((nuxtApp) => {
   const runtimeConfig = useRuntimeConfig();
+
+  if (runtimeConfig.public.standalone) {
+    setupStandaloneAuth(runtimeConfig);
+    return;
+  }
 
   const config: LogtoConfig = {
     endpoint: runtimeConfig.public.endpoint,

@@ -1,0 +1,94 @@
+{
+  "name": "@earthworm/desktop",
+  "version": "1.1.0",
+  "private": true,
+  "description": "Earthworm desktop client for macOS and Windows",
+  "main": "src/main.cjs",
+  "author": "Earthworm Community",
+  "license": "AGPL-3.0",
+  "scripts": {
+    "standalone:prepare": "node scripts/prepare-standalone.mjs",
+    "dev": "pnpm standalone:prepare && electron .",
+    "build:mac": "pnpm standalone:prepare && electron-builder --mac dmg zip --arm64 --x64",
+    "build:mac:arm64": "pnpm standalone:prepare && electron-builder --mac dmg zip --arm64",
+    "build:win": "pnpm standalone:prepare && electron-builder --win nsis portable --x64",
+    "pack": "electron-builder --dir"
+  },
+  "devDependencies": {
+    "electron": "43.4.1",
+    "electron-builder": "26.15.3"
+  },
+  "build": {
+    "appId": "com.earthworm.desktop",
+    "productName": "Earthworm",
+    "asar": true,
+    "directories": {
+      "buildResources": "build",
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "standalone",
+        "to": "standalone",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "artifactName": "Earthworm-${version}-${os}-${arch}.${ext}",
+    "mac": {
+      "category": "public.app-category.education",
+      "icon": "build/icon.png",
+      "identity": "-",
+      "hardenedRuntime": false,
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    },
+    "dmg": {
+      "title": "Earthworm ${version}",
+      "iconSize": 96,
+      "window": {
+        "width": 540,
+        "height": 380
+      },
+      "contents": [
+        {
+          "x": 155,
+          "y": 190,
+          "type": "file"
+        },
+        {
+          "x": 385,
+          "y": 190,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "win": {
+      "icon": "build/icon.png",
+      "artifactName": "Earthworm-${version}-win-${arch}.${ext}",
+      "target": [
+        "nsis",
+        "portable"
+      ]
+    },
+    "nsis": {
+      "artifactName": "Earthworm-${version}-win-${arch}-Setup.${ext}",
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Earthworm"
+    },
+    "portable": {
+      "artifactName": "Earthworm-${version}-win-${arch}-Portable.${ext}"
+    }
+  }
+}

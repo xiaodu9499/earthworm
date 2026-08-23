@@ -111,6 +111,12 @@ docker compose down
 docker-compose up -d
 ```
 
+To run the API and client entirely inside Docker on ports `3001` and `3020`, copy `.env.local.example` to `.env.local`, fill in the Logto application values, and start the local application overlay together with the upstream infrastructure:
+
+```bash
+docker compose --env-file .env.local -f docker-compose.yml -f docker-compose.local.yml up -d
+```
+
 ### 5. Initialize Database Schema
 
 When executing this command, try to keep a little time from the previous command, because the `-d` parameter just used will suspend its service execution in the background. At this time, the docker service may still be running. If an error is found, execute it again.

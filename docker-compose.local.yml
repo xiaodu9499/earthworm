@@ -1,0 +1,54 @@
+# Local application overlay. Start it together with the upstream infrastructure:
+# docker compose --env-file .env.local -f docker-compose.yml -f docker-compose.local.yml up -d
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.local
+    image: earthworm-local:latest
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_started
+      logto:
+        condition: service_started
+    environment:
+      DATABASE_URL: postgres://postgres:password@db:5432/earthworm
+      SECRET: ${EARTHWORM_API_SECRET:?Set EARTHWORM_API_SECRET in .env.local}
+      REDIS_URL: redis://redis:6379
+      LOGTO_CLIENT_ID: ${LOGTO_CLIENT_ID:?Set LOGTO_CLIENT_ID in .env.local}
+      LOGTO_CLIENT_SECRET: ${LOGTO_CLIENT_SECRET:?Set LOGTO_CLIENT_SECRET in .env.local}
+      LOGTO_M2M_API: https://default.logto.app/api
+      LOGTO_ENDPOINT: http://localhost:3010/
+      BACKEND_ENDPOINT: http://localhost:3001/
+    command:
+      - sh
+      - -lc
+      - socat TCP-LISTEN:3010,fork,reuseaddr TCP:logto:3010 & exec pnpm dev:serve
+    ports:
+      - 3001:3001
+
+  client:
+    build:
+      context: .
+      dockerfile: Dockerfile.local
+    image: earthworm-local:latest
+    restart: unless-stopped
+    depends_on:
+      api:
+        condition: service_started
+      logto:
+        condition: service_started
+    environment:
+      API_BASE: http://localhost:3001
+      LOGTO_APP_ID: ${LOGTO_APP_ID:?Set LOGTO_APP_ID in .env.local}
+      LOGTO_ENDPOINT: http://localhost:3010/
+      BACKEND_ENDPOINT: http://localhost:3001/
+      LOGTO_SIGN_IN_REDIRECT_URI: http://localhost:3020/callback
+      LOGTO_SIGN_OUT_REDIRECT_URI: http://localhost:3020/
+      HELP_DOCS_URL: https://earthworm-docs.cuixueshe.com/get-started/
+    command: pnpm -F client dev --host 0.0.0.0 --port 3000
+    ports:
+      - 3020:3000

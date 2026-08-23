@@ -53,7 +53,9 @@
       </div>
 
       <!-- 底部信息 -->
-      <div class="p-4 text-center text-xs opacity-50">版本 v1.0.0</div>
+      <div class="p-4 text-center text-xs opacity-50">
+        {{ runtimeConfig.public.standalone ? "独立版 v1.1.0" : "版本 v1.0.0" }}
+      </div>
     </div>
   </USlideover>
 </template>
@@ -82,7 +84,7 @@ const isDarkMode = computed(() => darkMode.value === Theme.DARK);
 const modal = useModal();
 
 const showMenuOptions = computed(() => {
-  return [
+  const localOptions = [
     {
       title: "设置",
       name: "setting",
@@ -96,8 +98,22 @@ const showMenuOptions = computed(() => {
       icon: "i-ph-book",
     },
     {
+      title: "主题切换",
+      name: "changeTheme",
+      eventName: toggleDarkMode,
+      icon: isDarkMode.value ? "i-ph-moon" : "i-ph-sun",
+    },
+  ];
+
+  if (runtimeConfig.public.standalone) {
+    return localOptions;
+  }
+
+  return [
+    ...localOptions,
+    {
       title: "编辑器",
-      name: "setting",
+      name: "editor",
       eventName: handleGoToEditor,
       icon: "i-ph-planet-duotone",
     },
@@ -112,12 +128,6 @@ const showMenuOptions = computed(() => {
       name: "feedback",
       eventName: handleFeedback,
       icon: "i-ph-hands-praying-duotone",
-    },
-    {
-      title: "主题切换",
-      name: "changeTheme",
-      eventName: toggleDarkMode,
-      icon: isDarkMode.value ? "i-ph-moon" : "i-ph-sun",
     },
     {
       title: "登出",

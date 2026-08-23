@@ -1,7 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
 const appScripts: any = [];
-if (process.env.NODE_ENV === "production") {
+const standalone = process.env.EARTHWORM_STANDALONE === "true";
+if (process.env.NODE_ENV === "production" && !standalone) {
   addClarity();
 }
 
@@ -24,7 +25,7 @@ export default defineNuxtConfig({
     autoImport: false,
   },
   devtools: {
-    enabled: true,
+    enabled: !standalone,
   },
   app: {
     head: {
@@ -51,6 +52,7 @@ export default defineNuxtConfig({
       signInRedirectURI: process.env.LOGTO_SIGN_IN_REDIRECT_URI || "",
       signOutRedirectURI: process.env.LOGTO_SIGN_OUT_REDIRECT_URI || "",
       helpDocsURL: process.env.HELP_DOCS_URL || "",
+      standalone,
     },
   },
   build: {

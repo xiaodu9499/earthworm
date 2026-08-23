@@ -138,3 +138,6 @@ dist
 .volumes
 cache
 course-db
+
+# Generated standalone desktop assets
+apps/desktop/standalone/
