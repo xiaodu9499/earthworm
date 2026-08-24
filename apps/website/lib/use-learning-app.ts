@@ -135,11 +135,13 @@ export function useLearningApp(): LearningAppController {
   useEffect(() => {
     const controller = new AbortController();
     void Promise.all(
-      ["/course-data.json", "/new-concept-original-trial.json"].map(async (source) => {
-        const response = await fetch(source, { signal: controller.signal });
-        if (!response.ok) throw new Error(`课程数据加载失败（${source}）：${response.status}`);
-        return (await response.json()) as Catalog;
-      }),
+      ["/course-data.json", "/new-concept-authorized.json", "/new-concept-original-trial.json"].map(
+        async (source) => {
+          const response = await fetch(source, { signal: controller.signal });
+          if (!response.ok) throw new Error(`课程数据加载失败（${source}）：${response.status}`);
+          return (await response.json()) as Catalog;
+        },
+      ),
     )
       .then((catalogs) => {
         setCatalog({ packs: catalogs.flatMap((item) => item.packs) });

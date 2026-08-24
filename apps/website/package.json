@@ -10,6 +10,7 @@
     "dev": "vinext dev",
     "build": "vinext build",
     "build:vercel": "VERCEL_STATIC_EXPORT=true next build",
+    "courses:generate:new-concept": "node scripts/generate-new-concept-original.mjs && node scripts/import-new-concept-authorized.mjs",
     "start": "vinext start",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next"
   },

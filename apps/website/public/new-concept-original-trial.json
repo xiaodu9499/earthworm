@@ -1,22 +1,18 @@
 {
-  "version": 1,
+  "version": 2,
   "packs": [
     {
       "id": "new-concept-original-trial",
-      "order": 6,
-      "title": "新概念英语·原创试学版",
-      "description": "参考公开课程结构重新创作的 5 课入门练习；不含教材课文或原版音频",
+      "order": 10,
+      "title": "新概念路线·原创基础篇",
+      "description": "15 课原创基础训练，从日常问候走到完整句型；不含教材原文或原版音频",
       "isFree": true,
       "cover": "/logo.png",
       "creatorId": "local-user",
       "shareLevel": "public",
       "source": {
         "structureOnly": true,
-        "repositories": [
-          "https://github.com/andylee1890/NewConceptEnglish",
-          "https://github.com/ClancyHuang/NewConceptEnglish"
-        ],
-        "content": "All Chinese and English practice statements in this file are newly written for this trial course. No textbook passages, PDF or DOCX content, LRC transcripts, or repository audio are included."
+        "content": "All Chinese and English practice statements are original Earthworm curriculum content. No textbook passages, answer keys, PDF or DOCX content, transcripts, or publisher audio are included."
       },
       "courses": [
         {
@@ -426,6 +422,4564 @@
               "order": 12,
               "chinese": "谢谢你的关心。",
               "english": "Thank you for caring."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-trial-lesson-06",
+          "title": "基础 06 · 计划未来",
+          "description": "will、计划和预测",
+          "video": "",
+          "order": 6,
+          "coursePackId": "new-concept-original-trial",
+          "statements": [
+            {
+              "id": "new-concept-original-trial-lesson-06-statement-01",
+              "order": 1,
+              "chinese": "我明天会检查我的笔记本。",
+              "english": "I will check my notebook tomorrow."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-06-statement-02",
+              "order": 2,
+              "chinese": "你今晚会阅读这条消息。",
+              "english": "You will read this message this evening."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-06-statement-03",
+              "order": 3,
+              "chinese": "他下周一会携带他的蓝色包。",
+              "english": "He will carry his blue bag next Monday."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-06-statement-04",
+              "order": 4,
+              "chinese": "她今天晚些时候会打开窗户。",
+              "english": "She will open the window later today."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-06-statement-05",
+              "order": 5,
+              "chinese": "我们本周五会打扫房间。",
+              "english": "We will clean the room this Friday."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-06-statement-06",
+              "order": 6,
+              "chinese": "他们明天早晨会准备早餐。",
+              "english": "They will prepare breakfast tomorrow morning."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-06-statement-07",
+              "order": 7,
+              "chinese": "我妹妹下周末会选择一条红裙子。",
+              "english": "My sister will choose a red dress next weekend."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-06-statement-08",
+              "order": 8,
+              "chinese": "我们的老师明天会解释新单词。",
+              "english": "Our teacher will explain the new words tomorrow."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-06-statement-09",
+              "order": 9,
+              "chinese": "汤姆下周日会清洗汽车。",
+              "english": "Tom will wash the car next Sunday."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-06-statement-10",
+              "order": 10,
+              "chinese": "孩子们明天下午会画一幅画。",
+              "english": "The children will draw a picture tomorrow afternoon."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-06-statement-11",
+              "order": 11,
+              "chinese": "我的父母下个月会拜访我们的祖父母。",
+              "english": "My parents will visit our grandparents next month."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-06-statement-12",
+              "order": 12,
+              "chinese": "公交车十分钟后会到达市中心。",
+              "english": "The bus will reach the city center in ten minutes."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-trial-lesson-07",
+          "title": "基础 07 · 提出问题",
+          "description": "一般疑问句和信息确认",
+          "video": "",
+          "order": 7,
+          "coursePackId": "new-concept-original-trial",
+          "statements": [
+            {
+              "id": "new-concept-original-trial-lesson-07-statement-01",
+              "order": 1,
+              "chinese": "我每天早晨检查我的笔记本吗？",
+              "english": "Do I check my notebook every morning?"
+            },
+            {
+              "id": "new-concept-original-trial-lesson-07-statement-02",
+              "order": 2,
+              "chinese": "你午饭后阅读这条消息吗？",
+              "english": "Do you read this message after lunch?"
+            },
+            {
+              "id": "new-concept-original-trial-lesson-07-statement-03",
+              "order": 3,
+              "chinese": "他每周一携带他的蓝色包吗？",
+              "english": "Does he carry his blue bag every Monday?"
+            },
+            {
+              "id": "new-concept-original-trial-lesson-07-statement-04",
+              "order": 4,
+              "chinese": "她每天下午打开窗户吗？",
+              "english": "Does she open the window every afternoon?"
+            },
+            {
+              "id": "new-concept-original-trial-lesson-07-statement-05",
+              "order": 5,
+              "chinese": "我们每周五打扫房间吗？",
+              "english": "Do we clean the room every Friday?"
+            },
+            {
+              "id": "new-concept-original-trial-lesson-07-statement-06",
+              "order": 6,
+              "chinese": "他们七点准备早餐吗？",
+              "english": "Do they prepare breakfast at seven?"
+            },
+            {
+              "id": "new-concept-original-trial-lesson-07-statement-07",
+              "order": 7,
+              "chinese": "我妹妹周末选择一条红裙子吗？",
+              "english": "Does my sister choose a red dress on weekends?"
+            },
+            {
+              "id": "new-concept-original-trial-lesson-07-statement-08",
+              "order": 8,
+              "chinese": "我们的老师每天解释新单词吗？",
+              "english": "Does our teacher explain the new words every day?"
+            },
+            {
+              "id": "new-concept-original-trial-lesson-07-statement-09",
+              "order": 9,
+              "chinese": "汤姆每周日清洗汽车吗？",
+              "english": "Does Tom wash the car on Sundays?"
+            },
+            {
+              "id": "new-concept-original-trial-lesson-07-statement-10",
+              "order": 10,
+              "chinese": "孩子们放学后画一幅画吗？",
+              "english": "Do the children draw a picture after school?"
+            },
+            {
+              "id": "new-concept-original-trial-lesson-07-statement-11",
+              "order": 11,
+              "chinese": "我的父母每个月拜访我们的祖父母吗？",
+              "english": "Do my parents visit our grandparents every month?"
+            },
+            {
+              "id": "new-concept-original-trial-lesson-07-statement-12",
+              "order": 12,
+              "chinese": "公交车每十分钟到达市中心吗？",
+              "english": "Does the bus reach the city center every ten minutes?"
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-trial-lesson-08",
+          "title": "基础 08 · 能力与建议",
+          "description": "can、should 和礼貌建议",
+          "video": "",
+          "order": 8,
+          "coursePackId": "new-concept-original-trial",
+          "statements": [
+            {
+              "id": "new-concept-original-trial-lesson-08-statement-01",
+              "order": 1,
+              "chinese": "我应该在家检查我的笔记本。",
+              "english": "I should check my notebook at home."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-08-statement-02",
+              "order": 2,
+              "chinese": "你应该在教室里阅读这条消息。",
+              "english": "You should read this message in the classroom."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-08-statement-03",
+              "order": 3,
+              "chinese": "他应该在车站携带他的蓝色包。",
+              "english": "He should carry his blue bag at the station."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-08-statement-04",
+              "order": 4,
+              "chinese": "她应该在办公室打开窗户。",
+              "english": "She should open the window in the office."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-08-statement-05",
+              "order": 5,
+              "chinese": "我们应该在学校打扫房间。",
+              "english": "We should clean the room at school."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-08-statement-06",
+              "order": 6,
+              "chinese": "他们应该在厨房准备早餐。",
+              "english": "They should prepare breakfast in the kitchen."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-08-statement-07",
+              "order": 7,
+              "chinese": "我妹妹应该在商店选择一条红裙子。",
+              "english": "My sister should choose a red dress at the shop."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-08-statement-08",
+              "order": 8,
+              "chinese": "我们的老师应该在课堂上解释新单词。",
+              "english": "Our teacher should explain the new words in class."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-08-statement-09",
+              "order": 9,
+              "chinese": "汤姆应该在房子外面清洗汽车。",
+              "english": "Tom should wash the car outside the house."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-08-statement-10",
+              "order": 10,
+              "chinese": "孩子们应该在花园里画一幅画。",
+              "english": "The children should draw a picture in the garden."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-08-statement-11",
+              "order": 11,
+              "chinese": "我的父母应该在村里拜访我们的祖父母。",
+              "english": "My parents should visit our grandparents in the village."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-08-statement-12",
+              "order": 12,
+              "chinese": "公交车应该在银行附近到达市中心。",
+              "english": "The bus should reach the city center near the bank."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-trial-lesson-09",
+          "title": "基础 09 · 比较与选择",
+          "description": "比较级和选择理由",
+          "video": "",
+          "order": 9,
+          "coursePackId": "new-concept-original-trial",
+          "statements": [
+            {
+              "id": "new-concept-original-trial-lesson-09-statement-01",
+              "order": 1,
+              "chinese": "我比另一位学习者更有准备。",
+              "english": "I am more ready than another learner."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-09-statement-02",
+              "order": 2,
+              "chinese": "你比另一位学习者更仔细。",
+              "english": "You are more careful than another learner."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-09-statement-03",
+              "order": 3,
+              "chinese": "他比他的同学更早。",
+              "english": "He is earlier than his classmate."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-09-statement-04",
+              "order": 4,
+              "chinese": "她比她的队友更忙。",
+              "english": "She is busier than her teammate."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-09-statement-05",
+              "order": 5,
+              "chinese": "我们比另一个小组更安静。",
+              "english": "We are quieter than the other group."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-09-statement-06",
+              "order": 6,
+              "chinese": "他们比另一个小组更饿。",
+              "english": "They are hungrier than the other group."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-09-statement-07",
+              "order": 7,
+              "chinese": "我妹妹比另一位店员更开心。",
+              "english": "My sister is happier than the other assistant."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-09-statement-08",
+              "order": 8,
+              "chinese": "我们的老师比另一位老师更有耐心。",
+              "english": "Our teacher is more patient than the other teacher."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-09-statement-09",
+              "order": 9,
+              "chinese": "汤姆比他哥哥更累。",
+              "english": "Tom is more tired than his brother."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-09-statement-10",
+              "order": 10,
+              "chinese": "孩子们比另一个班的学生更有创意。",
+              "english": "The children are more creative than the other class."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-09-statement-11",
+              "order": 11,
+              "chinese": "我的父母比邻居一家更亲切。",
+              "english": "My parents are kinder than the neighboring family."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-09-statement-12",
+              "order": 12,
+              "chinese": "公交车比本地火车更快。",
+              "english": "The bus is faster than the local train."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-trial-lesson-10",
+          "title": "基础 10 · 地点与数量",
+          "description": "there be、位置和数量表达",
+          "video": "",
+          "order": 10,
+          "coursePackId": "new-concept-original-trial",
+          "statements": [
+            {
+              "id": "new-concept-original-trial-lesson-10-statement-01",
+              "order": 1,
+              "chinese": "在家有一本笔记本。",
+              "english": "There is a notebook at home."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-10-statement-02",
+              "order": 2,
+              "chinese": "在教室里有一条消息。",
+              "english": "There is a message in the classroom."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-10-statement-03",
+              "order": 3,
+              "chinese": "在车站有一个蓝色包。",
+              "english": "There is a blue bag at the station."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-10-statement-04",
+              "order": 4,
+              "chinese": "在办公室有一扇开着的窗户。",
+              "english": "There is an open window in the office."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-10-statement-05",
+              "order": 5,
+              "chinese": "在学校有一间干净的房间。",
+              "english": "There is a clean room at school."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-10-statement-06",
+              "order": 6,
+              "chinese": "在厨房有一份热早餐。",
+              "english": "There is a warm breakfast in the kitchen."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-10-statement-07",
+              "order": 7,
+              "chinese": "在商店有一条红裙子。",
+              "english": "There is a red dress at the shop."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-10-statement-08",
+              "order": 8,
+              "chinese": "在课堂上有一个有用的例子。",
+              "english": "There is a useful example in class."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-10-statement-09",
+              "order": 9,
+              "chinese": "在房子外面有一辆干净的汽车。",
+              "english": "There is a clean car outside the house."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-10-statement-10",
+              "order": 10,
+              "chinese": "在花园里有一幅彩色的画。",
+              "english": "There is a colorful picture in the garden."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-10-statement-11",
+              "order": 11,
+              "chinese": "在村里有一张全家福。",
+              "english": "There is a family photo in the village."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-10-statement-12",
+              "order": 12,
+              "chinese": "在银行附近有一个公交站。",
+              "english": "There is a bus stop near the bank."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-trial-lesson-11",
+          "title": "基础 11 · 经验与结果",
+          "description": "现在完成时和经历表达",
+          "video": "",
+          "order": 11,
+          "coursePackId": "new-concept-original-trial",
+          "statements": [
+            {
+              "id": "new-concept-original-trial-lesson-11-statement-01",
+              "order": 1,
+              "chinese": "我以前检查过我的笔记本。",
+              "english": "I have checked my notebook before."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-11-statement-02",
+              "order": 2,
+              "chinese": "你以前阅读过这条消息。",
+              "english": "You have read this message before."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-11-statement-03",
+              "order": 3,
+              "chinese": "他以前携带过他的蓝色包。",
+              "english": "He has carried his blue bag before."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-11-statement-04",
+              "order": 4,
+              "chinese": "她以前打开过窗户。",
+              "english": "She has opened the window before."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-11-statement-05",
+              "order": 5,
+              "chinese": "我们以前打扫过房间。",
+              "english": "We have cleaned the room before."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-11-statement-06",
+              "order": 6,
+              "chinese": "他们以前准备过早餐。",
+              "english": "They have prepared breakfast before."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-11-statement-07",
+              "order": 7,
+              "chinese": "我妹妹以前选择过一条红裙子。",
+              "english": "My sister has chosen a red dress before."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-11-statement-08",
+              "order": 8,
+              "chinese": "我们的老师以前解释过新单词。",
+              "english": "Our teacher has explained the new words before."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-11-statement-09",
+              "order": 9,
+              "chinese": "汤姆以前清洗过汽车。",
+              "english": "Tom has washed the car before."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-11-statement-10",
+              "order": 10,
+              "chinese": "孩子们以前画过一幅画。",
+              "english": "The children have drawn a picture before."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-11-statement-11",
+              "order": 11,
+              "chinese": "我的父母以前拜访过我们的祖父母。",
+              "english": "My parents have visited our grandparents before."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-11-statement-12",
+              "order": 12,
+              "chinese": "公交车以前到达过市中心。",
+              "english": "The bus has reached the city center before."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-trial-lesson-12",
+          "title": "基础 12 · 条件与结果",
+          "description": "真实条件句和结果预测",
+          "video": "",
+          "order": 12,
+          "coursePackId": "new-concept-original-trial",
+          "statements": [
+            {
+              "id": "new-concept-original-trial-lesson-12-statement-01",
+              "order": 1,
+              "chinese": "如果我检查我的笔记本，我会很有准备。",
+              "english": "If I check my notebook, I will be ready."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-12-statement-02",
+              "order": 2,
+              "chinese": "如果你阅读这条消息，你会很仔细。",
+              "english": "If you read this message, you will be careful."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-12-statement-03",
+              "order": 3,
+              "chinese": "如果他携带他的蓝色包，他会很早。",
+              "english": "If he carries his blue bag, he will be early."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-12-statement-04",
+              "order": 4,
+              "chinese": "如果她打开窗户，她会很忙。",
+              "english": "If she opens the window, she will be busy."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-12-statement-05",
+              "order": 5,
+              "chinese": "如果我们打扫房间，我们会很安静。",
+              "english": "If we clean the room, we will be quiet."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-12-statement-06",
+              "order": 6,
+              "chinese": "如果他们准备早餐，他们会很饿。",
+              "english": "If they prepare breakfast, they will be hungry."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-12-statement-07",
+              "order": 7,
+              "chinese": "如果我妹妹选择一条红裙子，她会很开心。",
+              "english": "If my sister chooses a red dress, she will be happy."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-12-statement-08",
+              "order": 8,
+              "chinese": "如果我们的老师解释新单词，她会很有耐心。",
+              "english": "If our teacher explains the new words, she will be patient."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-12-statement-09",
+              "order": 9,
+              "chinese": "如果汤姆清洗汽车，他会很累。",
+              "english": "If Tom washes the car, he will be tired."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-12-statement-10",
+              "order": 10,
+              "chinese": "如果孩子们画一幅画，他们会很有创意。",
+              "english": "If the children draw a picture, they will be creative."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-12-statement-11",
+              "order": 11,
+              "chinese": "如果我的父母拜访我们的祖父母，他们会很亲切。",
+              "english": "If my parents visit our grandparents, they will be kind."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-12-statement-12",
+              "order": 12,
+              "chinese": "如果公交车到达市中心，它会很快。",
+              "english": "If the bus reaches the city center, it will be fast."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-trial-lesson-13",
+          "title": "基础 13 · 动作与承受者",
+          "description": "被动语态和过程描述",
+          "video": "",
+          "order": 13,
+          "coursePackId": "new-concept-original-trial",
+          "statements": [
+            {
+              "id": "new-concept-original-trial-lesson-13-statement-01",
+              "order": 1,
+              "chinese": "昨天，我的笔记本由我检查。",
+              "english": "My notebook was checked by me yesterday."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-13-statement-02",
+              "order": 2,
+              "chinese": "昨晚，这条消息由你阅读。",
+              "english": "This message was read by you last night."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-13-statement-03",
+              "order": 3,
+              "chinese": "昨天早晨，他的蓝色包由他携带。",
+              "english": "His blue bag was carried by him yesterday morning."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-13-statement-04",
+              "order": 4,
+              "chinese": "一小时前，窗户由她打开。",
+              "english": "The window was opened by her an hour ago."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-13-statement-05",
+              "order": 5,
+              "chinese": "上周五，房间由我们打扫。",
+              "english": "The room was cleaned by us last Friday."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-13-statement-06",
+              "order": 6,
+              "chinese": "今天早晨，早餐由他们准备。",
+              "english": "Breakfast was prepared by them this morning."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-13-statement-07",
+              "order": 7,
+              "chinese": "上周末，一条红裙子由我妹妹选择。",
+              "english": "A red dress was chosen by my sister last weekend."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-13-statement-08",
+              "order": 8,
+              "chinese": "昨天，新单词由我们的老师解释。",
+              "english": "The new words were explained by our teacher yesterday."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-13-statement-09",
+              "order": 9,
+              "chinese": "上周日，汽车由汤姆清洗。",
+              "english": "The car was washed by Tom last Sunday."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-13-statement-10",
+              "order": 10,
+              "chinese": "昨天下午，一幅画由孩子们画。",
+              "english": "A picture was drawn by the children yesterday afternoon."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-13-statement-11",
+              "order": 11,
+              "chinese": "上个月，我们的祖父母由我的父母拜访。",
+              "english": "Our grandparents were visited by my parents last month."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-13-statement-12",
+              "order": 12,
+              "chinese": "十分钟前，市中心由公交车到达。",
+              "english": "The city center was reached by the bus ten minutes ago."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-trial-lesson-14",
+          "title": "基础 14 · 补充人物信息",
+          "description": "关系从句和信息扩展",
+          "video": "",
+          "order": 14,
+          "coursePackId": "new-concept-original-trial",
+          "statements": [
+            {
+              "id": "new-concept-original-trial-lesson-14-statement-01",
+              "order": 1,
+              "chinese": "检查我的笔记本的朋友很有准备。",
+              "english": "The friend who checks my notebook is ready."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-14-statement-02",
+              "order": 2,
+              "chinese": "阅读这条消息的同学很仔细。",
+              "english": "The classmate who reads this message is careful."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-14-statement-03",
+              "order": 3,
+              "chinese": "携带他的蓝色包的司机很早。",
+              "english": "The driver who carries his blue bag is early."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-14-statement-04",
+              "order": 4,
+              "chinese": "打开窗户的老师很忙。",
+              "english": "The teacher who opens the window is busy."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-14-statement-05",
+              "order": 5,
+              "chinese": "打扫房间的学生很安静。",
+              "english": "The student who cleans the room is quiet."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-14-statement-06",
+              "order": 6,
+              "chinese": "准备早餐的厨师很饿。",
+              "english": "The cook who prepares breakfast is hungry."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-14-statement-07",
+              "order": 7,
+              "chinese": "选择一条红裙子的店员很开心。",
+              "english": "The assistant who chooses a red dress is happy."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-14-statement-08",
+              "order": 8,
+              "chinese": "解释新单词的老师很有耐心。",
+              "english": "The teacher who explains the new words is patient."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-14-statement-09",
+              "order": 9,
+              "chinese": "清洗汽车的邻居很累。",
+              "english": "The neighbor who washes the car is tired."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-14-statement-10",
+              "order": 10,
+              "chinese": "画一幅画的画家很有创意。",
+              "english": "The artist who draws a picture is creative."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-14-statement-11",
+              "order": 11,
+              "chinese": "拜访我们的祖父母的农民很亲切。",
+              "english": "The farmer who visits our grandparents is kind."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-14-statement-12",
+              "order": 12,
+              "chinese": "到达市中心的乘客很快。",
+              "english": "The passenger who reaches the city center is fast."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-trial-lesson-15",
+          "title": "基础 15 · 转折与完整表达",
+          "description": "让步、转折和较长句表达",
+          "video": "",
+          "order": 15,
+          "coursePackId": "new-concept-original-trial",
+          "statements": [
+            {
+              "id": "new-concept-original-trial-lesson-15-statement-01",
+              "order": 1,
+              "chinese": "虽然我很有准备，但我还是检查了我的笔记本。",
+              "english": "Although I was ready, I checked my notebook."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-15-statement-02",
+              "order": 2,
+              "chinese": "虽然你很仔细，但你还是阅读了这条消息。",
+              "english": "Although you were careful, you read this message."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-15-statement-03",
+              "order": 3,
+              "chinese": "虽然他很早，但他还是携带了他的蓝色包。",
+              "english": "Although he was early, he carried his blue bag."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-15-statement-04",
+              "order": 4,
+              "chinese": "虽然她很忙，但她还是打开了窗户。",
+              "english": "Although she was busy, she opened the window."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-15-statement-05",
+              "order": 5,
+              "chinese": "虽然我们很安静，但我们还是打扫了房间。",
+              "english": "Although we were quiet, we cleaned the room."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-15-statement-06",
+              "order": 6,
+              "chinese": "虽然他们很饿，但他们还是准备了早餐。",
+              "english": "Although they were hungry, they prepared breakfast."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-15-statement-07",
+              "order": 7,
+              "chinese": "虽然我妹妹很开心，但她还是选择了一条红裙子。",
+              "english": "Although my sister was happy, she chose a red dress."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-15-statement-08",
+              "order": 8,
+              "chinese": "虽然我们的老师很有耐心，但她还是解释了新单词。",
+              "english": "Although our teacher was patient, she explained the new words."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-15-statement-09",
+              "order": 9,
+              "chinese": "虽然汤姆很累，但他还是清洗了汽车。",
+              "english": "Although Tom was tired, he washed the car."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-15-statement-10",
+              "order": 10,
+              "chinese": "虽然孩子们很有创意，但他们还是画了一幅画。",
+              "english": "Although the children were creative, they drew a picture."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-15-statement-11",
+              "order": 11,
+              "chinese": "虽然我的父母很亲切，但他们还是拜访了我们的祖父母。",
+              "english": "Although my parents were kind, they visited our grandparents."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-15-statement-12",
+              "order": 12,
+              "chinese": "虽然公交车很快，但它还是到达了市中心。",
+              "english": "Although the bus was fast, it reached the city center."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "new-concept-original-progress",
+      "order": 11,
+      "title": "新概念路线·原创进阶篇",
+      "description": "15 课原创进阶训练，强化时态、条件、被动和复合句；不含教材原文或原版音频",
+      "isFree": true,
+      "cover": "/logo.png",
+      "creatorId": "local-user",
+      "shareLevel": "public",
+      "source": {
+        "structureOnly": true,
+        "content": "All Chinese and English practice statements are original Earthworm curriculum content. No textbook passages, answer keys, PDF or DOCX content, transcripts, or publisher audio are included."
+      },
+      "courses": [
+        {
+          "id": "new-concept-original-progress-lesson-01",
+          "title": "进阶 01 · 状态与身份",
+          "description": "be 动词、身份和状态描述",
+          "video": "",
+          "order": 1,
+          "coursePackId": "new-concept-original-progress",
+          "statements": [
+            {
+              "id": "new-concept-original-progress-lesson-01-statement-01",
+              "order": 1,
+              "chinese": "我很灵活。",
+              "english": "I am flexible."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-01-statement-02",
+              "order": 2,
+              "chinese": "你很高效。",
+              "english": "You are efficient."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-01-statement-03",
+              "order": 3,
+              "chinese": "米娅很独立。",
+              "english": "Mia is independent."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-01-statement-04",
+              "order": 4,
+              "chinese": "丹尼尔很熟练。",
+              "english": "Daniel is skillful."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-01-statement-05",
+              "order": 5,
+              "chinese": "我们很客观。",
+              "english": "We are objective."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-01-statement-06",
+              "order": 6,
+              "chinese": "他们很可靠。",
+              "english": "They are reliable."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-01-statement-07",
+              "order": 7,
+              "chinese": "我们团队很全面。",
+              "english": "Our team is thorough."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-01-statement-08",
+              "order": 8,
+              "chinese": "店主很友好。",
+              "english": "The shop owner is friendly."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-01-statement-09",
+              "order": 9,
+              "chinese": "学生们很好奇。",
+              "english": "The students are curious."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-01-statement-10",
+              "order": 10,
+              "chinese": "我的邻居很有耐心。",
+              "english": "My neighbor is patient."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-01-statement-11",
+              "order": 11,
+              "chinese": "博物馆很受欢迎。",
+              "english": "The museum is popular."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-01-statement-12",
+              "order": 12,
+              "chinese": "志愿者们很慷慨。",
+              "english": "The volunteers are generous."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-progress-lesson-02",
+          "title": "进阶 02 · 拥有与需要",
+          "description": "have、拥有关系和实际需要",
+          "video": "",
+          "order": 2,
+          "coursePackId": "new-concept-original-progress",
+          "statements": [
+            {
+              "id": "new-concept-original-progress-lesson-02-statement-01",
+              "order": 1,
+              "chinese": "我有一张实用地图。",
+              "english": "I have a practical map."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-02-statement-02",
+              "order": 2,
+              "chinese": "你有一份清晰的摘要。",
+              "english": "You have a clear summary."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-02-statement-03",
+              "order": 3,
+              "chinese": "米娅有一份确认的预订。",
+              "english": "Mia has a confirmed booking."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-02-statement-04",
+              "order": 4,
+              "chinese": "丹尼尔有一个备用工具。",
+              "english": "Daniel has a spare tool."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-02-statement-05",
+              "order": 5,
+              "chinese": "我们有一份有用的清单。",
+              "english": "We have a useful checklist."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-02-statement-06",
+              "order": 6,
+              "chinese": "他们有一个应急包裹。",
+              "english": "They have an emergency package."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-02-statement-07",
+              "order": 7,
+              "chinese": "我们团队有一台备用设备。",
+              "english": "Our team has a backup device."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-02-statement-08",
+              "order": 8,
+              "chinese": "店主有一个木架子。",
+              "english": "The shop owner has a wooden shelf."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-02-statement-09",
+              "order": 9,
+              "chinese": "学生们有一份共享文档。",
+              "english": "The students have a shared document."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-02-statement-10",
+              "order": 10,
+              "chinese": "我的邻居有一个小温室。",
+              "english": "My neighbor has a small greenhouse."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-02-statement-11",
+              "order": 11,
+              "chinese": "博物馆有一个新展览。",
+              "english": "The museum has a new exhibition."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-02-statement-12",
+              "order": 12,
+              "chinese": "志愿者们有一个捐赠箱。",
+              "english": "The volunteers have a donation box."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-progress-lesson-03",
+          "title": "进阶 03 · 习惯与事实",
+          "description": "一般现在时和频率表达",
+          "video": "",
+          "order": 3,
+          "coursePackId": "new-concept-original-progress",
+          "statements": [
+            {
+              "id": "new-concept-original-progress-lesson-03-statement-01",
+              "order": 1,
+              "chinese": "我早餐前修改旅行计划。",
+              "english": "I revise the travel plan before breakfast."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-03-statement-02",
+              "order": 2,
+              "chinese": "你每周两次整理会议记录。",
+              "english": "You organize the meeting notes twice a week."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-03-statement-03",
+              "order": 3,
+              "chinese": "她旅行时，米娅预订一间安静的房间。",
+              "english": "Mia books a quiet room when she travels."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-03-statement-04",
+              "order": 4,
+              "chinese": "丹尼尔每周六早晨修理旧自行车。",
+              "english": "Daniel repairs the old bicycle on Saturday mornings."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-03-statement-05",
+              "order": 5,
+              "chinese": "我们每次会议前比较两个方案。",
+              "english": "We compare the two proposals before each meeting."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-03-statement-06",
+              "order": 6,
+              "chinese": "他们每天下午递送医疗物资。",
+              "english": "They deliver the medical supplies every afternoon."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-03-statement-07",
+              "order": 7,
+              "chinese": "我们团队每次发布前测试手机应用。",
+              "english": "Our team tests the mobile application before every release."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-03-statement-08",
+              "order": 8,
+              "chinese": "店主假日期间陈列手工杯子。",
+              "english": "The shop owner displays the handmade cups during the holiday."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-03-statement-09",
+              "order": 9,
+              "chinese": "学生们每周三讨论科学项目。",
+              "english": "The students discuss the science project every Wednesday."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-03-statement-10",
+              "order": 10,
+              "chinese": "我的邻居全年种植新鲜蔬菜。",
+              "english": "My neighbor grows fresh vegetables throughout the year."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-03-statement-11",
+              "order": 11,
+              "chinese": "博物馆夏季期间展出当地历史。",
+              "english": "The museum presents local history during the summer."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-03-statement-12",
+              "order": 12,
+              "chinese": "志愿者们每年十二月收集冬衣。",
+              "english": "The volunteers collect winter clothes every December."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-progress-lesson-04",
+          "title": "进阶 04 · 正在发生",
+          "description": "现在进行时和现场描述",
+          "video": "",
+          "order": 4,
+          "coursePackId": "new-concept-original-progress",
+          "statements": [
+            {
+              "id": "new-concept-original-progress-lesson-04-statement-01",
+              "order": 1,
+              "chinese": "我在酒店正在修改旅行计划。",
+              "english": "I am revising the travel plan at the hotel."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-04-statement-02",
+              "order": 2,
+              "chinese": "你在图书馆正在整理会议记录。",
+              "english": "You are organizing the meeting notes in the library."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-04-statement-03",
+              "order": 3,
+              "chinese": "米娅在机场附近正在预订一间安静的房间。",
+              "english": "Mia is booking a quiet room near the airport."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-04-statement-04",
+              "order": 4,
+              "chinese": "丹尼尔在车库正在修理旧自行车。",
+              "english": "Daniel is repairing the old bicycle in the garage."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-04-statement-05",
+              "order": 5,
+              "chinese": "我们在会议室正在比较两个方案。",
+              "english": "We are comparing the two proposals in the conference room."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-04-statement-06",
+              "order": 6,
+              "chinese": "他们在诊所正在递送医疗物资。",
+              "english": "They are delivering the medical supplies at the clinic."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-04-statement-07",
+              "order": 7,
+              "chinese": "我们团队在实验室正在测试手机应用。",
+              "english": "Our team is testing the mobile application in the lab."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-04-statement-08",
+              "order": 8,
+              "chinese": "店主在入口旁正在陈列手工杯子。",
+              "english": "The shop owner is displaying the handmade cups by the entrance."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-04-statement-09",
+              "order": 9,
+              "chinese": "学生们课后正在讨论科学项目。",
+              "english": "The students are discussing the science project after class."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-04-statement-10",
+              "order": 10,
+              "chinese": "我的邻居在房子后面正在种植新鲜蔬菜。",
+              "english": "My neighbor is growing fresh vegetables behind the house."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-04-statement-11",
+              "order": 11,
+              "chinese": "博物馆在西厅正在展出当地历史。",
+              "english": "The museum is presenting local history in the west hall."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-04-statement-12",
+              "order": 12,
+              "chinese": "志愿者们在社区中心正在收集冬衣。",
+              "english": "The volunteers are collecting winter clothes at the community center."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-progress-lesson-05",
+          "title": "进阶 05 · 讲述过去",
+          "description": "一般过去时和已完成事件",
+          "video": "",
+          "order": 5,
+          "coursePackId": "new-concept-original-progress",
+          "statements": [
+            {
+              "id": "new-concept-original-progress-lesson-05-statement-01",
+              "order": 1,
+              "chinese": "我昨晚修改了旅行计划。",
+              "english": "I revised the travel plan last night."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-05-statement-02",
+              "order": 2,
+              "chinese": "你上周二整理了会议记录。",
+              "english": "You organized the meeting notes last Tuesday."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-05-statement-03",
+              "order": 3,
+              "chinese": "米娅上周预订了一间安静的房间。",
+              "english": "Mia booked a quiet room last week."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-05-statement-04",
+              "order": 4,
+              "chinese": "丹尼尔上周六修理了旧自行车。",
+              "english": "Daniel repaired the old bicycle last Saturday."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-05-statement-05",
+              "order": 5,
+              "chinese": "我们昨天比较了两个方案。",
+              "english": "We compared the two proposals yesterday."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-05-statement-06",
+              "order": 6,
+              "chinese": "他们昨天下午递送了医疗物资。",
+              "english": "They delivered the medical supplies yesterday afternoon."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-05-statement-07",
+              "order": 7,
+              "chinese": "我们团队上周五测试了手机应用。",
+              "english": "Our team tested the mobile application last Friday."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-05-statement-08",
+              "order": 8,
+              "chinese": "店主上周末陈列了手工杯子。",
+              "english": "The shop owner displayed the handmade cups last weekend."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-05-statement-09",
+              "order": 9,
+              "chinese": "学生们上周三讨论了科学项目。",
+              "english": "The students discussed the science project last Wednesday."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-05-statement-10",
+              "order": 10,
+              "chinese": "我的邻居去年春天种植了新鲜蔬菜。",
+              "english": "My neighbor grew fresh vegetables last spring."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-05-statement-11",
+              "order": 11,
+              "chinese": "博物馆去年夏天展出了当地历史。",
+              "english": "The museum presented local history last summer."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-05-statement-12",
+              "order": 12,
+              "chinese": "志愿者们去年十二月收集了冬衣。",
+              "english": "The volunteers collected winter clothes last December."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-progress-lesson-06",
+          "title": "进阶 06 · 计划未来",
+          "description": "will、计划和预测",
+          "video": "",
+          "order": 6,
+          "coursePackId": "new-concept-original-progress",
+          "statements": [
+            {
+              "id": "new-concept-original-progress-lesson-06-statement-01",
+              "order": 1,
+              "chinese": "我明天早晨会修改旅行计划。",
+              "english": "I will revise the travel plan tomorrow morning."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-06-statement-02",
+              "order": 2,
+              "chinese": "你下周二会整理会议记录。",
+              "english": "You will organize the meeting notes next Tuesday."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-06-statement-03",
+              "order": 3,
+              "chinese": "米娅下周会预订一间安静的房间。",
+              "english": "Mia will book a quiet room next week."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-06-statement-04",
+              "order": 4,
+              "chinese": "丹尼尔本周六会修理旧自行车。",
+              "english": "Daniel will repair the old bicycle this Saturday."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-06-statement-05",
+              "order": 5,
+              "chinese": "我们明天会比较两个方案。",
+              "english": "We will compare the two proposals tomorrow."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-06-statement-06",
+              "order": 6,
+              "chinese": "他们明天下午会递送医疗物资。",
+              "english": "They will deliver the medical supplies tomorrow afternoon."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-06-statement-07",
+              "order": 7,
+              "chinese": "我们团队本周五会测试手机应用。",
+              "english": "Our team will test the mobile application this Friday."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-06-statement-08",
+              "order": 8,
+              "chinese": "店主下周末会陈列手工杯子。",
+              "english": "The shop owner will display the handmade cups next weekend."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-06-statement-09",
+              "order": 9,
+              "chinese": "学生们下周三会讨论科学项目。",
+              "english": "The students will discuss the science project next Wednesday."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-06-statement-10",
+              "order": 10,
+              "chinese": "我的邻居明年春天会种植新鲜蔬菜。",
+              "english": "My neighbor will grow fresh vegetables next spring."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-06-statement-11",
+              "order": 11,
+              "chinese": "博物馆明年夏天会展出当地历史。",
+              "english": "The museum will present local history next summer."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-06-statement-12",
+              "order": 12,
+              "chinese": "志愿者们今年十二月会收集冬衣。",
+              "english": "The volunteers will collect winter clothes this December."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-progress-lesson-07",
+          "title": "进阶 07 · 提出问题",
+          "description": "一般疑问句和信息确认",
+          "video": "",
+          "order": 7,
+          "coursePackId": "new-concept-original-progress",
+          "statements": [
+            {
+              "id": "new-concept-original-progress-lesson-07-statement-01",
+              "order": 1,
+              "chinese": "我早餐前修改旅行计划吗？",
+              "english": "Do I revise the travel plan before breakfast?"
+            },
+            {
+              "id": "new-concept-original-progress-lesson-07-statement-02",
+              "order": 2,
+              "chinese": "你每周两次整理会议记录吗？",
+              "english": "Do you organize the meeting notes twice a week?"
+            },
+            {
+              "id": "new-concept-original-progress-lesson-07-statement-03",
+              "order": 3,
+              "chinese": "她旅行时，米娅预订一间安静的房间吗？",
+              "english": "Does Mia book a quiet room when she travels?"
+            },
+            {
+              "id": "new-concept-original-progress-lesson-07-statement-04",
+              "order": 4,
+              "chinese": "丹尼尔每周六早晨修理旧自行车吗？",
+              "english": "Does Daniel repair the old bicycle on Saturday mornings?"
+            },
+            {
+              "id": "new-concept-original-progress-lesson-07-statement-05",
+              "order": 5,
+              "chinese": "我们每次会议前比较两个方案吗？",
+              "english": "Do we compare the two proposals before each meeting?"
+            },
+            {
+              "id": "new-concept-original-progress-lesson-07-statement-06",
+              "order": 6,
+              "chinese": "他们每天下午递送医疗物资吗？",
+              "english": "Do they deliver the medical supplies every afternoon?"
+            },
+            {
+              "id": "new-concept-original-progress-lesson-07-statement-07",
+              "order": 7,
+              "chinese": "我们团队每次发布前测试手机应用吗？",
+              "english": "Does our team test the mobile application before every release?"
+            },
+            {
+              "id": "new-concept-original-progress-lesson-07-statement-08",
+              "order": 8,
+              "chinese": "店主假日期间陈列手工杯子吗？",
+              "english": "Does the shop owner display the handmade cups during the holiday?"
+            },
+            {
+              "id": "new-concept-original-progress-lesson-07-statement-09",
+              "order": 9,
+              "chinese": "学生们每周三讨论科学项目吗？",
+              "english": "Do the students discuss the science project every Wednesday?"
+            },
+            {
+              "id": "new-concept-original-progress-lesson-07-statement-10",
+              "order": 10,
+              "chinese": "我的邻居全年种植新鲜蔬菜吗？",
+              "english": "Does my neighbor grow fresh vegetables throughout the year?"
+            },
+            {
+              "id": "new-concept-original-progress-lesson-07-statement-11",
+              "order": 11,
+              "chinese": "博物馆夏季期间展出当地历史吗？",
+              "english": "Does the museum present local history during the summer?"
+            },
+            {
+              "id": "new-concept-original-progress-lesson-07-statement-12",
+              "order": 12,
+              "chinese": "志愿者们每年十二月收集冬衣吗？",
+              "english": "Do the volunteers collect winter clothes every December?"
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-progress-lesson-08",
+          "title": "进阶 08 · 能力与建议",
+          "description": "can、should 和礼貌建议",
+          "video": "",
+          "order": 8,
+          "coursePackId": "new-concept-original-progress",
+          "statements": [
+            {
+              "id": "new-concept-original-progress-lesson-08-statement-01",
+              "order": 1,
+              "chinese": "我应该在酒店修改旅行计划。",
+              "english": "I should revise the travel plan at the hotel."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-08-statement-02",
+              "order": 2,
+              "chinese": "你应该在图书馆整理会议记录。",
+              "english": "You should organize the meeting notes in the library."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-08-statement-03",
+              "order": 3,
+              "chinese": "米娅应该在机场附近预订一间安静的房间。",
+              "english": "Mia should book a quiet room near the airport."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-08-statement-04",
+              "order": 4,
+              "chinese": "丹尼尔应该在车库修理旧自行车。",
+              "english": "Daniel should repair the old bicycle in the garage."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-08-statement-05",
+              "order": 5,
+              "chinese": "我们应该在会议室比较两个方案。",
+              "english": "We should compare the two proposals in the conference room."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-08-statement-06",
+              "order": 6,
+              "chinese": "他们应该在诊所递送医疗物资。",
+              "english": "They should deliver the medical supplies at the clinic."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-08-statement-07",
+              "order": 7,
+              "chinese": "我们团队应该在实验室测试手机应用。",
+              "english": "Our team should test the mobile application in the lab."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-08-statement-08",
+              "order": 8,
+              "chinese": "店主应该在入口旁陈列手工杯子。",
+              "english": "The shop owner should display the handmade cups by the entrance."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-08-statement-09",
+              "order": 9,
+              "chinese": "学生们应该课后讨论科学项目。",
+              "english": "The students should discuss the science project after class."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-08-statement-10",
+              "order": 10,
+              "chinese": "我的邻居应该在房子后面种植新鲜蔬菜。",
+              "english": "My neighbor should grow fresh vegetables behind the house."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-08-statement-11",
+              "order": 11,
+              "chinese": "博物馆应该在西厅展出当地历史。",
+              "english": "The museum should present local history in the west hall."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-08-statement-12",
+              "order": 12,
+              "chinese": "志愿者们应该在社区中心收集冬衣。",
+              "english": "The volunteers should collect winter clothes at the community center."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-progress-lesson-09",
+          "title": "进阶 09 · 比较与选择",
+          "description": "比较级和选择理由",
+          "video": "",
+          "order": 9,
+          "coursePackId": "new-concept-original-progress",
+          "statements": [
+            {
+              "id": "new-concept-original-progress-lesson-09-statement-01",
+              "order": 1,
+              "chinese": "我比另一位学习者更灵活。",
+              "english": "I am more flexible than another learner."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-09-statement-02",
+              "order": 2,
+              "chinese": "你比另一位学习者更高效。",
+              "english": "You are more efficient than another learner."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-09-statement-03",
+              "order": 3,
+              "chinese": "米娅比另一位旅行者更独立。",
+              "english": "Mia is more independent than another traveler."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-09-statement-04",
+              "order": 4,
+              "chinese": "丹尼尔比另一位机械师更熟练。",
+              "english": "Daniel is more skillful than the other mechanic."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-09-statement-05",
+              "order": 5,
+              "chinese": "我们比另一个小组更客观。",
+              "english": "We are more objective than the other group."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-09-statement-06",
+              "order": 6,
+              "chinese": "他们比另一个小组更可靠。",
+              "english": "They are more reliable than the other group."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-09-statement-07",
+              "order": 7,
+              "chinese": "我们团队比以前的小组更全面。",
+              "english": "Our team is more thorough than the previous group."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-09-statement-08",
+              "order": 8,
+              "chinese": "店主比另一位顾客更友好。",
+              "english": "The shop owner is friendlier than the other customer."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-09-statement-09",
+              "order": 9,
+              "chinese": "学生们比另一个班更好奇。",
+              "english": "The students are more curious than the other class."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-09-statement-10",
+              "order": 10,
+              "chinese": "我的邻居比另一位园丁更有耐心。",
+              "english": "My neighbor is more patient than the other gardener."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-09-statement-11",
+              "order": 11,
+              "chinese": "博物馆比当地美术馆更受欢迎。",
+              "english": "The museum is more popular than the local gallery."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-09-statement-12",
+              "order": 12,
+              "chinese": "志愿者们比另一支志愿者队伍更慷慨。",
+              "english": "The volunteers are more generous than the other volunteer group."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-progress-lesson-10",
+          "title": "进阶 10 · 地点与数量",
+          "description": "there be、位置和数量表达",
+          "video": "",
+          "order": 10,
+          "coursePackId": "new-concept-original-progress",
+          "statements": [
+            {
+              "id": "new-concept-original-progress-lesson-10-statement-01",
+              "order": 1,
+              "chinese": "在酒店有一张实用地图。",
+              "english": "There is a practical map at the hotel."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-10-statement-02",
+              "order": 2,
+              "chinese": "在图书馆有一份清晰的摘要。",
+              "english": "There is a clear summary in the library."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-10-statement-03",
+              "order": 3,
+              "chinese": "在机场附近有一份确认的预订。",
+              "english": "There is a confirmed booking near the airport."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-10-statement-04",
+              "order": 4,
+              "chinese": "在车库有一个备用工具。",
+              "english": "There is a spare tool in the garage."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-10-statement-05",
+              "order": 5,
+              "chinese": "在会议室有一份有用的清单。",
+              "english": "There is a useful checklist in the conference room."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-10-statement-06",
+              "order": 6,
+              "chinese": "在诊所有一个应急包裹。",
+              "english": "There is an emergency package at the clinic."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-10-statement-07",
+              "order": 7,
+              "chinese": "在实验室有一台备用设备。",
+              "english": "There is a backup device in the lab."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-10-statement-08",
+              "order": 8,
+              "chinese": "在入口旁有一个木架子。",
+              "english": "There is a wooden shelf by the entrance."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-10-statement-09",
+              "order": 9,
+              "chinese": "课后有一份共享文档。",
+              "english": "There is a shared document after class."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-10-statement-10",
+              "order": 10,
+              "chinese": "在房子后面有一个小温室。",
+              "english": "There is a small greenhouse behind the house."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-10-statement-11",
+              "order": 11,
+              "chinese": "在西厅有一个新展览。",
+              "english": "There is a new exhibition in the west hall."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-10-statement-12",
+              "order": 12,
+              "chinese": "在社区中心有一个捐赠箱。",
+              "english": "There is a donation box at the community center."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-progress-lesson-11",
+          "title": "进阶 11 · 经验与结果",
+          "description": "现在完成时和经历表达",
+          "video": "",
+          "order": 11,
+          "coursePackId": "new-concept-original-progress",
+          "statements": [
+            {
+              "id": "new-concept-original-progress-lesson-11-statement-01",
+              "order": 1,
+              "chinese": "我以前修改过旅行计划。",
+              "english": "I have revised the travel plan before."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-11-statement-02",
+              "order": 2,
+              "chinese": "你以前整理过会议记录。",
+              "english": "You have organized the meeting notes before."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-11-statement-03",
+              "order": 3,
+              "chinese": "米娅以前预订过一间安静的房间。",
+              "english": "Mia has booked a quiet room before."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-11-statement-04",
+              "order": 4,
+              "chinese": "丹尼尔以前修理过旧自行车。",
+              "english": "Daniel has repaired the old bicycle before."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-11-statement-05",
+              "order": 5,
+              "chinese": "我们以前比较过两个方案。",
+              "english": "We have compared the two proposals before."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-11-statement-06",
+              "order": 6,
+              "chinese": "他们以前递送过医疗物资。",
+              "english": "They have delivered the medical supplies before."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-11-statement-07",
+              "order": 7,
+              "chinese": "我们团队以前测试过手机应用。",
+              "english": "Our team has tested the mobile application before."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-11-statement-08",
+              "order": 8,
+              "chinese": "店主以前陈列过手工杯子。",
+              "english": "The shop owner has displayed the handmade cups before."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-11-statement-09",
+              "order": 9,
+              "chinese": "学生们以前讨论过科学项目。",
+              "english": "The students have discussed the science project before."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-11-statement-10",
+              "order": 10,
+              "chinese": "我的邻居以前种植过新鲜蔬菜。",
+              "english": "My neighbor has grown fresh vegetables before."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-11-statement-11",
+              "order": 11,
+              "chinese": "博物馆以前展出过当地历史。",
+              "english": "The museum has presented local history before."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-11-statement-12",
+              "order": 12,
+              "chinese": "志愿者们以前收集过冬衣。",
+              "english": "The volunteers have collected winter clothes before."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-progress-lesson-12",
+          "title": "进阶 12 · 条件与结果",
+          "description": "真实条件句和结果预测",
+          "video": "",
+          "order": 12,
+          "coursePackId": "new-concept-original-progress",
+          "statements": [
+            {
+              "id": "new-concept-original-progress-lesson-12-statement-01",
+              "order": 1,
+              "chinese": "如果我修改旅行计划，我会很灵活。",
+              "english": "If I revise the travel plan, I will be flexible."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-12-statement-02",
+              "order": 2,
+              "chinese": "如果你整理会议记录，你会很高效。",
+              "english": "If you organize the meeting notes, you will be efficient."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-12-statement-03",
+              "order": 3,
+              "chinese": "如果米娅预订一间安静的房间，她会很独立。",
+              "english": "If Mia books a quiet room, she will be independent."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-12-statement-04",
+              "order": 4,
+              "chinese": "如果丹尼尔修理旧自行车，他会很熟练。",
+              "english": "If Daniel repairs the old bicycle, he will be skillful."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-12-statement-05",
+              "order": 5,
+              "chinese": "如果我们比较两个方案，我们会很客观。",
+              "english": "If we compare the two proposals, we will be objective."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-12-statement-06",
+              "order": 6,
+              "chinese": "如果他们递送医疗物资，他们会很可靠。",
+              "english": "If they deliver the medical supplies, they will be reliable."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-12-statement-07",
+              "order": 7,
+              "chinese": "如果我们团队测试手机应用，它会很全面。",
+              "english": "If our team tests the mobile application, it will be thorough."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-12-statement-08",
+              "order": 8,
+              "chinese": "如果店主陈列手工杯子，她会很友好。",
+              "english": "If the shop owner displays the handmade cups, she will be friendly."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-12-statement-09",
+              "order": 9,
+              "chinese": "如果学生们讨论科学项目，他们会很好奇。",
+              "english": "If the students discuss the science project, they will be curious."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-12-statement-10",
+              "order": 10,
+              "chinese": "如果我的邻居种植新鲜蔬菜，他会很有耐心。",
+              "english": "If my neighbor grows fresh vegetables, he will be patient."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-12-statement-11",
+              "order": 11,
+              "chinese": "如果博物馆展出当地历史，它会很受欢迎。",
+              "english": "If the museum presents local history, it will be popular."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-12-statement-12",
+              "order": 12,
+              "chinese": "如果志愿者们收集冬衣，他们会很慷慨。",
+              "english": "If the volunteers collect winter clothes, they will be generous."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-progress-lesson-13",
+          "title": "进阶 13 · 动作与承受者",
+          "description": "被动语态和过程描述",
+          "video": "",
+          "order": 13,
+          "coursePackId": "new-concept-original-progress",
+          "statements": [
+            {
+              "id": "new-concept-original-progress-lesson-13-statement-01",
+              "order": 1,
+              "chinese": "昨晚，旅行计划由我修改。",
+              "english": "The travel plan was revised by me last night."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-13-statement-02",
+              "order": 2,
+              "chinese": "上周二，会议记录由你整理。",
+              "english": "The meeting notes were organized by you last Tuesday."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-13-statement-03",
+              "order": 3,
+              "chinese": "上周，一间安静的房间由米娅预订。",
+              "english": "A quiet room was booked by Mia last week."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-13-statement-04",
+              "order": 4,
+              "chinese": "上周六，旧自行车由丹尼尔修理。",
+              "english": "The old bicycle was repaired by Daniel last Saturday."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-13-statement-05",
+              "order": 5,
+              "chinese": "昨天，两个方案由我们比较。",
+              "english": "The two proposals were compared by us yesterday."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-13-statement-06",
+              "order": 6,
+              "chinese": "昨天下午，医疗物资由他们递送。",
+              "english": "The medical supplies were delivered by them yesterday afternoon."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-13-statement-07",
+              "order": 7,
+              "chinese": "上周五，手机应用由我们团队测试。",
+              "english": "The mobile application was tested by our team last Friday."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-13-statement-08",
+              "order": 8,
+              "chinese": "上周末，手工杯子由店主陈列。",
+              "english": "The handmade cups were displayed by the shop owner last weekend."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-13-statement-09",
+              "order": 9,
+              "chinese": "上周三，科学项目由学生们讨论。",
+              "english": "The science project was discussed by the students last Wednesday."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-13-statement-10",
+              "order": 10,
+              "chinese": "去年春天，新鲜蔬菜由我的邻居种植。",
+              "english": "Fresh vegetables were grown by my neighbor last spring."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-13-statement-11",
+              "order": 11,
+              "chinese": "去年夏天，当地历史由博物馆展出。",
+              "english": "Local history was presented by the museum last summer."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-13-statement-12",
+              "order": 12,
+              "chinese": "去年十二月，冬衣由志愿者们收集。",
+              "english": "Winter clothes were collected by the volunteers last December."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-progress-lesson-14",
+          "title": "进阶 14 · 补充人物信息",
+          "description": "关系从句和信息扩展",
+          "video": "",
+          "order": 14,
+          "coursePackId": "new-concept-original-progress",
+          "statements": [
+            {
+              "id": "new-concept-original-progress-lesson-14-statement-01",
+              "order": 1,
+              "chinese": "修改旅行计划的导游很灵活。",
+              "english": "The guide who revises the travel plan is flexible."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-14-statement-02",
+              "order": 2,
+              "chinese": "整理会议记录的图书管理员很高效。",
+              "english": "The librarian who organizes the meeting notes is efficient."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-14-statement-03",
+              "order": 3,
+              "chinese": "预订一间安静的房间的前台人员很独立。",
+              "english": "The receptionist who books a quiet room is independent."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-14-statement-04",
+              "order": 4,
+              "chinese": "修理旧自行车的机械师很熟练。",
+              "english": "The mechanic who repairs the old bicycle is skillful."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-14-statement-05",
+              "order": 5,
+              "chinese": "比较两个方案的经理很客观。",
+              "english": "The manager who compares the two proposals is objective."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-14-statement-06",
+              "order": 6,
+              "chinese": "递送医疗物资的护士很可靠。",
+              "english": "The nurse who delivers the medical supplies is reliable."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-14-statement-07",
+              "order": 7,
+              "chinese": "测试手机应用的工程师很全面。",
+              "english": "The engineer who tests the mobile application is thorough."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-14-statement-08",
+              "order": 8,
+              "chinese": "陈列手工杯子的顾客很友好。",
+              "english": "The customer who displays the handmade cups is friendly."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-14-statement-09",
+              "order": 9,
+              "chinese": "讨论科学项目的研究员很好奇。",
+              "english": "The researcher who discusses the science project is curious."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-14-statement-10",
+              "order": 10,
+              "chinese": "种植新鲜蔬菜的园丁很有耐心。",
+              "english": "The gardener who grows fresh vegetables is patient."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-14-statement-11",
+              "order": 11,
+              "chinese": "展出当地历史的策展人很受欢迎。",
+              "english": "The curator who presents local history is popular."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-14-statement-12",
+              "order": 12,
+              "chinese": "收集冬衣的协调员很慷慨。",
+              "english": "The coordinator who collects winter clothes is generous."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-progress-lesson-15",
+          "title": "进阶 15 · 转折与完整表达",
+          "description": "让步、转折和较长句表达",
+          "video": "",
+          "order": 15,
+          "coursePackId": "new-concept-original-progress",
+          "statements": [
+            {
+              "id": "new-concept-original-progress-lesson-15-statement-01",
+              "order": 1,
+              "chinese": "虽然我很灵活，但我还是修改了旅行计划。",
+              "english": "Although I was flexible, I revised the travel plan."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-15-statement-02",
+              "order": 2,
+              "chinese": "虽然你很高效，但你还是整理了会议记录。",
+              "english": "Although you were efficient, you organized the meeting notes."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-15-statement-03",
+              "order": 3,
+              "chinese": "虽然米娅很独立，但她还是预订了一间安静的房间。",
+              "english": "Although Mia was independent, she booked a quiet room."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-15-statement-04",
+              "order": 4,
+              "chinese": "虽然丹尼尔很熟练，但他还是修理了旧自行车。",
+              "english": "Although Daniel was skillful, he repaired the old bicycle."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-15-statement-05",
+              "order": 5,
+              "chinese": "虽然我们很客观，但我们还是比较了两个方案。",
+              "english": "Although we were objective, we compared the two proposals."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-15-statement-06",
+              "order": 6,
+              "chinese": "虽然他们很可靠，但他们还是递送了医疗物资。",
+              "english": "Although they were reliable, they delivered the medical supplies."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-15-statement-07",
+              "order": 7,
+              "chinese": "虽然我们团队很全面，但它还是测试了手机应用。",
+              "english": "Although our team was thorough, it tested the mobile application."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-15-statement-08",
+              "order": 8,
+              "chinese": "虽然店主很友好，但她还是陈列了手工杯子。",
+              "english": "Although the shop owner was friendly, she displayed the handmade cups."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-15-statement-09",
+              "order": 9,
+              "chinese": "虽然学生们很好奇，但他们还是讨论了科学项目。",
+              "english": "Although the students were curious, they discussed the science project."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-15-statement-10",
+              "order": 10,
+              "chinese": "虽然我的邻居很有耐心，但他还是种植了新鲜蔬菜。",
+              "english": "Although my neighbor was patient, he grew fresh vegetables."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-15-statement-11",
+              "order": 11,
+              "chinese": "虽然博物馆很受欢迎，但它还是展出了当地历史。",
+              "english": "Although the museum was popular, it presented local history."
+            },
+            {
+              "id": "new-concept-original-progress-lesson-15-statement-12",
+              "order": 12,
+              "chinese": "虽然志愿者们很慷慨，但他们还是收集了冬衣。",
+              "english": "Although the volunteers were generous, they collected winter clothes."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "new-concept-original-fluency",
+      "order": 12,
+      "title": "新概念路线·原创熟练篇",
+      "description": "15 课原创熟练训练，在工作、研究和公共议题中组织复杂表达",
+      "isFree": true,
+      "cover": "/logo.png",
+      "creatorId": "local-user",
+      "shareLevel": "public",
+      "source": {
+        "structureOnly": true,
+        "content": "All Chinese and English practice statements are original Earthworm curriculum content. No textbook passages, answer keys, PDF or DOCX content, transcripts, or publisher audio are included."
+      },
+      "courses": [
+        {
+          "id": "new-concept-original-fluency-lesson-01",
+          "title": "熟练 01 · 状态与身份",
+          "description": "be 动词、身份和状态描述",
+          "video": "",
+          "order": 1,
+          "coursePackId": "new-concept-original-fluency",
+          "statements": [
+            {
+              "id": "new-concept-original-fluency-lesson-01-statement-01",
+              "order": 1,
+              "chinese": "我很审慎。",
+              "english": "I am critical."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-01-statement-02",
+              "order": 2,
+              "chinese": "你很善于沟通。",
+              "english": "You are diplomatic."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-01-statement-03",
+              "order": 3,
+              "chinese": "研究人员很精确。",
+              "english": "The researcher is precise."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-01-statement-04",
+              "order": 4,
+              "chinese": "编辑很简洁。",
+              "english": "The editor is concise."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-01-statement-05",
+              "order": 5,
+              "chinese": "我们很有韧性。",
+              "english": "We are resilient."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-01-statement-06",
+              "order": 6,
+              "chinese": "他们很透明。",
+              "english": "They are transparent."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-01-statement-07",
+              "order": 7,
+              "chinese": "设计团队很具包容性。",
+              "english": "The design team is inclusive."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-01-statement-08",
+              "order": 8,
+              "chinese": "委员会很负责任。",
+              "english": "The committee is accountable."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-01-statement-09",
+              "order": 9,
+              "chinese": "工程师们很系统。",
+              "english": "The engineers are systematic."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-01-statement-10",
+              "order": 10,
+              "chinese": "诊所很安全。",
+              "english": "The clinic is secure."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-01-statement-11",
+              "order": 11,
+              "chinese": "当地居民很坚持。",
+              "english": "Local residents are persistent."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-01-statement-12",
+              "order": 12,
+              "chinese": "出版社很一致。",
+              "english": "The publisher is consistent."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-fluency-lesson-02",
+          "title": "熟练 02 · 拥有与需要",
+          "description": "have、拥有关系和实际需要",
+          "video": "",
+          "order": 2,
+          "coursePackId": "new-concept-original-fluency",
+          "statements": [
+            {
+              "id": "new-concept-original-fluency-lesson-02-statement-01",
+              "order": 1,
+              "chinese": "我有一组已核实的数据。",
+              "english": "I have a verified data set."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-02-statement-02",
+              "order": 2,
+              "chinese": "你有一份书面协议。",
+              "english": "You have a written agreement."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-02-statement-03",
+              "order": 3,
+              "chinese": "研究人员有一份对照样本。",
+              "english": "The researcher has a control sample."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-02-statement-04",
+              "order": 4,
+              "chinese": "编辑有一份详细提纲。",
+              "english": "The editor has a detailed outline."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-02-statement-05",
+              "order": 5,
+              "chinese": "我们有一套共享流程。",
+              "english": "We have a shared protocol."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-02-statement-06",
+              "order": 6,
+              "chinese": "他们有一个公共仪表盘。",
+              "english": "They have a public dashboard."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-02-statement-07",
+              "order": 7,
+              "chinese": "设计团队有一个经过测试的组件。",
+              "english": "The design team has a tested component."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-02-statement-08",
+              "order": 8,
+              "chinese": "委员会有一项利益冲突政策。",
+              "english": "The committee has a conflict policy."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-02-statement-09",
+              "order": 9,
+              "chinese": "工程师们有一套恢复流程。",
+              "english": "The engineers have a recovery procedure."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-02-statement-10",
+              "order": 10,
+              "chinese": "诊所有一份加密备份。",
+              "english": "The clinic has an encrypted backup."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-02-statement-11",
+              "order": 11,
+              "chinese": "当地居民有一份签名请愿书。",
+              "english": "Local residents have a signed petition."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-02-statement-12",
+              "order": 12,
+              "chinese": "出版社有一份术语表。",
+              "english": "The publisher has a terminology list."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-fluency-lesson-03",
+          "title": "熟练 03 · 习惯与事实",
+          "description": "一般现在时和频率表达",
+          "video": "",
+          "order": 3,
+          "coursePackId": "new-concept-original-fluency",
+          "statements": [
+            {
+              "id": "new-concept-original-fluency-lesson-03-statement-01",
+              "order": 1,
+              "chinese": "我写作前评估研究证据。",
+              "english": "I evaluate the research evidence before writing."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-03-statement-02",
+              "order": 2,
+              "chinese": "条款变化时，你协商修订后的合同。",
+              "english": "You negotiate the revised contract when terms change."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-03-statement-03",
+              "order": 3,
+              "chinese": "研究人员按固定间隔测量长期影响。",
+              "english": "The researcher measures the long-term impact at regular intervals."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-03-statement-04",
+              "order": 4,
+              "chinese": "编辑出版前澄清核心论点。",
+              "english": "The editor clarifies the central argument before publication."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-03-statement-05",
+              "order": 5,
+              "chinese": "我们紧急情况下协调区域响应。",
+              "english": "We coordinate the regional response during emergencies."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-03-statement-06",
+              "order": 6,
+              "chinese": "他们全天候监测空气质量。",
+              "english": "They monitor air quality around the clock."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-03-statement-07",
+              "order": 7,
+              "chinese": "设计团队开发前制作原型无障碍界面。",
+              "english": "The design team prototypes the accessible interface before development."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-03-statement-08",
+              "order": 8,
+              "chinese": "委员会每六个月审查资金申请。",
+              "english": "The committee reviews the funding request every six months."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-03-statement-09",
+              "order": 9,
+              "chinese": "工程师们部署前模拟故障场景。",
+              "english": "The engineers simulate the failure scenario before deployment."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-03-statement-10",
+              "order": 10,
+              "chinese": "诊所始终保护患者记录。",
+              "english": "The clinic protects patient records at all times."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-03-statement-11",
+              "order": 11,
+              "chinese": "当地居民在议会会议期间提出一个更安全的人行横道。",
+              "english": "Local residents propose a safer crossing during council meetings."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-03-statement-12",
+              "order": 12,
+              "chinese": "出版社每个版本发布前翻译技术指南。",
+              "english": "The publisher translates the technical guide before each edition."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-fluency-lesson-04",
+          "title": "熟练 04 · 正在发生",
+          "description": "现在进行时和现场描述",
+          "video": "",
+          "order": 4,
+          "coursePackId": "new-concept-original-fluency",
+          "statements": [
+            {
+              "id": "new-concept-original-fluency-lesson-04-statement-01",
+              "order": 1,
+              "chinese": "我在档案室正在评估研究证据。",
+              "english": "I am evaluating the research evidence in the archive."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-04-statement-02",
+              "order": 2,
+              "chinese": "你在总部正在协商修订后的合同。",
+              "english": "You are negotiating the revised contract at headquarters."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-04-statement-03",
+              "order": 3,
+              "chinese": "研究人员在实地正在测量长期影响。",
+              "english": "The researcher is measuring the long-term impact in the field."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-04-statement-04",
+              "order": 4,
+              "chinese": "编辑在编辑部正在澄清核心论点。",
+              "english": "The editor is clarifying the central argument in the newsroom."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-04-statement-05",
+              "order": 5,
+              "chinese": "我们跨三个办公室正在协调区域响应。",
+              "english": "We are coordinating the regional response across three offices."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-04-statement-06",
+              "order": 6,
+              "chinese": "他们全市范围内正在监测空气质量。",
+              "english": "They are monitoring air quality throughout the city."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-04-statement-07",
+              "order": 7,
+              "chinese": "设计团队在可用性实验室正在制作原型无障碍界面。",
+              "english": "The design team is prototyping the accessible interface in the usability lab."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-04-statement-08",
+              "order": 8,
+              "chinese": "委员会在公开会议上正在审查资金申请。",
+              "english": "The committee is reviewing the funding request in a public session."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-04-statement-09",
+              "order": 9,
+              "chinese": "工程师们在安全环境中正在模拟故障场景。",
+              "english": "The engineers are simulating the failure scenario in a secure environment."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-04-statement-10",
+              "order": 10,
+              "chinese": "诊所在独立服务器上正在保护患者记录。",
+              "english": "The clinic is protecting patient records on a separate server."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-04-statement-11",
+              "order": 11,
+              "chinese": "当地居民在学校附近正在提出一个更安全的人行横道。",
+              "english": "Local residents are proposing a safer crossing near the school."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-04-statement-12",
+              "order": 12,
+              "chinese": "出版社面向国际读者正在翻译技术指南。",
+              "english": "The publisher is translating the technical guide for international readers."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-fluency-lesson-05",
+          "title": "熟练 05 · 讲述过去",
+          "description": "一般过去时和已完成事件",
+          "video": "",
+          "order": 5,
+          "coursePackId": "new-concept-original-fluency",
+          "statements": [
+            {
+              "id": "new-concept-original-fluency-lesson-05-statement-01",
+              "order": 1,
+              "chinese": "我上个月评估了研究证据。",
+              "english": "I evaluated the research evidence last month."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-05-statement-02",
+              "order": 2,
+              "chinese": "你上季度协商了修订后的合同。",
+              "english": "You negotiated the revised contract last quarter."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-05-statement-03",
+              "order": 3,
+              "chinese": "研究人员去年测量了长期影响。",
+              "english": "The researcher measured the long-term impact last year."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-05-statement-04",
+              "order": 4,
+              "chinese": "编辑昨天澄清了核心论点。",
+              "english": "The editor clarified the central argument yesterday."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-05-statement-05",
+              "order": 5,
+              "chinese": "我们上周协调了区域响应。",
+              "english": "We coordinated the regional response last week."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-05-statement-06",
+              "order": 6,
+              "chinese": "他们去年冬天监测了空气质量。",
+              "english": "They monitored air quality last winter."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-05-statement-07",
+              "order": 7,
+              "chinese": "设计团队上个迭代制作原型了无障碍界面。",
+              "english": "The design team prototyped the accessible interface last sprint."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-05-statement-08",
+              "order": 8,
+              "chinese": "委员会去年六月审查了资金申请。",
+              "english": "The committee reviewed the funding request last June."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-05-statement-09",
+              "order": 9,
+              "chinese": "工程师们昨晚模拟了故障场景。",
+              "english": "The engineers simulated the failure scenario last night."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-05-statement-10",
+              "order": 10,
+              "chinese": "诊所审计期间保护了患者记录。",
+              "english": "The clinic protected patient records during the audit."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-05-statement-11",
+              "order": 11,
+              "chinese": "当地居民上个月提出了一个更安全的人行横道。",
+              "english": "Local residents proposed a safer crossing last month."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-05-statement-12",
+              "order": 12,
+              "chinese": "出版社去年翻译了技术指南。",
+              "english": "The publisher translated the technical guide last year."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-fluency-lesson-06",
+          "title": "熟练 06 · 计划未来",
+          "description": "will、计划和预测",
+          "video": "",
+          "order": 6,
+          "coursePackId": "new-concept-original-fluency",
+          "statements": [
+            {
+              "id": "new-concept-original-fluency-lesson-06-statement-01",
+              "order": 1,
+              "chinese": "我下个月会评估研究证据。",
+              "english": "I will evaluate the research evidence next month."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-06-statement-02",
+              "order": 2,
+              "chinese": "你下季度会协商修订后的合同。",
+              "english": "You will negotiate the revised contract next quarter."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-06-statement-03",
+              "order": 3,
+              "chinese": "研究人员明年会测量长期影响。",
+              "english": "The researcher will measure the long-term impact next year."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-06-statement-04",
+              "order": 4,
+              "chinese": "编辑明天会澄清核心论点。",
+              "english": "The editor will clarify the central argument tomorrow."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-06-statement-05",
+              "order": 5,
+              "chinese": "我们下周会协调区域响应。",
+              "english": "We will coordinate the regional response next week."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-06-statement-06",
+              "order": 6,
+              "chinese": "他们今年冬天会监测空气质量。",
+              "english": "They will monitor air quality this winter."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-06-statement-07",
+              "order": 7,
+              "chinese": "设计团队下个迭代会制作原型无障碍界面。",
+              "english": "The design team will prototype the accessible interface next sprint."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-06-statement-08",
+              "order": 8,
+              "chinese": "委员会明年六月会审查资金申请。",
+              "english": "The committee will review the funding request next June."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-06-statement-09",
+              "order": 9,
+              "chinese": "工程师们今晚会模拟故障场景。",
+              "english": "The engineers will simulate the failure scenario tonight."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-06-statement-10",
+              "order": 10,
+              "chinese": "诊所下次审计期间会保护患者记录。",
+              "english": "The clinic will protect patient records during the next audit."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-06-statement-11",
+              "order": 11,
+              "chinese": "当地居民下个月会提出一个更安全的人行横道。",
+              "english": "Local residents will propose a safer crossing next month."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-06-statement-12",
+              "order": 12,
+              "chinese": "出版社明年会翻译技术指南。",
+              "english": "The publisher will translate the technical guide next year."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-fluency-lesson-07",
+          "title": "熟练 07 · 提出问题",
+          "description": "一般疑问句和信息确认",
+          "video": "",
+          "order": 7,
+          "coursePackId": "new-concept-original-fluency",
+          "statements": [
+            {
+              "id": "new-concept-original-fluency-lesson-07-statement-01",
+              "order": 1,
+              "chinese": "我写作前评估研究证据吗？",
+              "english": "Do I evaluate the research evidence before writing?"
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-07-statement-02",
+              "order": 2,
+              "chinese": "条款变化时，你协商修订后的合同吗？",
+              "english": "Do you negotiate the revised contract when terms change?"
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-07-statement-03",
+              "order": 3,
+              "chinese": "研究人员按固定间隔测量长期影响吗？",
+              "english": "Does the researcher measure the long-term impact at regular intervals?"
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-07-statement-04",
+              "order": 4,
+              "chinese": "编辑出版前澄清核心论点吗？",
+              "english": "Does the editor clarify the central argument before publication?"
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-07-statement-05",
+              "order": 5,
+              "chinese": "我们紧急情况下协调区域响应吗？",
+              "english": "Do we coordinate the regional response during emergencies?"
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-07-statement-06",
+              "order": 6,
+              "chinese": "他们全天候监测空气质量吗？",
+              "english": "Do they monitor air quality around the clock?"
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-07-statement-07",
+              "order": 7,
+              "chinese": "设计团队开发前制作原型无障碍界面吗？",
+              "english": "Does the design team prototype the accessible interface before development?"
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-07-statement-08",
+              "order": 8,
+              "chinese": "委员会每六个月审查资金申请吗？",
+              "english": "Does the committee review the funding request every six months?"
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-07-statement-09",
+              "order": 9,
+              "chinese": "工程师们部署前模拟故障场景吗？",
+              "english": "Do the engineers simulate the failure scenario before deployment?"
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-07-statement-10",
+              "order": 10,
+              "chinese": "诊所始终保护患者记录吗？",
+              "english": "Does the clinic protect patient records at all times?"
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-07-statement-11",
+              "order": 11,
+              "chinese": "当地居民在议会会议期间提出一个更安全的人行横道吗？",
+              "english": "Do local residents propose a safer crossing during council meetings?"
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-07-statement-12",
+              "order": 12,
+              "chinese": "出版社每个版本发布前翻译技术指南吗？",
+              "english": "Does the publisher translate the technical guide before each edition?"
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-fluency-lesson-08",
+          "title": "熟练 08 · 能力与建议",
+          "description": "can、should 和礼貌建议",
+          "video": "",
+          "order": 8,
+          "coursePackId": "new-concept-original-fluency",
+          "statements": [
+            {
+              "id": "new-concept-original-fluency-lesson-08-statement-01",
+              "order": 1,
+              "chinese": "我应该在档案室评估研究证据。",
+              "english": "I should evaluate the research evidence in the archive."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-08-statement-02",
+              "order": 2,
+              "chinese": "你应该在总部协商修订后的合同。",
+              "english": "You should negotiate the revised contract at headquarters."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-08-statement-03",
+              "order": 3,
+              "chinese": "研究人员应该在实地测量长期影响。",
+              "english": "The researcher should measure the long-term impact in the field."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-08-statement-04",
+              "order": 4,
+              "chinese": "编辑应该在编辑部澄清核心论点。",
+              "english": "The editor should clarify the central argument in the newsroom."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-08-statement-05",
+              "order": 5,
+              "chinese": "我们应该跨三个办公室协调区域响应。",
+              "english": "We should coordinate the regional response across three offices."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-08-statement-06",
+              "order": 6,
+              "chinese": "他们应该全市范围内监测空气质量。",
+              "english": "They should monitor air quality throughout the city."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-08-statement-07",
+              "order": 7,
+              "chinese": "设计团队应该在可用性实验室制作原型无障碍界面。",
+              "english": "The design team should prototype the accessible interface in the usability lab."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-08-statement-08",
+              "order": 8,
+              "chinese": "委员会应该在公开会议上审查资金申请。",
+              "english": "The committee should review the funding request in a public session."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-08-statement-09",
+              "order": 9,
+              "chinese": "工程师们应该在安全环境中模拟故障场景。",
+              "english": "The engineers should simulate the failure scenario in a secure environment."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-08-statement-10",
+              "order": 10,
+              "chinese": "诊所应该在独立服务器上保护患者记录。",
+              "english": "The clinic should protect patient records on a separate server."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-08-statement-11",
+              "order": 11,
+              "chinese": "当地居民应该在学校附近提出一个更安全的人行横道。",
+              "english": "Local residents should propose a safer crossing near the school."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-08-statement-12",
+              "order": 12,
+              "chinese": "出版社应该面向国际读者翻译技术指南。",
+              "english": "The publisher should translate the technical guide for international readers."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-fluency-lesson-09",
+          "title": "熟练 09 · 比较与选择",
+          "description": "比较级和选择理由",
+          "video": "",
+          "order": 9,
+          "coursePackId": "new-concept-original-fluency",
+          "statements": [
+            {
+              "id": "new-concept-original-fluency-lesson-09-statement-01",
+              "order": 1,
+              "chinese": "我比另一位学习者更审慎。",
+              "english": "I am more critical than another learner."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-09-statement-02",
+              "order": 2,
+              "chinese": "你比另一位学习者更善于沟通。",
+              "english": "You are more diplomatic than another learner."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-09-statement-03",
+              "order": 3,
+              "chinese": "研究人员比另一位科学家更精确。",
+              "english": "The researcher is more precise than the other scientist."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-09-statement-04",
+              "order": 4,
+              "chinese": "编辑比另一位记者更简洁。",
+              "english": "The editor is more concise than the other journalist."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-09-statement-05",
+              "order": 5,
+              "chinese": "我们比另一个小组更有韧性。",
+              "english": "We are more resilient than the other group."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-09-statement-06",
+              "order": 6,
+              "chinese": "他们比另一个小组更透明。",
+              "english": "They are more transparent than the other group."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-09-statement-07",
+              "order": 7,
+              "chinese": "设计团队比以前的小组更具包容性。",
+              "english": "The design team is more inclusive than the previous group."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-09-statement-08",
+              "order": 8,
+              "chinese": "委员会比以前的小组更负责任。",
+              "english": "The committee is more accountable than the previous group."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-09-statement-09",
+              "order": 9,
+              "chinese": "工程师们比外部工程团队更系统。",
+              "english": "The engineers are more systematic than the external engineering team."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-09-statement-10",
+              "order": 10,
+              "chinese": "诊所比地区医院更安全。",
+              "english": "The clinic is more secure than the regional hospital."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-09-statement-11",
+              "order": 11,
+              "chinese": "当地居民比邻近社区更坚持。",
+              "english": "Local residents are more persistent than the neighboring community."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-09-statement-12",
+              "order": 12,
+              "chinese": "出版社比数字出版社更一致。",
+              "english": "The publisher is more consistent than the digital publisher."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-fluency-lesson-10",
+          "title": "熟练 10 · 地点与数量",
+          "description": "there be、位置和数量表达",
+          "video": "",
+          "order": 10,
+          "coursePackId": "new-concept-original-fluency",
+          "statements": [
+            {
+              "id": "new-concept-original-fluency-lesson-10-statement-01",
+              "order": 1,
+              "chinese": "在档案室有一组已核实的数据。",
+              "english": "There is a verified data set in the archive."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-10-statement-02",
+              "order": 2,
+              "chinese": "在总部有一份书面协议。",
+              "english": "There is a written agreement at headquarters."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-10-statement-03",
+              "order": 3,
+              "chinese": "在实地有一份对照样本。",
+              "english": "There is a control sample in the field."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-10-statement-04",
+              "order": 4,
+              "chinese": "在编辑部有一份详细提纲。",
+              "english": "There is a detailed outline in the newsroom."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-10-statement-05",
+              "order": 5,
+              "chinese": "跨三个办公室有一套共享流程。",
+              "english": "There is a shared protocol across three offices."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-10-statement-06",
+              "order": 6,
+              "chinese": "全市范围内有一个公共仪表盘。",
+              "english": "There is a public dashboard throughout the city."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-10-statement-07",
+              "order": 7,
+              "chinese": "在可用性实验室有一个经过测试的组件。",
+              "english": "There is a tested component in the usability lab."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-10-statement-08",
+              "order": 8,
+              "chinese": "在公开会议上有一项利益冲突政策。",
+              "english": "There is a conflict policy in a public session."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-10-statement-09",
+              "order": 9,
+              "chinese": "在安全环境中有一套恢复流程。",
+              "english": "There is a recovery procedure in a secure environment."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-10-statement-10",
+              "order": 10,
+              "chinese": "在独立服务器上有一份加密备份。",
+              "english": "There is an encrypted backup on a separate server."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-10-statement-11",
+              "order": 11,
+              "chinese": "在学校附近有一份签名请愿书。",
+              "english": "There is a signed petition near the school."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-10-statement-12",
+              "order": 12,
+              "chinese": "面向国际读者有一份术语表。",
+              "english": "There is a terminology list for international readers."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-fluency-lesson-11",
+          "title": "熟练 11 · 经验与结果",
+          "description": "现在完成时和经历表达",
+          "video": "",
+          "order": 11,
+          "coursePackId": "new-concept-original-fluency",
+          "statements": [
+            {
+              "id": "new-concept-original-fluency-lesson-11-statement-01",
+              "order": 1,
+              "chinese": "我以前评估过研究证据。",
+              "english": "I have evaluated the research evidence before."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-11-statement-02",
+              "order": 2,
+              "chinese": "你以前协商过修订后的合同。",
+              "english": "You have negotiated the revised contract before."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-11-statement-03",
+              "order": 3,
+              "chinese": "研究人员以前测量过长期影响。",
+              "english": "The researcher has measured the long-term impact before."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-11-statement-04",
+              "order": 4,
+              "chinese": "编辑以前澄清过核心论点。",
+              "english": "The editor has clarified the central argument before."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-11-statement-05",
+              "order": 5,
+              "chinese": "我们以前协调过区域响应。",
+              "english": "We have coordinated the regional response before."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-11-statement-06",
+              "order": 6,
+              "chinese": "他们以前监测过空气质量。",
+              "english": "They have monitored air quality before."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-11-statement-07",
+              "order": 7,
+              "chinese": "设计团队以前制作原型过无障碍界面。",
+              "english": "The design team has prototyped the accessible interface before."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-11-statement-08",
+              "order": 8,
+              "chinese": "委员会以前审查过资金申请。",
+              "english": "The committee has reviewed the funding request before."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-11-statement-09",
+              "order": 9,
+              "chinese": "工程师们以前模拟过故障场景。",
+              "english": "The engineers have simulated the failure scenario before."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-11-statement-10",
+              "order": 10,
+              "chinese": "诊所以前保护过患者记录。",
+              "english": "The clinic has protected patient records before."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-11-statement-11",
+              "order": 11,
+              "chinese": "当地居民以前提出过一个更安全的人行横道。",
+              "english": "Local residents have proposed a safer crossing before."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-11-statement-12",
+              "order": 12,
+              "chinese": "出版社以前翻译过技术指南。",
+              "english": "The publisher has translated the technical guide before."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-fluency-lesson-12",
+          "title": "熟练 12 · 条件与结果",
+          "description": "真实条件句和结果预测",
+          "video": "",
+          "order": 12,
+          "coursePackId": "new-concept-original-fluency",
+          "statements": [
+            {
+              "id": "new-concept-original-fluency-lesson-12-statement-01",
+              "order": 1,
+              "chinese": "如果我评估研究证据，我会很审慎。",
+              "english": "If I evaluate the research evidence, I will be critical."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-12-statement-02",
+              "order": 2,
+              "chinese": "如果你协商修订后的合同，你会很善于沟通。",
+              "english": "If you negotiate the revised contract, you will be diplomatic."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-12-statement-03",
+              "order": 3,
+              "chinese": "如果研究人员测量长期影响，她会很精确。",
+              "english": "If the researcher measures the long-term impact, she will be precise."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-12-statement-04",
+              "order": 4,
+              "chinese": "如果编辑澄清核心论点，他会很简洁。",
+              "english": "If the editor clarifies the central argument, he will be concise."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-12-statement-05",
+              "order": 5,
+              "chinese": "如果我们协调区域响应，我们会很有韧性。",
+              "english": "If we coordinate the regional response, we will be resilient."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-12-statement-06",
+              "order": 6,
+              "chinese": "如果他们监测空气质量，他们会很透明。",
+              "english": "If they monitor air quality, they will be transparent."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-12-statement-07",
+              "order": 7,
+              "chinese": "如果设计团队制作原型无障碍界面，它会很具包容性。",
+              "english": "If the design team prototypes the accessible interface, it will be inclusive."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-12-statement-08",
+              "order": 8,
+              "chinese": "如果委员会审查资金申请，它会很负责任。",
+              "english": "If the committee reviews the funding request, it will be accountable."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-12-statement-09",
+              "order": 9,
+              "chinese": "如果工程师们模拟故障场景，他们会很系统。",
+              "english": "If the engineers simulate the failure scenario, they will be systematic."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-12-statement-10",
+              "order": 10,
+              "chinese": "如果诊所保护患者记录，它会很安全。",
+              "english": "If the clinic protects patient records, it will be secure."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-12-statement-11",
+              "order": 11,
+              "chinese": "如果当地居民提出一个更安全的人行横道，他们会很坚持。",
+              "english": "If local residents propose a safer crossing, they will be persistent."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-12-statement-12",
+              "order": 12,
+              "chinese": "如果出版社翻译技术指南，它会很一致。",
+              "english": "If the publisher translates the technical guide, it will be consistent."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-fluency-lesson-13",
+          "title": "熟练 13 · 动作与承受者",
+          "description": "被动语态和过程描述",
+          "video": "",
+          "order": 13,
+          "coursePackId": "new-concept-original-fluency",
+          "statements": [
+            {
+              "id": "new-concept-original-fluency-lesson-13-statement-01",
+              "order": 1,
+              "chinese": "上个月，研究证据由我评估。",
+              "english": "The research evidence was evaluated by me last month."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-13-statement-02",
+              "order": 2,
+              "chinese": "上季度，修订后的合同由你协商。",
+              "english": "The revised contract was negotiated by you last quarter."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-13-statement-03",
+              "order": 3,
+              "chinese": "去年，长期影响由研究人员测量。",
+              "english": "The long-term impact was measured by the researcher last year."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-13-statement-04",
+              "order": 4,
+              "chinese": "昨天，核心论点由编辑澄清。",
+              "english": "The central argument was clarified by the editor yesterday."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-13-statement-05",
+              "order": 5,
+              "chinese": "上周，区域响应由我们协调。",
+              "english": "The regional response was coordinated by us last week."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-13-statement-06",
+              "order": 6,
+              "chinese": "去年冬天，空气质量由他们监测。",
+              "english": "Air quality was monitored by them last winter."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-13-statement-07",
+              "order": 7,
+              "chinese": "上个迭代，无障碍界面由设计团队制作原型。",
+              "english": "The accessible interface was prototyped by the design team last sprint."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-13-statement-08",
+              "order": 8,
+              "chinese": "去年六月，资金申请由委员会审查。",
+              "english": "The funding request was reviewed by the committee last June."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-13-statement-09",
+              "order": 9,
+              "chinese": "昨晚，故障场景由工程师们模拟。",
+              "english": "The failure scenario was simulated by the engineers last night."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-13-statement-10",
+              "order": 10,
+              "chinese": "审计期间，患者记录由诊所保护。",
+              "english": "Patient records were protected by the clinic during the audit."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-13-statement-11",
+              "order": 11,
+              "chinese": "上个月，一个更安全的人行横道由当地居民提出。",
+              "english": "A safer crossing was proposed by local residents last month."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-13-statement-12",
+              "order": 12,
+              "chinese": "去年，技术指南由出版社翻译。",
+              "english": "The technical guide was translated by the publisher last year."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-fluency-lesson-14",
+          "title": "熟练 14 · 补充人物信息",
+          "description": "关系从句和信息扩展",
+          "video": "",
+          "order": 14,
+          "coursePackId": "new-concept-original-fluency",
+          "statements": [
+            {
+              "id": "new-concept-original-fluency-lesson-14-statement-01",
+              "order": 1,
+              "chinese": "评估研究证据的分析师很审慎。",
+              "english": "The analyst who evaluates the research evidence is critical."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-14-statement-02",
+              "order": 2,
+              "chinese": "协商修订后的合同的律师很善于沟通。",
+              "english": "The lawyer who negotiates the revised contract is diplomatic."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-14-statement-03",
+              "order": 3,
+              "chinese": "测量长期影响的科学家很精确。",
+              "english": "The scientist who measures the long-term impact is precise."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-14-statement-04",
+              "order": 4,
+              "chinese": "澄清核心论点的记者很简洁。",
+              "english": "The journalist who clarifies the central argument is concise."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-14-statement-05",
+              "order": 5,
+              "chinese": "协调区域响应的负责人很有韧性。",
+              "english": "The director who coordinates the regional response is resilient."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-14-statement-06",
+              "order": 6,
+              "chinese": "监测空气质量的检查员很透明。",
+              "english": "The inspector who monitors air quality is transparent."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-14-statement-07",
+              "order": 7,
+              "chinese": "制作原型无障碍界面的设计师很具包容性。",
+              "english": "The designer who prototypes the accessible interface is inclusive."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-14-statement-08",
+              "order": 8,
+              "chinese": "审查资金申请的主席很负责任。",
+              "english": "The chairperson who reviews the funding request is accountable."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-14-statement-09",
+              "order": 9,
+              "chinese": "模拟故障场景的架构师很系统。",
+              "english": "The architect who simulates the failure scenario is systematic."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-14-statement-10",
+              "order": 10,
+              "chinese": "保护患者记录的医生很安全。",
+              "english": "The doctor who protects patient records is secure."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-14-statement-11",
+              "order": 11,
+              "chinese": "提出一个更安全的人行横道的组织者很坚持。",
+              "english": "The organizer who proposes a safer crossing is persistent."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-14-statement-12",
+              "order": 12,
+              "chinese": "翻译技术指南的译者很一致。",
+              "english": "The translator who translates the technical guide is consistent."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-fluency-lesson-15",
+          "title": "熟练 15 · 转折与完整表达",
+          "description": "让步、转折和较长句表达",
+          "video": "",
+          "order": 15,
+          "coursePackId": "new-concept-original-fluency",
+          "statements": [
+            {
+              "id": "new-concept-original-fluency-lesson-15-statement-01",
+              "order": 1,
+              "chinese": "虽然我很审慎，但我还是评估了研究证据。",
+              "english": "Although I was critical, I evaluated the research evidence."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-15-statement-02",
+              "order": 2,
+              "chinese": "虽然你很善于沟通，但你还是协商了修订后的合同。",
+              "english": "Although you were diplomatic, you negotiated the revised contract."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-15-statement-03",
+              "order": 3,
+              "chinese": "虽然研究人员很精确，但她还是测量了长期影响。",
+              "english": "Although the researcher was precise, she measured the long-term impact."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-15-statement-04",
+              "order": 4,
+              "chinese": "虽然编辑很简洁，但他还是澄清了核心论点。",
+              "english": "Although the editor was concise, he clarified the central argument."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-15-statement-05",
+              "order": 5,
+              "chinese": "虽然我们很有韧性，但我们还是协调了区域响应。",
+              "english": "Although we were resilient, we coordinated the regional response."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-15-statement-06",
+              "order": 6,
+              "chinese": "虽然他们很透明，但他们还是监测了空气质量。",
+              "english": "Although they were transparent, they monitored air quality."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-15-statement-07",
+              "order": 7,
+              "chinese": "虽然设计团队很具包容性，但它还是制作原型了无障碍界面。",
+              "english": "Although the design team was inclusive, it prototyped the accessible interface."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-15-statement-08",
+              "order": 8,
+              "chinese": "虽然委员会很负责任，但它还是审查了资金申请。",
+              "english": "Although the committee was accountable, it reviewed the funding request."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-15-statement-09",
+              "order": 9,
+              "chinese": "虽然工程师们很系统，但他们还是模拟了故障场景。",
+              "english": "Although the engineers were systematic, they simulated the failure scenario."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-15-statement-10",
+              "order": 10,
+              "chinese": "虽然诊所很安全，但它还是保护了患者记录。",
+              "english": "Although the clinic was secure, it protected patient records."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-15-statement-11",
+              "order": 11,
+              "chinese": "虽然当地居民很坚持，但他们还是提出了一个更安全的人行横道。",
+              "english": "Although local residents were persistent, they proposed a safer crossing."
+            },
+            {
+              "id": "new-concept-original-fluency-lesson-15-statement-12",
+              "order": 12,
+              "chinese": "虽然出版社很一致，但它还是翻译了技术指南。",
+              "english": "Although the publisher was consistent, it translated the technical guide."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "new-concept-original-expression",
+      "order": 13,
+      "title": "新概念路线·原创综合表达篇",
+      "description": "15 课原创综合训练，练习论证、决策、公共表达和复杂观点",
+      "isFree": true,
+      "cover": "/logo.png",
+      "creatorId": "local-user",
+      "shareLevel": "public",
+      "source": {
+        "structureOnly": true,
+        "content": "All Chinese and English practice statements are original Earthworm curriculum content. No textbook passages, answer keys, PDF or DOCX content, transcripts, or publisher audio are included."
+      },
+      "courses": [
+        {
+          "id": "new-concept-original-expression-lesson-01",
+          "title": "综合表达 01 · 状态与身份",
+          "description": "be 动词、身份和状态描述",
+          "video": "",
+          "order": 1,
+          "coursePackId": "new-concept-original-expression",
+          "statements": [
+            {
+              "id": "new-concept-original-expression-lesson-01-statement-01",
+              "order": 1,
+              "chinese": "我很开放。",
+              "english": "I am open-minded."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-01-statement-02",
+              "order": 2,
+              "chinese": "你很平衡。",
+              "english": "You are balanced."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-01-statement-03",
+              "order": 3,
+              "chinese": "经济学家很谨慎。",
+              "english": "The economist is cautious."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-01-statement-04",
+              "order": 4,
+              "chinese": "历史学家很细致。",
+              "english": "The historian is nuanced."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-01-statement-05",
+              "order": 5,
+              "chinese": "我们很有战略性。",
+              "english": "We are strategic."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-01-statement-06",
+              "order": 6,
+              "chinese": "他们很严谨。",
+              "english": "They are rigorous."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-01-statement-07",
+              "order": 7,
+              "chinese": "伦理委员会很公正。",
+              "english": "The ethics board is impartial."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-01-statement-08",
+              "order": 8,
+              "chinese": "领导小组很可信。",
+              "english": "The leadership group is credible."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-01-statement-09",
+              "order": 9,
+              "chinese": "科学专家组很基于证据。",
+              "english": "The scientific panel is evidence-based."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-01-statement-10",
+              "order": 10,
+              "chinese": "调解员很具建设性。",
+              "english": "The mediator is constructive."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-01-statement-11",
+              "order": 11,
+              "chinese": "公民联盟很具代表性。",
+              "english": "The civic coalition is representative."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-01-statement-12",
+              "order": 12,
+              "chinese": "评审团队很负责任。",
+              "english": "The review team is accountable."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-expression-lesson-02",
+          "title": "综合表达 02 · 拥有与需要",
+          "description": "have、拥有关系和实际需要",
+          "video": "",
+          "order": 2,
+          "coursePackId": "new-concept-original-expression",
+          "statements": [
+            {
+              "id": "new-concept-original-expression-lesson-02-statement-01",
+              "order": 1,
+              "chinese": "我有一种替代解释。",
+              "english": "I have an alternative explanation."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-02-statement-02",
+              "order": 2,
+              "chinese": "你有一套清晰标准。",
+              "english": "You have a clear set of criteria."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-02-statement-03",
+              "order": 3,
+              "chinese": "经济学家有一个透明的假设。",
+              "english": "The economist has a transparent assumption."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-02-statement-04",
+              "order": 4,
+              "chinese": "历史学家有一份一手资料。",
+              "english": "The historian has a primary source."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-02-statement-05",
+              "order": 5,
+              "chinese": "我们有一个可衡量的结果。",
+              "english": "We have a measurable outcome."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-02-statement-06",
+              "order": 6,
+              "chinese": "他们有一个反例。",
+              "english": "They have a counterexample."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-02-statement-07",
+              "order": 7,
+              "chinese": "伦理委员会有一份独立评估。",
+              "english": "The ethics board has an independent assessment."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-02-statement-08",
+              "order": 8,
+              "chinese": "领导小组有一份共享决策记录。",
+              "english": "The leadership group has a shared decision record."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-02-statement-09",
+              "order": 9,
+              "chinese": "科学专家组有一个置信区间。",
+              "english": "The scientific panel has a confidence range."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-02-statement-10",
+              "order": 10,
+              "chinese": "调解员有一个可行的折中方案。",
+              "english": "The mediator has a workable compromise."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-02-statement-11",
+              "order": 11,
+              "chinese": "公民联盟有一个包容性论坛。",
+              "english": "The civic coalition has an inclusive forum."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-02-statement-12",
+              "order": 12,
+              "chinese": "评审团队有一份可审计记录。",
+              "english": "The review team has an auditable record."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-expression-lesson-03",
+          "title": "综合表达 03 · 习惯与事实",
+          "description": "一般现在时和频率表达",
+          "video": "",
+          "order": 3,
+          "coursePackId": "new-concept-original-expression",
+          "statements": [
+            {
+              "id": "new-concept-original-expression-lesson-03-statement-01",
+              "order": 1,
+              "chinese": "证据冲突时，我质疑主流叙事。",
+              "english": "I question the dominant narrative when evidence conflicts."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-03-statement-02",
+              "order": 2,
+              "chinese": "优先事项冲突时，你界定政策问题。",
+              "english": "You frame the policy question when priorities compete."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-03-statement-03",
+              "order": 3,
+              "chinese": "经济学家作出预测前建模分析分配效应。",
+              "english": "The economist models the distributional effect before making a forecast."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-03-statement-04",
+              "order": 4,
+              "chinese": "史料说法不一致时，历史学家还原背景政治决策。",
+              "english": "The historian contextualizes the political decision when accounts disagree."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-03-statement-05",
+              "order": 5,
+              "chinese": "资源有限时，我们优先考虑公共利益。",
+              "english": "We prioritize the public benefit when resources are limited."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-03-statement-06",
+              "order": 6,
+              "chinese": "论断含糊时，他们挑战隐藏的假设。",
+              "english": "They challenge the hidden assumption whenever claims are vague."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-03-statement-07",
+              "order": 7,
+              "chinese": "风险不确定时，伦理委员会权衡潜在伤害。",
+              "english": "The ethics board weighs the potential harm when risks are uncertain."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-03-statement-08",
+              "order": 8,
+              "chinese": "计划变化时，领导小组沟通艰难的取舍。",
+              "english": "The leadership group communicates the difficult trade-off when plans change."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-03-statement-09",
+              "order": 9,
+              "chinese": "科学专家组向公众提出建议前综合分析相互冲突的发现。",
+              "english": "The scientific panel synthesizes the conflicting findings before advising the public."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-03-statement-10",
+              "order": 10,
+              "chinese": "信任不足时，调解员协调相互竞争的利益。",
+              "english": "The mediator reconciles the competing interests when trust is low."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-03-statement-11",
+              "order": 11,
+              "chinese": "参与率下降时，公民联盟动员本地参与。",
+              "english": "The civic coalition mobilizes local participation when turnout falls."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-03-statement-12",
+              "order": 12,
+              "chinese": "仍存在不确定性时，评审团队记录推理过程。",
+              "english": "The review team documents the reasoning process when uncertainty remains."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-expression-lesson-04",
+          "title": "综合表达 04 · 正在发生",
+          "description": "现在进行时和现场描述",
+          "video": "",
+          "order": 4,
+          "coursePackId": "new-concept-original-expression",
+          "statements": [
+            {
+              "id": "new-concept-original-expression-lesson-04-statement-01",
+              "order": 1,
+              "chinese": "我在研讨会上正在质疑主流叙事。",
+              "english": "I am questioning the dominant narrative in the seminar."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-04-statement-02",
+              "order": 2,
+              "chinese": "你听证会前正在界定政策问题。",
+              "english": "You are framing the policy question before the hearing."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-04-statement-03",
+              "order": 3,
+              "chinese": "经济学家跨不同收入群体正在建模分析分配效应。",
+              "english": "The economist is modeling the distributional effect across income groups."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-04-statement-04",
+              "order": 4,
+              "chinese": "历史学家置于其时代之中正在还原背景政治决策。",
+              "english": "The historian is contextualizing the political decision within its own period."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-04-statement-05",
+              "order": 5,
+              "chinese": "我们贯穿整个项目正在优先考虑公共利益。",
+              "english": "We are prioritizing the public benefit across the whole program."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-04-statement-06",
+              "order": 6,
+              "chinese": "他们在小组讨论中正在挑战隐藏的假设。",
+              "english": "They are challenging the hidden assumption during the panel."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-04-statement-07",
+              "order": 7,
+              "chinese": "伦理委员会批准前正在权衡潜在伤害。",
+              "english": "The ethics board is weighing the potential harm before approval."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-04-statement-08",
+              "order": 8,
+              "chinese": "领导小组在整个组织中正在沟通艰难的取舍。",
+              "english": "The leadership group is communicating the difficult trade-off across the organization."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-04-statement-09",
+              "order": 9,
+              "chinese": "科学专家组在最终报告中正在综合分析相互冲突的发现。",
+              "english": "The scientific panel is synthesizing the conflicting findings in the final report."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-04-statement-10",
+              "order": 10,
+              "chinese": "调解员在谈判桌上正在协调相互竞争的利益。",
+              "english": "The mediator is reconciling the competing interests at the negotiation table."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-04-statement-11",
+              "order": 11,
+              "chinese": "公民联盟在整个地区正在动员本地参与。",
+              "english": "The civic coalition is mobilizing local participation throughout the region."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-04-statement-12",
+              "order": 12,
+              "chinese": "评审团队在每个决策点正在记录推理过程。",
+              "english": "The review team is documenting the reasoning process at every decision point."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-expression-lesson-05",
+          "title": "综合表达 05 · 讲述过去",
+          "description": "一般过去时和已完成事件",
+          "video": "",
+          "order": 5,
+          "coursePackId": "new-concept-original-expression",
+          "statements": [
+            {
+              "id": "new-concept-original-expression-lesson-05-statement-01",
+              "order": 1,
+              "chinese": "我上次辩论期间质疑了主流叙事。",
+              "english": "I questioned the dominant narrative during the last debate."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-05-statement-02",
+              "order": 2,
+              "chinese": "你上周界定了政策问题。",
+              "english": "You framed the policy question last week."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-05-statement-03",
+              "order": 3,
+              "chinese": "经济学家上次评审期间建模分析了分配效应。",
+              "english": "The economist modeled the distributional effect during the previous review."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-05-statement-04",
+              "order": 4,
+              "chinese": "历史学家在早期研究中还原背景了政治决策。",
+              "english": "The historian contextualized the political decision in the earlier study."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-05-statement-05",
+              "order": 5,
+              "chinese": "我们试点阶段优先考虑了公共利益。",
+              "english": "We prioritized the public benefit in the pilot phase."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-05-statement-06",
+              "order": 6,
+              "chinese": "他们在上次会议上挑战了隐藏的假设。",
+              "english": "They challenged the hidden assumption at the last conference."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-05-statement-07",
+              "order": 7,
+              "chinese": "伦理委员会第一次申请期间权衡了潜在伤害。",
+              "english": "The ethics board weighed the potential harm during the first application."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-05-statement-08",
+              "order": 8,
+              "chinese": "领导小组上次调整期间沟通了艰难的取舍。",
+              "english": "The leadership group communicated the difficult trade-off during the last transition."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-05-statement-09",
+              "order": 9,
+              "chinese": "科学专家组去年综合分析了相互冲突的发现。",
+              "english": "The scientific panel synthesized the conflicting findings last year."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-05-statement-10",
+              "order": 10,
+              "chinese": "调解员第一轮期间协调了相互竞争的利益。",
+              "english": "The mediator reconciled the competing interests during the first round."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-05-statement-11",
+              "order": 11,
+              "chinese": "公民联盟上次活动期间动员了本地参与。",
+              "english": "The civic coalition mobilized local participation during the previous campaign."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-05-statement-12",
+              "order": 12,
+              "chinese": "评审团队在初步评估中记录了推理过程。",
+              "english": "The review team documented the reasoning process in the initial assessment."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-expression-lesson-06",
+          "title": "综合表达 06 · 计划未来",
+          "description": "will、计划和预测",
+          "video": "",
+          "order": 6,
+          "coursePackId": "new-concept-original-expression",
+          "statements": [
+            {
+              "id": "new-concept-original-expression-lesson-06-statement-01",
+              "order": 1,
+              "chinese": "我下次辩论期间会质疑主流叙事。",
+              "english": "I will question the dominant narrative during the next debate."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-06-statement-02",
+              "order": 2,
+              "chinese": "你下周会界定政策问题。",
+              "english": "You will frame the policy question next week."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-06-statement-03",
+              "order": 3,
+              "chinese": "经济学家下次评审期间会建模分析分配效应。",
+              "english": "The economist will model the distributional effect during the next review."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-06-statement-04",
+              "order": 4,
+              "chinese": "历史学家在下次讲座中会还原背景政治决策。",
+              "english": "The historian will contextualize the political decision in the next lecture."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-06-statement-05",
+              "order": 5,
+              "chinese": "我们扩展阶段会优先考虑公共利益。",
+              "english": "We will prioritize the public benefit in the expansion phase."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-06-statement-06",
+              "order": 6,
+              "chinese": "他们在下次会议上会挑战隐藏的假设。",
+              "english": "They will challenge the hidden assumption at the next conference."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-06-statement-07",
+              "order": 7,
+              "chinese": "伦理委员会修订申请期间会权衡潜在伤害。",
+              "english": "The ethics board will weigh the potential harm during the revised application."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-06-statement-08",
+              "order": 8,
+              "chinese": "领导小组下次调整期间会沟通艰难的取舍。",
+              "english": "The leadership group will communicate the difficult trade-off during the next transition."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-06-statement-09",
+              "order": 9,
+              "chinese": "科学专家组明年会综合分析相互冲突的发现。",
+              "english": "The scientific panel will synthesize the conflicting findings next year."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-06-statement-10",
+              "order": 10,
+              "chinese": "调解员最后一轮期间会协调相互竞争的利益。",
+              "english": "The mediator will reconcile the competing interests during the final round."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-06-statement-11",
+              "order": 11,
+              "chinese": "公民联盟即将开展的活动期间会动员本地参与。",
+              "english": "The civic coalition will mobilize local participation during the coming campaign."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-06-statement-12",
+              "order": 12,
+              "chinese": "评审团队在最终评估中会记录推理过程。",
+              "english": "The review team will document the reasoning process in the final assessment."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-expression-lesson-07",
+          "title": "综合表达 07 · 提出问题",
+          "description": "一般疑问句和信息确认",
+          "video": "",
+          "order": 7,
+          "coursePackId": "new-concept-original-expression",
+          "statements": [
+            {
+              "id": "new-concept-original-expression-lesson-07-statement-01",
+              "order": 1,
+              "chinese": "证据冲突时，我质疑主流叙事吗？",
+              "english": "Do I question the dominant narrative when evidence conflicts?"
+            },
+            {
+              "id": "new-concept-original-expression-lesson-07-statement-02",
+              "order": 2,
+              "chinese": "优先事项冲突时，你界定政策问题吗？",
+              "english": "Do you frame the policy question when priorities compete?"
+            },
+            {
+              "id": "new-concept-original-expression-lesson-07-statement-03",
+              "order": 3,
+              "chinese": "经济学家作出预测前建模分析分配效应吗？",
+              "english": "Does the economist model the distributional effect before making a forecast?"
+            },
+            {
+              "id": "new-concept-original-expression-lesson-07-statement-04",
+              "order": 4,
+              "chinese": "史料说法不一致时，历史学家还原背景政治决策吗？",
+              "english": "Does the historian contextualize the political decision when accounts disagree?"
+            },
+            {
+              "id": "new-concept-original-expression-lesson-07-statement-05",
+              "order": 5,
+              "chinese": "资源有限时，我们优先考虑公共利益吗？",
+              "english": "Do we prioritize the public benefit when resources are limited?"
+            },
+            {
+              "id": "new-concept-original-expression-lesson-07-statement-06",
+              "order": 6,
+              "chinese": "论断含糊时，他们挑战隐藏的假设吗？",
+              "english": "Do they challenge the hidden assumption whenever claims are vague?"
+            },
+            {
+              "id": "new-concept-original-expression-lesson-07-statement-07",
+              "order": 7,
+              "chinese": "风险不确定时，伦理委员会权衡潜在伤害吗？",
+              "english": "Does the ethics board weigh the potential harm when risks are uncertain?"
+            },
+            {
+              "id": "new-concept-original-expression-lesson-07-statement-08",
+              "order": 8,
+              "chinese": "计划变化时，领导小组沟通艰难的取舍吗？",
+              "english": "Does the leadership group communicate the difficult trade-off when plans change?"
+            },
+            {
+              "id": "new-concept-original-expression-lesson-07-statement-09",
+              "order": 9,
+              "chinese": "科学专家组向公众提出建议前综合分析相互冲突的发现吗？",
+              "english": "Does the scientific panel synthesize the conflicting findings before advising the public?"
+            },
+            {
+              "id": "new-concept-original-expression-lesson-07-statement-10",
+              "order": 10,
+              "chinese": "信任不足时，调解员协调相互竞争的利益吗？",
+              "english": "Does the mediator reconcile the competing interests when trust is low?"
+            },
+            {
+              "id": "new-concept-original-expression-lesson-07-statement-11",
+              "order": 11,
+              "chinese": "参与率下降时，公民联盟动员本地参与吗？",
+              "english": "Does the civic coalition mobilize local participation when turnout falls?"
+            },
+            {
+              "id": "new-concept-original-expression-lesson-07-statement-12",
+              "order": 12,
+              "chinese": "仍存在不确定性时，评审团队记录推理过程吗？",
+              "english": "Does the review team document the reasoning process when uncertainty remains?"
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-expression-lesson-08",
+          "title": "综合表达 08 · 能力与建议",
+          "description": "can、should 和礼貌建议",
+          "video": "",
+          "order": 8,
+          "coursePackId": "new-concept-original-expression",
+          "statements": [
+            {
+              "id": "new-concept-original-expression-lesson-08-statement-01",
+              "order": 1,
+              "chinese": "我应该在研讨会上质疑主流叙事。",
+              "english": "I should question the dominant narrative in the seminar."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-08-statement-02",
+              "order": 2,
+              "chinese": "你应该听证会前界定政策问题。",
+              "english": "You should frame the policy question before the hearing."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-08-statement-03",
+              "order": 3,
+              "chinese": "经济学家应该跨不同收入群体建模分析分配效应。",
+              "english": "The economist should model the distributional effect across income groups."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-08-statement-04",
+              "order": 4,
+              "chinese": "历史学家应该置于其时代之中还原背景政治决策。",
+              "english": "The historian should contextualize the political decision within its own period."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-08-statement-05",
+              "order": 5,
+              "chinese": "我们应该贯穿整个项目优先考虑公共利益。",
+              "english": "We should prioritize the public benefit across the whole program."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-08-statement-06",
+              "order": 6,
+              "chinese": "他们应该在小组讨论中挑战隐藏的假设。",
+              "english": "They should challenge the hidden assumption during the panel."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-08-statement-07",
+              "order": 7,
+              "chinese": "伦理委员会应该批准前权衡潜在伤害。",
+              "english": "The ethics board should weigh the potential harm before approval."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-08-statement-08",
+              "order": 8,
+              "chinese": "领导小组应该在整个组织中沟通艰难的取舍。",
+              "english": "The leadership group should communicate the difficult trade-off across the organization."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-08-statement-09",
+              "order": 9,
+              "chinese": "科学专家组应该在最终报告中综合分析相互冲突的发现。",
+              "english": "The scientific panel should synthesize the conflicting findings in the final report."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-08-statement-10",
+              "order": 10,
+              "chinese": "调解员应该在谈判桌上协调相互竞争的利益。",
+              "english": "The mediator should reconcile the competing interests at the negotiation table."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-08-statement-11",
+              "order": 11,
+              "chinese": "公民联盟应该在整个地区动员本地参与。",
+              "english": "The civic coalition should mobilize local participation throughout the region."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-08-statement-12",
+              "order": 12,
+              "chinese": "评审团队应该在每个决策点记录推理过程。",
+              "english": "The review team should document the reasoning process at every decision point."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-expression-lesson-09",
+          "title": "综合表达 09 · 比较与选择",
+          "description": "比较级和选择理由",
+          "video": "",
+          "order": 9,
+          "coursePackId": "new-concept-original-expression",
+          "statements": [
+            {
+              "id": "new-concept-original-expression-lesson-09-statement-01",
+              "order": 1,
+              "chinese": "我比另一位学习者更开放。",
+              "english": "I am more open-minded than another learner."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-09-statement-02",
+              "order": 2,
+              "chinese": "你比另一位学习者更平衡。",
+              "english": "You are more balanced than another learner."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-09-statement-03",
+              "order": 3,
+              "chinese": "经济学家比另一位经济学家更谨慎。",
+              "english": "The economist is more cautious than the other economist."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-09-statement-04",
+              "order": 4,
+              "chinese": "历史学家比另一位档案研究员更细致。",
+              "english": "The historian is more nuanced than the other archivist."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-09-statement-05",
+              "order": 5,
+              "chinese": "我们比另一个小组更有战略性。",
+              "english": "We are more strategic than the other group."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-09-statement-06",
+              "order": 6,
+              "chinese": "他们比另一个小组更严谨。",
+              "english": "They are more rigorous than the other group."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-09-statement-07",
+              "order": 7,
+              "chinese": "伦理委员会比以前的小组更公正。",
+              "english": "The ethics board is more impartial than the previous group."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-09-statement-08",
+              "order": 8,
+              "chinese": "领导小组比以前的小组更可信。",
+              "english": "The leadership group is more credible than the previous group."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-09-statement-09",
+              "order": 9,
+              "chinese": "科学专家组比以前的小组更基于证据。",
+              "english": "The scientific panel is more evidence-based than the previous group."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-09-statement-10",
+              "order": 10,
+              "chinese": "调解员比另一位调解员更具建设性。",
+              "english": "The mediator is more constructive than the other mediator."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-09-statement-11",
+              "order": 11,
+              "chinese": "公民联盟比以前的小组更具代表性。",
+              "english": "The civic coalition is more representative than the previous group."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-09-statement-12",
+              "order": 12,
+              "chinese": "评审团队比以前的小组更负责任。",
+              "english": "The review team is more accountable than the previous group."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-expression-lesson-10",
+          "title": "综合表达 10 · 地点与数量",
+          "description": "there be、位置和数量表达",
+          "video": "",
+          "order": 10,
+          "coursePackId": "new-concept-original-expression",
+          "statements": [
+            {
+              "id": "new-concept-original-expression-lesson-10-statement-01",
+              "order": 1,
+              "chinese": "在研讨会上有一种替代解释。",
+              "english": "There is an alternative explanation in the seminar."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-10-statement-02",
+              "order": 2,
+              "chinese": "听证会前有一套清晰标准。",
+              "english": "There is a clear set of criteria before the hearing."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-10-statement-03",
+              "order": 3,
+              "chinese": "跨不同收入群体有一个透明的假设。",
+              "english": "There is a transparent assumption across income groups."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-10-statement-04",
+              "order": 4,
+              "chinese": "置于其时代之中有一份一手资料。",
+              "english": "There is a primary source within its own period."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-10-statement-05",
+              "order": 5,
+              "chinese": "贯穿整个项目有一个可衡量的结果。",
+              "english": "There is a measurable outcome across the whole program."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-10-statement-06",
+              "order": 6,
+              "chinese": "在小组讨论中有一个反例。",
+              "english": "There is a counterexample during the panel."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-10-statement-07",
+              "order": 7,
+              "chinese": "批准前有一份独立评估。",
+              "english": "There is an independent assessment before approval."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-10-statement-08",
+              "order": 8,
+              "chinese": "在整个组织中有一份共享决策记录。",
+              "english": "There is a shared decision record across the organization."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-10-statement-09",
+              "order": 9,
+              "chinese": "在最终报告中有一个置信区间。",
+              "english": "There is a confidence range in the final report."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-10-statement-10",
+              "order": 10,
+              "chinese": "在谈判桌上有一个可行的折中方案。",
+              "english": "There is a workable compromise at the negotiation table."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-10-statement-11",
+              "order": 11,
+              "chinese": "在整个地区有一个包容性论坛。",
+              "english": "There is an inclusive forum throughout the region."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-10-statement-12",
+              "order": 12,
+              "chinese": "在每个决策点有一份可审计记录。",
+              "english": "There is an auditable record at every decision point."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-expression-lesson-11",
+          "title": "综合表达 11 · 经验与结果",
+          "description": "现在完成时和经历表达",
+          "video": "",
+          "order": 11,
+          "coursePackId": "new-concept-original-expression",
+          "statements": [
+            {
+              "id": "new-concept-original-expression-lesson-11-statement-01",
+              "order": 1,
+              "chinese": "我以前质疑过主流叙事。",
+              "english": "I have questioned the dominant narrative before."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-11-statement-02",
+              "order": 2,
+              "chinese": "你以前界定过政策问题。",
+              "english": "You have framed the policy question before."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-11-statement-03",
+              "order": 3,
+              "chinese": "经济学家以前建模分析过分配效应。",
+              "english": "The economist has modeled the distributional effect before."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-11-statement-04",
+              "order": 4,
+              "chinese": "历史学家以前还原背景过政治决策。",
+              "english": "The historian has contextualized the political decision before."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-11-statement-05",
+              "order": 5,
+              "chinese": "我们以前优先考虑过公共利益。",
+              "english": "We have prioritized the public benefit before."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-11-statement-06",
+              "order": 6,
+              "chinese": "他们以前挑战过隐藏的假设。",
+              "english": "They have challenged the hidden assumption before."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-11-statement-07",
+              "order": 7,
+              "chinese": "伦理委员会以前权衡过潜在伤害。",
+              "english": "The ethics board has weighed the potential harm before."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-11-statement-08",
+              "order": 8,
+              "chinese": "领导小组以前沟通过艰难的取舍。",
+              "english": "The leadership group has communicated the difficult trade-off before."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-11-statement-09",
+              "order": 9,
+              "chinese": "科学专家组以前综合分析过相互冲突的发现。",
+              "english": "The scientific panel has synthesized the conflicting findings before."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-11-statement-10",
+              "order": 10,
+              "chinese": "调解员以前协调过相互竞争的利益。",
+              "english": "The mediator has reconciled the competing interests before."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-11-statement-11",
+              "order": 11,
+              "chinese": "公民联盟以前动员过本地参与。",
+              "english": "The civic coalition has mobilized local participation before."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-11-statement-12",
+              "order": 12,
+              "chinese": "评审团队以前记录过推理过程。",
+              "english": "The review team has documented the reasoning process before."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-expression-lesson-12",
+          "title": "综合表达 12 · 条件与结果",
+          "description": "真实条件句和结果预测",
+          "video": "",
+          "order": 12,
+          "coursePackId": "new-concept-original-expression",
+          "statements": [
+            {
+              "id": "new-concept-original-expression-lesson-12-statement-01",
+              "order": 1,
+              "chinese": "如果我质疑主流叙事，我会很开放。",
+              "english": "If I question the dominant narrative, I will be open-minded."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-12-statement-02",
+              "order": 2,
+              "chinese": "如果你界定政策问题，你会很平衡。",
+              "english": "If you frame the policy question, you will be balanced."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-12-statement-03",
+              "order": 3,
+              "chinese": "如果经济学家建模分析分配效应，她会很谨慎。",
+              "english": "If the economist models the distributional effect, she will be cautious."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-12-statement-04",
+              "order": 4,
+              "chinese": "如果历史学家还原背景政治决策，他会很细致。",
+              "english": "If the historian contextualizes the political decision, he will be nuanced."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-12-statement-05",
+              "order": 5,
+              "chinese": "如果我们优先考虑公共利益，我们会很有战略性。",
+              "english": "If we prioritize the public benefit, we will be strategic."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-12-statement-06",
+              "order": 6,
+              "chinese": "如果他们挑战隐藏的假设，他们会很严谨。",
+              "english": "If they challenge the hidden assumption, they will be rigorous."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-12-statement-07",
+              "order": 7,
+              "chinese": "如果伦理委员会权衡潜在伤害，它会很公正。",
+              "english": "If the ethics board weighs the potential harm, it will be impartial."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-12-statement-08",
+              "order": 8,
+              "chinese": "如果领导小组沟通艰难的取舍，它会很可信。",
+              "english": "If the leadership group communicates the difficult trade-off, it will be credible."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-12-statement-09",
+              "order": 9,
+              "chinese": "如果科学专家组综合分析相互冲突的发现，它会很基于证据。",
+              "english": "If the scientific panel synthesizes the conflicting findings, it will be evidence-based."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-12-statement-10",
+              "order": 10,
+              "chinese": "如果调解员协调相互竞争的利益，她会很具建设性。",
+              "english": "If the mediator reconciles the competing interests, she will be constructive."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-12-statement-11",
+              "order": 11,
+              "chinese": "如果公民联盟动员本地参与，它会很具代表性。",
+              "english": "If the civic coalition mobilizes local participation, it will be representative."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-12-statement-12",
+              "order": 12,
+              "chinese": "如果评审团队记录推理过程，它会很负责任。",
+              "english": "If the review team documents the reasoning process, it will be accountable."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-expression-lesson-13",
+          "title": "综合表达 13 · 动作与承受者",
+          "description": "被动语态和过程描述",
+          "video": "",
+          "order": 13,
+          "coursePackId": "new-concept-original-expression",
+          "statements": [
+            {
+              "id": "new-concept-original-expression-lesson-13-statement-01",
+              "order": 1,
+              "chinese": "上次辩论期间，主流叙事由我质疑。",
+              "english": "The dominant narrative was questioned by me during the last debate."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-13-statement-02",
+              "order": 2,
+              "chinese": "上周，政策问题由你界定。",
+              "english": "The policy question was framed by you last week."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-13-statement-03",
+              "order": 3,
+              "chinese": "上次评审期间，分配效应由经济学家建模分析。",
+              "english": "The distributional effect was modeled by the economist during the previous review."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-13-statement-04",
+              "order": 4,
+              "chinese": "在早期研究中，政治决策由历史学家还原背景。",
+              "english": "The political decision was contextualized by the historian in the earlier study."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-13-statement-05",
+              "order": 5,
+              "chinese": "试点阶段，公共利益由我们优先考虑。",
+              "english": "The public benefit was prioritized by us in the pilot phase."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-13-statement-06",
+              "order": 6,
+              "chinese": "在上次会议上，隐藏的假设由他们挑战。",
+              "english": "The hidden assumption was challenged by them at the last conference."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-13-statement-07",
+              "order": 7,
+              "chinese": "第一次申请期间，潜在伤害由伦理委员会权衡。",
+              "english": "The potential harm was weighed by the ethics board during the first application."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-13-statement-08",
+              "order": 8,
+              "chinese": "上次调整期间，艰难的取舍由领导小组沟通。",
+              "english": "The difficult trade-off was communicated by the leadership group during the last transition."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-13-statement-09",
+              "order": 9,
+              "chinese": "去年，相互冲突的发现由科学专家组综合分析。",
+              "english": "The conflicting findings were synthesized by the scientific panel last year."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-13-statement-10",
+              "order": 10,
+              "chinese": "第一轮期间，相互竞争的利益由调解员协调。",
+              "english": "The competing interests were reconciled by the mediator during the first round."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-13-statement-11",
+              "order": 11,
+              "chinese": "上次活动期间，本地参与由公民联盟动员。",
+              "english": "Local participation was mobilized by the civic coalition during the previous campaign."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-13-statement-12",
+              "order": 12,
+              "chinese": "在初步评估中，推理过程由评审团队记录。",
+              "english": "The reasoning process was documented by the review team in the initial assessment."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-expression-lesson-14",
+          "title": "综合表达 14 · 补充人物信息",
+          "description": "关系从句和信息扩展",
+          "video": "",
+          "order": 14,
+          "coursePackId": "new-concept-original-expression",
+          "statements": [
+            {
+              "id": "new-concept-original-expression-lesson-14-statement-01",
+              "order": 1,
+              "chinese": "质疑主流叙事的哲学研究者很开放。",
+              "english": "The philosopher who questions the dominant narrative is open-minded."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-14-statement-02",
+              "order": 2,
+              "chinese": "界定政策问题的顾问很平衡。",
+              "english": "The advisor who frames the policy question is balanced."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-14-statement-03",
+              "order": 3,
+              "chinese": "建模分析分配效应的经济学家很谨慎。",
+              "english": "The economist who models the distributional effect is cautious."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-14-statement-04",
+              "order": 4,
+              "chinese": "还原背景政治决策的档案研究员很细致。",
+              "english": "The archivist who contextualizes the political decision is nuanced."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-14-statement-05",
+              "order": 5,
+              "chinese": "优先考虑公共利益的协调者很有战略性。",
+              "english": "The facilitator who prioritizes the public benefit is strategic."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-14-statement-06",
+              "order": 6,
+              "chinese": "挑战隐藏的假设的主持人很严谨。",
+              "english": "The moderator who challenges the hidden assumption is rigorous."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-14-statement-07",
+              "order": 7,
+              "chinese": "权衡潜在伤害的审查员很公正。",
+              "english": "The reviewer who weighs the potential harm is impartial."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-14-statement-08",
+              "order": 8,
+              "chinese": "沟通艰难的取舍的管理者很可信。",
+              "english": "The executive who communicates the difficult trade-off is credible."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-14-statement-09",
+              "order": 9,
+              "chinese": "综合分析相互冲突的发现的科学家很基于证据。",
+              "english": "The scientist who synthesizes the conflicting findings is evidence-based."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-14-statement-10",
+              "order": 10,
+              "chinese": "协调相互竞争的利益的调解员很具建设性。",
+              "english": "The mediator who reconciles the competing interests is constructive."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-14-statement-11",
+              "order": 11,
+              "chinese": "动员本地参与的组织者很具代表性。",
+              "english": "The organizer who mobilizes local participation is representative."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-14-statement-12",
+              "order": 12,
+              "chinese": "记录推理过程的审计员很负责任。",
+              "english": "The auditor who documents the reasoning process is accountable."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-expression-lesson-15",
+          "title": "综合表达 15 · 转折与完整表达",
+          "description": "让步、转折和较长句表达",
+          "video": "",
+          "order": 15,
+          "coursePackId": "new-concept-original-expression",
+          "statements": [
+            {
+              "id": "new-concept-original-expression-lesson-15-statement-01",
+              "order": 1,
+              "chinese": "虽然我很开放，但我还是质疑了主流叙事。",
+              "english": "Although I was open-minded, I questioned the dominant narrative."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-15-statement-02",
+              "order": 2,
+              "chinese": "虽然你很平衡，但你还是界定了政策问题。",
+              "english": "Although you were balanced, you framed the policy question."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-15-statement-03",
+              "order": 3,
+              "chinese": "虽然经济学家很谨慎，但她还是建模分析了分配效应。",
+              "english": "Although the economist was cautious, she modeled the distributional effect."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-15-statement-04",
+              "order": 4,
+              "chinese": "虽然历史学家很细致，但他还是还原背景了政治决策。",
+              "english": "Although the historian was nuanced, he contextualized the political decision."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-15-statement-05",
+              "order": 5,
+              "chinese": "虽然我们很有战略性，但我们还是优先考虑了公共利益。",
+              "english": "Although we were strategic, we prioritized the public benefit."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-15-statement-06",
+              "order": 6,
+              "chinese": "虽然他们很严谨，但他们还是挑战了隐藏的假设。",
+              "english": "Although they were rigorous, they challenged the hidden assumption."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-15-statement-07",
+              "order": 7,
+              "chinese": "虽然伦理委员会很公正，但它还是权衡了潜在伤害。",
+              "english": "Although the ethics board was impartial, it weighed the potential harm."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-15-statement-08",
+              "order": 8,
+              "chinese": "虽然领导小组很可信，但它还是沟通了艰难的取舍。",
+              "english": "Although the leadership group was credible, it communicated the difficult trade-off."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-15-statement-09",
+              "order": 9,
+              "chinese": "虽然科学专家组很基于证据，但它还是综合分析了相互冲突的发现。",
+              "english": "Although the scientific panel was evidence-based, it synthesized the conflicting findings."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-15-statement-10",
+              "order": 10,
+              "chinese": "虽然调解员很具建设性，但她还是协调了相互竞争的利益。",
+              "english": "Although the mediator was constructive, she reconciled the competing interests."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-15-statement-11",
+              "order": 11,
+              "chinese": "虽然公民联盟很具代表性，但它还是动员了本地参与。",
+              "english": "Although the civic coalition was representative, it mobilized local participation."
+            },
+            {
+              "id": "new-concept-original-expression-lesson-15-statement-12",
+              "order": 12,
+              "chinese": "虽然评审团队很负责任，但它还是记录了推理过程。",
+              "english": "Although the review team was accountable, it documented the reasoning process."
             }
           ]
         }
