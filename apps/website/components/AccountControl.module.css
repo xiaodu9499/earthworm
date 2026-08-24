@@ -36,10 +36,15 @@
 .layer {
   position: fixed;
   z-index: 1000;
-  inset: 0;
+  top: var(--account-visible-top, 0px);
+  right: 0;
+  left: 0;
+  height: var(--account-visible-height, 100dvh);
+  min-height: 0;
   padding: 20px;
   display: grid;
   place-items: center;
+  overflow: hidden;
 }
 .backdrop {
   position: absolute;
@@ -53,19 +58,26 @@
 .dialog {
   position: relative;
   width: min(100%, 430px);
+  max-height: calc(100dvh - 40px);
   padding: 34px;
   border: 1px solid #ddd2e7;
   border-radius: 20px;
   background: #fffdf9;
   color: #211a2c;
   box-shadow: 0 30px 90px rgba(36, 22, 52, 0.24);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+.dialog:focus {
+  outline: none;
 }
 .closeButton {
   position: absolute;
   top: 13px;
   right: 13px;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border: 1px solid #e0d8e7;
   border-radius: 10px;
   background: #fff;
@@ -117,6 +129,26 @@
   border-color: #8d70dc;
   box-shadow: 0 0 0 4px rgba(117, 83, 216, 0.1);
 }
+.passwordField {
+  position: relative;
+}
+.passwordField input {
+  padding-right: 66px;
+}
+.passwordToggle {
+  position: absolute;
+  top: 3px;
+  right: 4px;
+  min-width: 54px;
+  min-height: 44px;
+  border: 0;
+  border-radius: 7px;
+  background: #f2edf8;
+  color: #5d438f;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+}
 .form > button {
   min-height: 50px;
   border: 0;
@@ -131,7 +163,7 @@
   cursor: wait;
 }
 .form .textButton {
-  min-height: 34px;
+  min-height: 44px;
   background: transparent;
   color: #655c6d;
   font-size: 11px;
@@ -249,15 +281,44 @@
 
 @media (max-width: 560px) {
   .layer {
+    height: var(--account-visible-height, 100dvh);
     padding: 0;
     align-items: end;
   }
   .dialog {
     width: 100%;
+    max-height: calc(100% - 8px);
     padding: 27px 20px calc(22px + env(safe-area-inset-bottom));
     border-radius: 24px 24px 0 0;
   }
   .dialog h2 {
     font-size: 27px;
+  }
+  .keyboardOpen {
+    padding: 8px 8px 0;
+    align-items: start;
+  }
+  .keyboardOpen .dialog {
+    max-height: 100%;
+    padding: 20px 16px 16px;
+    border-radius: 18px;
+  }
+  .keyboardOpen .dialog h2 {
+    font-size: 24px;
+  }
+  .keyboardOpen .dialog > p {
+    font-size: 12px;
+    line-height: 1.55;
+  }
+  .keyboardOpen .form {
+    margin-top: 14px;
+    gap: 9px;
+  }
+  .keyboardOpen .form input,
+  .keyboardOpen .form > button {
+    min-height: 46px;
+  }
+  .keyboardOpen .safetyNote {
+    margin-top: 12px;
   }
 }

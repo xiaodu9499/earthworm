@@ -18,15 +18,16 @@
   position: sticky;
   z-index: 20;
   top: 0;
-  width: min(1280px, calc(100% - 56px));
-  height: 70px;
-  margin: auto;
+  width: 100%;
+  height: 64px;
+  margin: 0;
+  padding-inline: clamp(24px, 3vw, 48px);
   border-bottom: 1px solid rgba(98, 75, 119, 0.16);
   display: grid;
   grid-template-columns: minmax(220px, 1fr) auto minmax(220px, 1fr);
   align-items: center;
   gap: 24px;
-  background: rgba(251, 248, 242, 0.86);
+  background: rgba(251, 248, 242, 0.92);
   backdrop-filter: blur(16px);
 }
 
@@ -125,7 +126,8 @@
   color: var(--muted);
   font-size: 10px;
 }
-.deviceSwitch {
+.deviceSwitch,
+.adminEntry {
   min-height: 40px;
   padding: 8px 11px;
   border: 1px solid var(--line);
@@ -135,24 +137,34 @@
   font-size: 11px;
   cursor: pointer;
 }
-.deviceSwitch:hover {
+.adminEntry {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-color: #cfc2ea;
+  background: rgba(244, 239, 253, 0.82);
+  color: var(--purple-dark);
+  font-weight: 800;
+}
+.deviceSwitch:hover,
+.adminEntry:hover {
   border-color: #aa96db;
   color: var(--purple-dark);
 }
 
 .homeHero {
   width: min(1180px, calc(100% - 80px));
-  min-height: 480px;
-  margin: 54px auto 72px;
+  min-height: 390px;
+  margin: 38px auto 48px;
   display: grid;
   grid-template-columns: 1fr 0.92fr;
   align-items: center;
-  gap: clamp(54px, 7vw, 105px);
+  gap: clamp(48px, 6vw, 88px);
 }
 .heroCopy h1 {
-  margin: 0 0 22px;
+  margin: 0 0 18px;
   font:
-    800 clamp(54px, 6vw, 78px) / 1.01 Georgia,
+    800 clamp(52px, 5.5vw, 70px) / 1.01 Georgia,
     "Songti SC",
     serif;
   letter-spacing: -0.055em;
@@ -161,12 +173,12 @@
   max-width: 580px;
   margin: 0;
   color: var(--muted);
-  font-size: 16px;
-  line-height: 1.8;
+  font-size: 15px;
+  line-height: 1.72;
 }
 .summaryStats {
-  margin-top: 30px;
-  gap: 38px;
+  margin-top: 24px;
+  gap: 34px;
 }
 .summaryStats div {
   display: flex;
@@ -185,8 +197,8 @@
 
 .continueCard,
 .startCard {
-  min-height: 300px;
-  padding: 32px;
+  min-height: 254px;
+  padding: 28px;
   border: 1px solid rgba(117, 83, 216, 0.25);
   border-radius: 18px;
   background: rgba(255, 253, 249, 0.88);
@@ -206,7 +218,7 @@
   letter-spacing: 0;
 }
 .continueCard > p {
-  margin: 46px 0 7px;
+  margin: 30px 0 7px;
   color: var(--muted);
   font-size: 11px;
 }
@@ -220,7 +232,7 @@
 }
 .continueProgress {
   height: 6px;
-  margin: 30px 0 16px;
+  margin: 24px 0 14px;
   overflow: hidden;
   border-radius: 99px;
   background: #e7dfee;
@@ -269,7 +281,7 @@
 .librarySection,
 .coursePage {
   width: min(1180px, calc(100% - 80px));
-  margin: 0 auto 80px;
+  margin: 0 auto 64px;
 }
 .sectionLead {
   justify-content: space-between;
@@ -322,8 +334,8 @@
 }
 .packCard {
   position: relative;
-  min-height: 276px;
-  padding: 22px;
+  min-height: 244px;
+  padding: 20px;
   border: 1px solid var(--line);
   border-radius: 14px;
   background: rgba(255, 253, 249, 0.88);
@@ -338,15 +350,15 @@
     box-shadow 0.18s ease;
 }
 .packCard:hover {
-  transform: translateY(-4px);
+  transform: translateY(-2px);
   border-color: #ab96df;
   box-shadow: 0 17px 42px rgba(62, 40, 95, 0.1);
 }
 .packCard .logoMark {
-  width: 46px;
-  height: 46px;
-  margin: 14px 0 20px;
-  font-size: 25px;
+  width: 42px;
+  height: 42px;
+  margin: 10px 0 16px;
+  font-size: 23px;
 }
 .packNumber {
   position: absolute;
@@ -406,7 +418,7 @@
 }
 
 .coursePage {
-  padding-top: 34px;
+  padding-top: 24px;
 }
 .backButton {
   min-height: 40px;
@@ -422,7 +434,7 @@
   cursor: pointer;
 }
 .courseHeading {
-  margin: 22px 0 28px;
+  margin: 14px 0 20px;
   align-items: flex-end;
   justify-content: space-between;
   gap: 40px;
@@ -431,7 +443,7 @@
   max-width: 880px;
   margin: 8px 0 10px;
   font:
-    800 clamp(42px, 5vw, 62px) / 1.06 Georgia,
+    800 clamp(40px, 4.5vw, 56px) / 1.06 Georgia,
     "Songti SC",
     serif;
   letter-spacing: -0.045em;
@@ -442,11 +454,24 @@
   color: var(--muted);
   font-size: 13px;
   line-height: 1.65;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+}
+.courseHeading p a {
+  color: var(--purple-dark);
+  font-size: 11px;
+  font-weight: 750;
+  text-decoration: none;
+}
+.courseHeading p a:hover {
+  text-decoration: underline;
 }
 .courseCount {
-  min-width: 105px;
-  padding: 16px;
-  border-radius: 15px;
+  min-width: 96px;
+  padding: 13px 15px;
+  border-radius: 12px;
   background: #eae1fb;
   display: flex;
   flex-direction: column;
@@ -490,11 +515,15 @@
   font-size: 10px;
 }
 .courseTools {
+  position: sticky;
+  z-index: 12;
+  top: 72px;
   margin-bottom: 14px;
   padding: 10px;
   border: 1px solid var(--line);
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.46);
+  background: rgba(250, 247, 242, 0.94);
+  backdrop-filter: blur(14px);
   gap: 15px;
 }
 .courseTools .searchBox {
@@ -522,13 +551,15 @@
   gap: 11px;
 }
 .courseCard {
-  min-height: 190px;
-  padding: 17px;
+  min-height: 170px;
+  padding: 15px;
   border: 1px solid var(--line);
   border-radius: 15px;
   background: rgba(255, 253, 249, 0.86);
   display: flex;
   flex-direction: column;
+  content-visibility: auto;
+  contain-intrinsic-size: 170px;
 }
 .courseCard:hover {
   border-color: #b4a2df;
@@ -557,8 +588,10 @@
   overflow: hidden;
   color: var(--muted);
   font-size: 10px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 .courseCardTop > strong {
   color: var(--purple-dark);
@@ -597,6 +630,7 @@
   gap: 7px;
 }
 .courseActions button {
+  min-height: 36px;
   padding: 7px 10px;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -617,16 +651,43 @@
 }
 
 .practicePage {
-  --practice-header-height: 112px;
-  height: 100dvh;
+  --practice-header-height: 102px;
+  height: var(--practice-visible-height, 100dvh);
   min-height: 0;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   background: radial-gradient(circle at 50% -25%, rgba(153, 114, 226, 0.2), transparent 36rem),
     var(--paper);
 }
+.practicePage > :global([aria-label="英语句子练习"]) {
+  height: auto;
+  min-height: 0;
+  flex: 1 1 auto;
+}
+.practiceKeyboardOpen {
+  --practice-header-height: 0px;
+  position: fixed;
+  z-index: 50;
+  top: var(--practice-visible-top, 0px);
+  right: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100vw;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+.practiceKeyboardOpen > .header,
+.practiceKeyboardOpen > .practiceUtility {
+  display: none;
+}
+.practiceKeyboardOpen :global([aria-label="英语句子练习"]) {
+  height: var(--practice-visible-height, 100dvh);
+  overflow: hidden;
+}
 .practiceUtility {
   width: min(1080px, calc(100% - 80px));
-  min-height: 42px;
+  min-height: 38px;
   margin: 0 auto;
   border-bottom: 1px solid rgba(98, 75, 119, 0.12);
   justify-content: space-between;
@@ -723,9 +784,10 @@
 
 @media (max-width: 900px) {
   .header {
-    width: calc(100% - 32px);
+    width: 100%;
     height: auto;
     min-height: 68px;
+    padding-inline: 16px;
     grid-template-columns: 1fr auto;
     gap: 12px;
   }
@@ -768,6 +830,7 @@
     align-items: flex-start;
   }
   .courseTools {
+    position: static;
     align-items: stretch;
     flex-wrap: wrap;
   }

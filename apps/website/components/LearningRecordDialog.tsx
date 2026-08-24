@@ -9,6 +9,9 @@ import { createPortal } from "react-dom";
 
 import styles from "./LearningRecordDialog.module.css";
 
+const focusableSelector =
+  'button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])';
+
 type LearningRecordDialogProps = {
   courseTitle: string;
   statements: Statement[];
@@ -27,13 +30,35 @@ export default function LearningRecordDialog({
   onSelect,
 }: LearningRecordDialogProps) {
   const currentItemRef = useRef<HTMLButtonElement | null>(null);
+  const dialogRef = useRef<HTMLElement | null>(null);
   const returnFocusRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key !== "Escape") return;
-      event.preventDefault();
-      onClose();
+      if (event.key === "Escape") {
+        event.preventDefault();
+        onClose();
+        return;
+      }
+      if (event.key !== "Tab" || !dialogRef.current) return;
+
+      const focusable = Array.from(
+        dialogRef.current.querySelectorAll<HTMLElement>(focusableSelector),
+      ).filter((element) => element.offsetParent !== null);
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable.at(-1);
+      const activeElement = document.activeElement;
+      if (
+        event.shiftKey &&
+        (activeElement === first || !dialogRef.current.contains(activeElement))
+      ) {
+        event.preventDefault();
+        last?.focus({ preventScroll: true });
+      } else if (!event.shiftKey && activeElement === last) {
+        event.preventDefault();
+        first.focus({ preventScroll: true });
+      }
     };
 
     returnFocusRef.current =
@@ -66,6 +91,7 @@ export default function LearningRecordDialog({
         aria-label="关闭学习记录"
       />
       <section
+        ref={dialogRef}
         className={styles.dialog}
         role="dialog"
         aria-modal="true"
@@ -73,7 +99,7 @@ export default function LearningRecordDialog({
       >
         <header className={styles.heading}>
           <div>
-            <h2 id="learning-record-title">学习内容</h2>
+            <h2 id="learning-record-title">本课学习记录</h2>
             <p>{courseTitle}</p>
           </div>
           <button

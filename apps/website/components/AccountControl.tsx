@@ -1,8 +1,10 @@
 "use client";
 
 import type { LearningAccountController } from "@/lib/use-learning-account";
+import type { CSSProperties } from "react";
 
 import UiIcon from "@/components/UiIcon";
+import { useSoftKeyboardViewport } from "@/lib/use-soft-keyboard-viewport";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
@@ -16,6 +18,9 @@ const syncLabels = {
   error: "同步异常",
 } as const;
 
+const focusableSelector =
+  'button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])';
+
 export default function AccountControl({
   account,
   compact = false,
@@ -26,18 +31,30 @@ export default function AccountControl({
   const [open, setOpen] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [passwordVisible, setPasswordVisible] = useState(false);
   const [busy, setBusy] = useState(false);
   const [notice, setNotice] = useState<string | null>(null);
   const [resetMode, setResetMode] = useState(false);
   const triggerRef = useRef<HTMLButtonElement | null>(null);
+  const dialogRef = useRef<HTMLElement | null>(null);
   const emailRef = useRef<HTMLInputElement | null>(null);
+  const { height: visibleHeight, top: visibleTop, keyboardOpen } = useSoftKeyboardViewport(open);
   const clearError = account.clearError;
+
+  const layerStyle = visibleHeight
+    ? ({
+        "--account-visible-height": `${visibleHeight}px`,
+        "--account-visible-top": `${visibleTop}px`,
+      } as CSSProperties)
+    : undefined;
 
   const close = useCallback(() => {
     setOpen(false);
     setBusy(false);
     setNotice(null);
     setResetMode(false);
+    setPassword("");
+    setPasswordVisible(false);
     clearError();
   }, [clearError]);
 
@@ -46,11 +63,36 @@ export default function AccountControl({
     const previousOverflow = document.body.style.overflow;
     const returnFocus = triggerRef.current;
     document.body.style.overflow = "hidden";
-    const focusTimer = window.setTimeout(() => emailRef.current?.focus({ preventScroll: true }), 0);
+    const focusTimer = window.setTimeout(() => {
+      // iOS may show a caret and its autofill toolbar without opening the software
+      // keyboard when an input is focused outside a trusted user gesture. Keep the
+      // modal keyboard-accessible, but let the user's tap focus the actual field.
+      dialogRef.current?.focus({ preventScroll: true });
+    }, 0);
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         event.preventDefault();
         close();
+        return;
+      }
+      if (event.key !== "Tab" || !dialogRef.current) return;
+
+      const focusable = Array.from(
+        dialogRef.current.querySelectorAll<HTMLElement>(focusableSelector),
+      ).filter((element) => element.offsetParent !== null);
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable.at(-1);
+      const activeElement = document.activeElement;
+      if (
+        event.shiftKey &&
+        (activeElement === first || !dialogRef.current.contains(activeElement))
+      ) {
+        event.preventDefault();
+        last?.focus({ preventScroll: true });
+      } else if (!event.shiftKey && activeElement === last) {
+        event.preventDefault();
+        first.focus({ preventScroll: true });
       }
     };
     window.addEventListener("keydown", handleKeyDown);
@@ -135,8 +177,9 @@ export default function AccountControl({
       {open &&
         createPortal(
           <div
-            className={styles.layer}
+            className={`${styles.layer} ${keyboardOpen ? styles.keyboardOpen : ""}`}
             role="presentation"
+            style={layerStyle}
           >
             <button
               className={styles.backdrop}
@@ -145,10 +188,12 @@ export default function AccountControl({
               aria-label="关闭登录窗口"
             />
             <section
+              ref={dialogRef}
               className={styles.dialog}
               role="dialog"
               aria-modal="true"
               aria-labelledby="account-title"
+              tabIndex={-1}
             >
               <button
                 className={styles.closeButton}
@@ -158,7 +203,13 @@ export default function AccountControl({
               >
                 <UiIcon name="close" />
               </button>
-              <h2 id="account-title">{account.user ? "学习进度云同步" : "登录并保存学习进度"}</h2>
+              <h2 id="account-title">
+                {account.user
+                  ? "学习进度云同步"
+                  : resetMode
+                    ? "重置登录密码"
+                    : "登录并保存学习进度"}
+              </h2>
 
               {!account.configured ? (
                 <div className={styles.unavailable}>
@@ -209,8 +260,17 @@ export default function AccountControl({
                         ref={emailRef}
                         type="email"
                         inputMode="email"
-                        autoComplete="email"
+                        autoComplete="username"
+                        enterKeyHint={resetMode ? "send" : "next"}
                         value={email}
+                        onPointerDown={(event) => {
+                          if (event.pointerType === "touch") {
+                            event.currentTarget.focus({ preventScroll: true });
+                          }
+                        }}
+                        onTouchEnd={(event) => {
+                          event.currentTarget.focus({ preventScroll: true });
+                        }}
                         onChange={(event) => setEmail(event.target.value)}
                         disabled={busy}
                         placeholder="name@example.com"
@@ -220,15 +280,36 @@ export default function AccountControl({
                     {!resetMode && (
                       <label>
                         <span>密码</span>
-                        <input
-                          type="password"
-                          autoComplete="current-password"
-                          value={password}
-                          onChange={(event) => setPassword(event.target.value)}
-                          placeholder="至少 8 位字符"
-                          minLength={8}
-                          required
-                        />
+                        <div className={styles.passwordField}>
+                          <input
+                            type={passwordVisible ? "text" : "password"}
+                            aria-label="密码"
+                            autoComplete="current-password"
+                            enterKeyHint="done"
+                            value={password}
+                            onPointerDown={(event) => {
+                              if (event.pointerType === "touch") {
+                                event.currentTarget.focus({ preventScroll: true });
+                              }
+                            }}
+                            onTouchEnd={(event) => {
+                              event.currentTarget.focus({ preventScroll: true });
+                            }}
+                            onChange={(event) => setPassword(event.target.value)}
+                            placeholder="至少 8 位字符"
+                            minLength={8}
+                            required
+                          />
+                          <button
+                            className={styles.passwordToggle}
+                            type="button"
+                            onClick={() => setPasswordVisible((current) => !current)}
+                            aria-label={passwordVisible ? "隐藏密码" : "显示密码"}
+                            aria-pressed={passwordVisible}
+                          >
+                            {passwordVisible ? "隐藏" : "显示"}
+                          </button>
+                        </div>
                       </label>
                     )}
                     <button
@@ -249,6 +330,8 @@ export default function AccountControl({
                       disabled={busy}
                       onClick={() => {
                         setResetMode((current) => !current);
+                        setPassword("");
+                        setPasswordVisible(false);
                         setNotice(null);
                         account.clearError();
                       }}

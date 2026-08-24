@@ -1,0 +1,435 @@
+{
+  "version": 1,
+  "packs": [
+    {
+      "id": "new-concept-original-trial",
+      "order": 6,
+      "title": "新概念英语·原创试学版",
+      "description": "参考公开课程结构重新创作的 5 课入门练习；不含教材课文或原版音频",
+      "isFree": true,
+      "cover": "/logo.png",
+      "creatorId": "local-user",
+      "shareLevel": "public",
+      "source": {
+        "structureOnly": true,
+        "repositories": [
+          "https://github.com/andylee1890/NewConceptEnglish",
+          "https://github.com/ClancyHuang/NewConceptEnglish"
+        ],
+        "content": "All Chinese and English practice statements in this file are newly written for this trial course. No textbook passages, PDF or DOCX content, LRC transcripts, or repository audio are included."
+      },
+      "courses": [
+        {
+          "id": "new-concept-original-trial-lesson-01",
+          "title": "Lesson 1: Excuse Me",
+          "description": "礼貌询问、确认物品与表达感谢",
+          "video": "",
+          "order": 1,
+          "coursePackId": "new-concept-original-trial",
+          "statements": [
+            {
+              "id": "new-concept-original-trial-lesson-01-statement-01",
+              "order": 1,
+              "chinese": "劳驾。",
+              "english": "Excuse me."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-01-statement-02",
+              "order": 2,
+              "chinese": "这是你的钢笔吗？",
+              "english": "Is this your pen?"
+            },
+            {
+              "id": "new-concept-original-trial-lesson-01-statement-03",
+              "order": 3,
+              "chinese": "是的，这是我的钢笔。",
+              "english": "Yes, this is my pen."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-01-statement-04",
+              "order": 4,
+              "chinese": "给你。",
+              "english": "Here you are."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-01-statement-05",
+              "order": 5,
+              "chinese": "谢谢你。",
+              "english": "Thank you."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-01-statement-06",
+              "order": 6,
+              "chinese": "不客气。",
+              "english": "You're welcome."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-01-statement-07",
+              "order": 7,
+              "chinese": "那是你的包吗？",
+              "english": "Is that your bag?"
+            },
+            {
+              "id": "new-concept-original-trial-lesson-01-statement-08",
+              "order": 8,
+              "chinese": "不，那不是我的包。",
+              "english": "No, that isn't my bag."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-01-statement-09",
+              "order": 9,
+              "chinese": "我的包在椅子上。",
+              "english": "My bag is on the chair."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-01-statement-10",
+              "order": 10,
+              "chinese": "我找到它了。",
+              "english": "I found it."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-01-statement-11",
+              "order": 11,
+              "chinese": "太好了。",
+              "english": "That's great."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-01-statement-12",
+              "order": 12,
+              "chinese": "谢谢你的帮助。",
+              "english": "Thank you for your help."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-trial-lesson-02",
+          "title": "Lesson 2: Sorry, Sir",
+          "description": "道歉、解释迟到与礼貌回应",
+          "video": "",
+          "order": 2,
+          "coursePackId": "new-concept-original-trial",
+          "statements": [
+            {
+              "id": "new-concept-original-trial-lesson-02-statement-01",
+              "order": 1,
+              "chinese": "对不起，先生。",
+              "english": "Sorry, sir."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-02-statement-02",
+              "order": 2,
+              "chinese": "我迟到了。",
+              "english": "I'm late."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-02-statement-03",
+              "order": 3,
+              "chinese": "没关系。",
+              "english": "That's all right."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-02-statement-04",
+              "order": 4,
+              "chinese": "发生了什么事？",
+              "english": "What happened?"
+            },
+            {
+              "id": "new-concept-original-trial-lesson-02-statement-05",
+              "order": 5,
+              "chinese": "我错过了公交车。",
+              "english": "I missed the bus."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-02-statement-06",
+              "order": 6,
+              "chinese": "你可以坐在这里。",
+              "english": "You can sit here."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-02-statement-07",
+              "order": 7,
+              "chinese": "这是你的座位吗？",
+              "english": "Is this your seat?"
+            },
+            {
+              "id": "new-concept-original-trial-lesson-02-statement-08",
+              "order": 8,
+              "chinese": "不，我的座位在窗边。",
+              "english": "No, my seat is by the window."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-02-statement-09",
+              "order": 9,
+              "chinese": "我坐错位置了。",
+              "english": "I took the wrong seat."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-02-statement-10",
+              "order": 10,
+              "chinese": "我现在就换位置。",
+              "english": "I'll move now."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-02-statement-11",
+              "order": 11,
+              "chinese": "谢谢你的理解。",
+              "english": "Thank you for understanding."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-02-statement-12",
+              "order": 12,
+              "chinese": "下次我会更仔细。",
+              "english": "I'll be more careful next time."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-trial-lesson-03",
+          "title": "Lesson 3: Nice to Meet You",
+          "description": "自我介绍、询问姓名与初次见面",
+          "video": "",
+          "order": 3,
+          "coursePackId": "new-concept-original-trial",
+          "statements": [
+            {
+              "id": "new-concept-original-trial-lesson-03-statement-01",
+              "order": 1,
+              "chinese": "你好。",
+              "english": "Hello."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-03-statement-02",
+              "order": 2,
+              "chinese": "我叫林。",
+              "english": "My name is Lin."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-03-statement-03",
+              "order": 3,
+              "chinese": "你叫什么名字？",
+              "english": "What's your name?"
+            },
+            {
+              "id": "new-concept-original-trial-lesson-03-statement-04",
+              "order": 4,
+              "chinese": "我叫安娜。",
+              "english": "My name is Anna."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-03-statement-05",
+              "order": 5,
+              "chinese": "很高兴认识你。",
+              "english": "Nice to meet you."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-03-statement-06",
+              "order": 6,
+              "chinese": "我也很高兴认识你。",
+              "english": "Nice to meet you, too."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-03-statement-07",
+              "order": 7,
+              "chinese": "你来自哪里？",
+              "english": "Where are you from?"
+            },
+            {
+              "id": "new-concept-original-trial-lesson-03-statement-08",
+              "order": 8,
+              "chinese": "我来自东京。",
+              "english": "I'm from Tokyo."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-03-statement-09",
+              "order": 9,
+              "chinese": "你住在这里吗？",
+              "english": "Do you live here?"
+            },
+            {
+              "id": "new-concept-original-trial-lesson-03-statement-10",
+              "order": 10,
+              "chinese": "是的，我住在附近。",
+              "english": "Yes, I live nearby."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-03-statement-11",
+              "order": 11,
+              "chinese": "欢迎来到我们的班级。",
+              "english": "Welcome to our class."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-03-statement-12",
+              "order": 12,
+              "chinese": "我很高兴来到这里。",
+              "english": "I'm happy to be here."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-trial-lesson-04",
+          "title": "Lesson 4: Are You a Teacher?",
+          "description": "询问职业、工作地点与日常职责",
+          "video": "",
+          "order": 4,
+          "coursePackId": "new-concept-original-trial",
+          "statements": [
+            {
+              "id": "new-concept-original-trial-lesson-04-statement-01",
+              "order": 1,
+              "chinese": "你是老师吗？",
+              "english": "Are you a teacher?"
+            },
+            {
+              "id": "new-concept-original-trial-lesson-04-statement-02",
+              "order": 2,
+              "chinese": "是的，我是一名英语老师。",
+              "english": "Yes, I'm an English teacher."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-04-statement-03",
+              "order": 3,
+              "chinese": "你在哪里工作？",
+              "english": "Where do you work?"
+            },
+            {
+              "id": "new-concept-original-trial-lesson-04-statement-04",
+              "order": 4,
+              "chinese": "我在附近的一所学校工作。",
+              "english": "I work at a school nearby."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-04-statement-05",
+              "order": 5,
+              "chinese": "你教儿童吗？",
+              "english": "Do you teach children?"
+            },
+            {
+              "id": "new-concept-original-trial-lesson-04-statement-06",
+              "order": 6,
+              "chinese": "是的，我教一个小班。",
+              "english": "Yes, I teach a small class."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-04-statement-07",
+              "order": 7,
+              "chinese": "你的工作有趣吗？",
+              "english": "Is your job interesting?"
+            },
+            {
+              "id": "new-concept-original-trial-lesson-04-statement-08",
+              "order": 8,
+              "chinese": "是的，我每天都学到新东西。",
+              "english": "Yes, I learn something new every day."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-04-statement-09",
+              "order": 9,
+              "chinese": "你什么时候开始工作？",
+              "english": "When do you start work?"
+            },
+            {
+              "id": "new-concept-original-trial-lesson-04-statement-10",
+              "order": 10,
+              "chinese": "我八点开始工作。",
+              "english": "I start work at eight."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-04-statement-11",
+              "order": 11,
+              "chinese": "你喜欢你的学生吗？",
+              "english": "Do you like your students?"
+            },
+            {
+              "id": "new-concept-original-trial-lesson-04-statement-12",
+              "order": 12,
+              "chinese": "是的，他们很友善，也很努力。",
+              "english": "Yes, they're kind and hardworking."
+            }
+          ]
+        },
+        {
+          "id": "new-concept-original-trial-lesson-05",
+          "title": "Lesson 5: How Are You Today?",
+          "description": "问候、描述感受与给出简单建议",
+          "video": "",
+          "order": 5,
+          "coursePackId": "new-concept-original-trial",
+          "statements": [
+            {
+              "id": "new-concept-original-trial-lesson-05-statement-01",
+              "order": 1,
+              "chinese": "你今天好吗？",
+              "english": "How are you today?"
+            },
+            {
+              "id": "new-concept-original-trial-lesson-05-statement-02",
+              "order": 2,
+              "chinese": "我很好，谢谢。",
+              "english": "I'm fine, thank you."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-05-statement-03",
+              "order": 3,
+              "chinese": "你看起来有点累。",
+              "english": "You look a little tired."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-05-statement-04",
+              "order": 4,
+              "chinese": "我昨晚睡得不好。",
+              "english": "I didn't sleep well last night."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-05-statement-05",
+              "order": 5,
+              "chinese": "你需要休息。",
+              "english": "You need some rest."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-05-statement-06",
+              "order": 6,
+              "chinese": "我先喝点水。",
+              "english": "I'll drink some water first."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-05-statement-07",
+              "order": 7,
+              "chinese": "你头疼吗？",
+              "english": "Do you have a headache?"
+            },
+            {
+              "id": "new-concept-original-trial-lesson-05-statement-08",
+              "order": 8,
+              "chinese": "不，我只是有点困。",
+              "english": "No, I'm just a little sleepy."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-05-statement-09",
+              "order": 9,
+              "chinese": "午饭后休息一下吧。",
+              "english": "Take a short break after lunch."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-05-statement-10",
+              "order": 10,
+              "chinese": "这是个好主意。",
+              "english": "That's a good idea."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-05-statement-11",
+              "order": 11,
+              "chinese": "希望你很快感觉好一些。",
+              "english": "I hope you feel better soon."
+            },
+            {
+              "id": "new-concept-original-trial-lesson-05-statement-12",
+              "order": 12,
+              "chinese": "谢谢你的关心。",
+              "english": "Thank you for caring."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

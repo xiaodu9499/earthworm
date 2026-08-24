@@ -8,9 +8,9 @@ import LearningRecordDialog from "@/components/LearningRecordDialog";
 import PracticeExperience from "@/components/PracticeExperience";
 import UiIcon from "@/components/UiIcon";
 import { writeDevicePreference as setPreferredDevice } from "@/lib/device-routing";
-import { resolveSoftKeyboardViewport } from "@/lib/soft-keyboard";
 import { useLearningApp } from "@/lib/use-learning-app";
-import { useEffect, useRef, useState } from "react";
+import { useSoftKeyboardViewport } from "@/lib/use-soft-keyboard-viewport";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import styles from "./MobileWebsite.module.css";
 
@@ -19,81 +19,44 @@ type MobileViewportStyle = CSSProperties & {
   "--mobile-visible-top": string;
 };
 
-function isTextEntryElement(element: Element | null) {
+function FullscreenIcon({ active }: { active: boolean }) {
   return (
-    element instanceof HTMLInputElement ||
-    element instanceof HTMLTextAreaElement ||
-    (element instanceof HTMLElement && element.isContentEditable)
+    <svg
+      aria-hidden="true"
+      fill="none"
+      height="19"
+      viewBox="0 0 24 24"
+      width="19"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    >
+      {active ? (
+        <>
+          <path d="M9 3v6H3M15 3v6h6M9 21v-6H3M15 21v-6h6" />
+          <path d="m9 9-5-5M15 9l5-5M9 15l-5 5M15 15l5 5" />
+        </>
+      ) : (
+        <>
+          <path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6" />
+          <path d="m3 3 6 6M21 3l-6 6M3 21l6-6M21 21l-6-6" />
+        </>
+      )}
+    </svg>
   );
-}
-
-function useSoftKeyboardViewport() {
-  const [viewport, setViewport] = useState({ height: 0, top: 0, keyboardOpen: false });
-  const baselineHeightRef = useRef(0);
-
-  useEffect(() => {
-    const visualViewport = window.visualViewport;
-    let settleTimer = 0;
-
-    const update = () => {
-      const visibleHeight = Math.round(visualViewport?.height ?? window.innerHeight);
-      const visibleTop = Math.max(0, Math.round(visualViewport?.offsetTop ?? 0));
-      const textEntryFocused = isTextEntryElement(document.activeElement);
-
-      if (!textEntryFocused) {
-        baselineHeightRef.current = Math.max(window.innerHeight, visibleHeight);
-      } else if (!baselineHeightRef.current) {
-        baselineHeightRef.current = Math.max(window.innerHeight, visibleHeight);
-      }
-
-      const nextViewport = resolveSoftKeyboardViewport({
-        baselineHeight: baselineHeightRef.current,
-        visibleHeight,
-        textEntryFocused,
-      });
-      setViewport((current) =>
-        current.height === nextViewport.height &&
-        current.top === visibleTop &&
-        current.keyboardOpen === nextViewport.keyboardOpen
-          ? current
-          : {
-              height: nextViewport.height,
-              top: visibleTop,
-              keyboardOpen: nextViewport.keyboardOpen,
-            },
-      );
-    };
-
-    const updateAndSettle = () => {
-      update();
-      window.clearTimeout(settleTimer);
-      settleTimer = window.setTimeout(update, 80);
-    };
-
-    update();
-    visualViewport?.addEventListener("resize", updateAndSettle);
-    visualViewport?.addEventListener("scroll", updateAndSettle);
-    window.addEventListener("resize", updateAndSettle);
-    window.addEventListener("focusin", updateAndSettle);
-    window.addEventListener("focusout", updateAndSettle);
-
-    return () => {
-      window.clearTimeout(settleTimer);
-      visualViewport?.removeEventListener("resize", updateAndSettle);
-      visualViewport?.removeEventListener("scroll", updateAndSettle);
-      window.removeEventListener("resize", updateAndSettle);
-      window.removeEventListener("focusin", updateAndSettle);
-      window.removeEventListener("focusout", updateAndSettle);
-    };
-  }, []);
-
-  return viewport;
 }
 
 export default function MobileWebsite() {
   const controller = useLearningApp();
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [learningRecordOpen, setLearningRecordOpen] = useState(false);
+  const [fullscreenActive, setFullscreenActive] = useState(false);
+  const [fullscreenNotice, setFullscreenNotice] = useState<string | null>(null);
+  const fullscreenRequestTimerRef = useRef(0);
+  const fullscreenRequestPendingRef = useRef(false);
+  const fullscreenSupportedRef = useRef(false);
+  const practiceShellRef = useRef<HTMLDivElement>(null);
   const { height: visibleHeight, top: visibleTop, keyboardOpen } = useSoftKeyboardViewport();
   const {
     catalog,
@@ -124,6 +87,20 @@ export default function MobileWebsite() {
     updatePreferences,
     getCourseStats,
   } = controller;
+  const activeCourseIndex = activePack?.courses.findIndex(
+    (course) => course.id === activeCourse?.id,
+  );
+  const nextCourse =
+    activeCourseIndex !== undefined && activeCourseIndex >= 0
+      ? activePack?.courses[activeCourseIndex + 1]
+      : undefined;
+  const handleCourseComplete = useCallback(() => {
+    if (reviewStatementIds || !nextCourse) {
+      closeCourse();
+      return;
+    }
+    openCourse(nextCourse);
+  }, [closeCourse, nextCourse, openCourse, reviewStatementIds]);
 
   const switchToDesktop = () => {
     setPreferredDevice("desktop");
@@ -134,6 +111,70 @@ export default function MobileWebsite() {
     if (!recentCourse || !recentPack) return;
     openCourse(recentCourse);
   };
+
+  const showFullscreenError = () => {
+    window.clearTimeout(fullscreenRequestTimerRef.current);
+    fullscreenRequestPendingRef.current = false;
+    setFullscreenNotice("浏览器未允许进入全屏，请从浏览器菜单选择全屏或添加到主屏幕。");
+  };
+
+  const toggleFullscreen = () => {
+    setFullscreenNotice(null);
+
+    if (document.fullscreenElement) {
+      fullscreenRequestPendingRef.current = false;
+      document.exitFullscreen().catch(showFullscreenError);
+      return;
+    }
+
+    if (fullscreenSupportedRef.current && document.documentElement.requestFullscreen) {
+      fullscreenRequestPendingRef.current = true;
+      setFullscreenNotice("正在进入全屏…");
+      document.documentElement.requestFullscreen().catch(showFullscreenError);
+      window.clearTimeout(fullscreenRequestTimerRef.current);
+      fullscreenRequestTimerRef.current = window.setTimeout(() => {
+        if (!document.fullscreenElement) showFullscreenError();
+      }, 1200);
+      return;
+    }
+
+    const isStandalone = window.matchMedia("(display-mode: standalone)").matches;
+    setFullscreenNotice(
+      isStandalone
+        ? "当前已是独立显示模式。"
+        : "当前浏览器不支持网页全屏，可从浏览器菜单将网站添加到主屏幕。",
+    );
+  };
+
+  useEffect(() => {
+    const syncFullscreenState = () => {
+      const active = Boolean(document.fullscreenElement);
+      setFullscreenActive(active);
+      if (active) {
+        window.clearTimeout(fullscreenRequestTimerRef.current);
+        fullscreenRequestPendingRef.current = false;
+        setFullscreenNotice(null);
+      }
+    };
+    const handleFullscreenError = () => {
+      window.clearTimeout(fullscreenRequestTimerRef.current);
+      fullscreenRequestPendingRef.current = false;
+      setFullscreenNotice("浏览器未允许进入全屏，请从浏览器菜单选择全屏或添加到主屏幕。");
+    };
+
+    fullscreenSupportedRef.current =
+      document.fullscreenEnabled === true &&
+      typeof document.documentElement.requestFullscreen === "function";
+    syncFullscreenState();
+    document.addEventListener("fullscreenchange", syncFullscreenState);
+    document.addEventListener("fullscreenerror", handleFullscreenError);
+    return () => {
+      window.clearTimeout(fullscreenRequestTimerRef.current);
+      fullscreenRequestPendingRef.current = false;
+      document.removeEventListener("fullscreenchange", syncFullscreenState);
+      document.removeEventListener("fullscreenerror", handleFullscreenError);
+    };
+  }, []);
 
   useEffect(() => {
     if (!settingsOpen) return;
@@ -151,6 +192,38 @@ export default function MobileWebsite() {
       document.body.style.overflow = previousOverflow;
     };
   }, [settingsOpen]);
+
+  useEffect(() => {
+    if (view !== "practice") return;
+    const previousBodyOverflow = document.body.style.overflow;
+    const previousBodyOverscroll = document.body.style.overscrollBehavior;
+    const previousHtmlOverflow = document.documentElement.style.overflow;
+    document.body.style.overflow = "hidden";
+    document.body.style.overscrollBehavior = "none";
+    document.documentElement.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previousBodyOverflow;
+      document.body.style.overscrollBehavior = previousBodyOverscroll;
+      document.documentElement.style.overflow = previousHtmlOverflow;
+    };
+  }, [view]);
+
+  useEffect(() => {
+    if (!keyboardOpen) return;
+    const practiceRegion =
+      practiceShellRef.current?.querySelector<HTMLElement>('[aria-label="英语句子练习"]');
+    if (!practiceRegion) return;
+
+    const resetPracticeScroll = () => {
+      if (practiceRegion.scrollTop !== 0) practiceRegion.scrollTop = 0;
+    };
+    const frame = window.requestAnimationFrame(resetPracticeScroll);
+    const settleTimer = window.setTimeout(resetPracticeScroll, 160);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.clearTimeout(settleTimer);
+    };
+  }, [keyboardOpen, statementIndex]);
 
   const shellHeader = (
     <header className={styles.header}>
@@ -233,6 +306,16 @@ export default function MobileWebsite() {
           <button
             className={styles.iconButton}
             type="button"
+            onClick={toggleFullscreen}
+            aria-label={fullscreenActive ? "退出全屏" : "进入全屏"}
+            aria-pressed={fullscreenActive}
+          >
+            <FullscreenIcon active={fullscreenActive} />
+            <span>{fullscreenActive ? "退出" : "全屏"}</span>
+          </button>
+          <button
+            className={styles.iconButton}
+            type="button"
             onClick={() => setSettingsOpen(true)}
           >
             <UiIcon
@@ -243,9 +326,22 @@ export default function MobileWebsite() {
           </button>
         </header>
 
-        <div className={styles.practiceShell}>
+        {fullscreenNotice && (
+          <div
+            className={styles.fullscreenNotice}
+            role="status"
+          >
+            {fullscreenNotice}
+          </div>
+        )}
+
+        <div
+          className={styles.practiceShell}
+          ref={practiceShellRef}
+        >
           <PracticeExperience
             compact={keyboardOpen}
+            autoFocusInput
             statement={enrichedStatement}
             index={statementIndex}
             total={practiceStatements.length}
@@ -255,6 +351,9 @@ export default function MobileWebsite() {
             onFamiliarityChange={updateFamiliarity}
             onPrevious={previousQuestion}
             onNext={nextQuestion}
+            onCourseComplete={handleCourseComplete}
+            courseCompleteLabel={reviewStatementIds || !nextCourse ? "返回课程目录" : "开始下一课"}
+            nextCourseTitle={nextCourse?.title}
             onComplete={completeStatement}
             canPrevious={statementIndex > 0}
             canNext={statementIndex < practiceStatements.length - 1}

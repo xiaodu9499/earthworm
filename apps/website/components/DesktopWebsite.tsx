@@ -1,6 +1,7 @@
 "use client";
 
 import type { LearningAppController } from "@/lib/use-learning-app";
+import type { CSSProperties } from "react";
 
 import AccountControl from "@/components/AccountControl";
 import LearningRecordDialog from "@/components/LearningRecordDialog";
@@ -8,13 +9,27 @@ import PracticeExperience from "@/components/PracticeExperience";
 import UiIcon from "@/components/UiIcon";
 import { writeDevicePreference } from "@/lib/device-routing";
 import { useLearningApp } from "@/lib/use-learning-app";
-import { useMemo, useState } from "react";
+import { useSoftKeyboardViewport } from "@/lib/use-soft-keyboard-viewport";
+import { useCallback, useMemo, useState } from "react";
 
 import styles from "./DesktopWebsite.module.css";
 
 type ControllerViewProps = {
   controller: LearningAppController;
 };
+
+type PracticeViewportStyle = CSSProperties & {
+  "--practice-visible-height": string;
+  "--practice-visible-top": string;
+};
+
+function describePack(description?: string) {
+  const fallback = "系统化句子练习课程。";
+  if (!description) return { summary: fallback, sourceUrl: undefined };
+  const [summary, source] = description.split(/\s*来源：\s*/, 2);
+  const sourceUrl = source?.startsWith("http") ? source : undefined;
+  return { summary: summary || fallback, sourceUrl };
+}
 
 function LogoMark() {
   return (
@@ -75,6 +90,19 @@ function DesktopHeader({
         {context && <span className={styles.headerContext}>{context}</span>}
       </nav>
       <div className={styles.headerActions}>
+        {controller.account.isAdmin && (
+          <button
+            className={styles.adminEntry}
+            type="button"
+            onClick={() => window.location.assign("/admin")}
+          >
+            <UiIcon
+              name="list"
+              size={16}
+            />
+            管理后台
+          </button>
+        )}
         <AccountControl account={controller.account} />
         <button
           className={styles.deviceSwitch}
@@ -227,6 +255,7 @@ function HomeView({ controller }: ControllerViewProps) {
                 0,
               );
               const isRecentPack = recentPack?.id === pack.id;
+              const { summary } = describePack(pack.description);
               return (
                 <button
                   className={`${styles.packCard} ${isRecentPack ? styles.recentPack : ""}`}
@@ -240,7 +269,7 @@ function HomeView({ controller }: ControllerViewProps) {
                   {isRecentPack && <span className={styles.recentLabel}>最近学习</span>}
                   <LogoMark />
                   <h3>{pack.title}</h3>
-                  <p>{pack.description || "系统化句子练习课程。"}</p>
+                  <p>{summary}</p>
                   <footer>
                     <span>
                       {pack.courses.length} 节课 · {statementCount.toLocaleString()} 句
@@ -289,6 +318,7 @@ function CourseListView({ controller }: ControllerViewProps) {
 
   const recentCourseInPack =
     recentCourse?.coursePackId === activePack.id ? recentCourse : undefined;
+  const packDescription = describePack(activePack.description);
 
   return (
     <main className={styles.page}>
@@ -312,7 +342,18 @@ function CourseListView({ controller }: ControllerViewProps) {
         <div className={styles.courseHeading}>
           <div>
             <h1>{activePack.title}</h1>
-            <p>{activePack.description}</p>
+            <p>
+              <span>{packDescription.summary}</span>
+              {packDescription.sourceUrl && (
+                <a
+                  href={packDescription.sourceUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  查看课程来源 ↗
+                </a>
+              )}
+            </p>
           </div>
           <div className={styles.courseCount}>
             <strong>{activePack.courses.length}</strong>
@@ -352,6 +393,18 @@ function CourseListView({ controller }: ControllerViewProps) {
               onChange={(event) => setCourseQuery(event.target.value)}
               placeholder="搜索课程名称…"
             />
+            {courseQuery && (
+              <button
+                type="button"
+                onClick={() => setCourseQuery("")}
+                aria-label="清除课程搜索"
+              >
+                <UiIcon
+                  name="close"
+                  size={15}
+                />
+              </button>
+            )}
           </label>
           <label className={styles.filterToggle}>
             <input
@@ -435,6 +488,8 @@ function CourseListView({ controller }: ControllerViewProps) {
 
 function PracticeView({ controller }: ControllerViewProps) {
   const [learningRecordOpen, setLearningRecordOpen] = useState(false);
+  const closeLearningRecord = useCallback(() => setLearningRecordOpen(false), []);
+  const { height: visibleHeight, top: visibleTop, keyboardOpen } = useSoftKeyboardViewport();
   const {
     activePack,
     activeCourse,
@@ -444,9 +499,38 @@ function PracticeView({ controller }: ControllerViewProps) {
     statementIndex,
     reviewStatementIds,
     stored,
+    openCourse,
+    closeCourse,
   } = controller;
+  const practiceViewportStyle = visibleHeight
+    ? ({
+        "--practice-visible-height": `${visibleHeight}px`,
+        "--practice-visible-top": `${visibleTop}px`,
+      } as PracticeViewportStyle)
+    : undefined;
+  const activeCourseIndex = activePack?.courses.findIndex(
+    (course) => course.id === activeCourse?.id,
+  );
+  const nextCourse =
+    activeCourseIndex !== undefined && activeCourseIndex >= 0
+      ? activePack?.courses[activeCourseIndex + 1]
+      : undefined;
+  const handleCourseComplete = useCallback(() => {
+    if (reviewStatementIds || !nextCourse) {
+      closeCourse();
+      return;
+    }
+    openCourse(nextCourse);
+  }, [closeCourse, nextCourse, openCourse, reviewStatementIds]);
 
   if (!activePack || !activeCourse) return null;
+
+  const resetCourseProgress = () => {
+    const confirmed = window.confirm(
+      `确定重置“${activeCourse.title}”的学习进度吗？不熟悉和已掌握标记会保留。`,
+    );
+    if (confirmed) controller.resetProgress();
+  };
 
   if (reviewStatementIds && reviewStatementIds.length === 0) {
     return (
@@ -482,7 +566,11 @@ function PracticeView({ controller }: ControllerViewProps) {
   }
 
   return (
-    <main className={`${styles.page} ${styles.practicePage}`}>
+    <main
+      className={`${styles.page} ${styles.practicePage} ${keyboardOpen ? styles.practiceKeyboardOpen : ""}`}
+      data-keyboard-open={keyboardOpen ? "true" : "false"}
+      style={practiceViewportStyle}
+    >
       <DesktopHeader
         controller={controller}
         context={`${reviewStatementIds ? "不熟悉复习 · " : ""}${activeCourse.title}`}
@@ -498,7 +586,6 @@ function PracticeView({ controller }: ControllerViewProps) {
           />
           课程目录
         </button>
-        <span>{activePack.title}</span>
         <div className={styles.practiceUtilityActions}>
           <button
             className={styles.recordLink}
@@ -510,13 +597,14 @@ function PracticeView({ controller }: ControllerViewProps) {
           <button
             className={styles.resetLink}
             type="button"
-            onClick={controller.resetProgress}
+            onClick={resetCourseProgress}
           >
-            重置本课进度
+            重置进度
           </button>
         </div>
       </div>
       <PracticeExperience
+        compact={keyboardOpen}
         statement={enrichedStatement}
         index={statementIndex}
         total={practiceStatements.length}
@@ -526,6 +614,9 @@ function PracticeView({ controller }: ControllerViewProps) {
         onFamiliarityChange={controller.updateFamiliarity}
         onPrevious={controller.previousQuestion}
         onNext={controller.nextQuestion}
+        onCourseComplete={handleCourseComplete}
+        courseCompleteLabel={reviewStatementIds || !nextCourse ? "返回课程目录" : "开始下一课"}
+        nextCourseTitle={nextCourse?.title}
         onComplete={controller.completeStatement}
         canPrevious={statementIndex > 0}
         canNext={statementIndex < practiceStatements.length - 1}
@@ -536,7 +627,7 @@ function PracticeView({ controller }: ControllerViewProps) {
           statements={practiceStatements}
           currentIndex={statementIndex}
           familiarity={stored.statementFamiliarity}
-          onClose={() => setLearningRecordOpen(false)}
+          onClose={closeLearningRecord}
           onSelect={controller.jumpToQuestion}
         />
       )}

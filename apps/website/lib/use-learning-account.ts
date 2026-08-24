@@ -15,6 +15,7 @@ export type LearningAccountController = {
   configured: boolean;
   authReady: boolean;
   user: { id: string; email: string } | null;
+  isAdmin: boolean;
   syncStatus: ProgressSyncStatus;
   error: string | null;
   signInOrCreate: (email: string, password: string) => Promise<PasswordSignInResult>;
@@ -59,6 +60,7 @@ export function useLearningAccount({
   const client = useMemo(() => getSupabaseBrowserClient(), []);
   const [authReady, setAuthReady] = useState(!client);
   const [user, setUser] = useState<User | null>(null);
+  const [adminUserId, setAdminUserId] = useState<string | null>(null);
   const [syncStatus, setSyncStatus] = useState<ProgressSyncStatus>("local");
   const [error, setError] = useState<string | null>(null);
   const [reconnectVersion, setReconnectVersion] = useState(0);
@@ -85,7 +87,10 @@ export function useLearningAccount({
     } = client.auth.onAuthStateChange((_event, session) => {
       if (!active) return;
       setUser(session?.user ?? null);
-      if (!session?.user) setSyncStatus("local");
+      if (!session?.user) {
+        setAdminUserId(null);
+        setSyncStatus("local");
+      }
       setAuthReady(true);
       setError(null);
     });
@@ -95,6 +100,25 @@ export function useLearningAccount({
       subscription.unsubscribe();
     };
   }, [client]);
+
+  useEffect(() => {
+    if (!client || !authReady || !user) return;
+
+    let active = true;
+    void (async () => {
+      try {
+        const { data, error: adminError } = await client.rpc("is_learning_admin");
+        if (!active) return;
+        setAdminUserId(!adminError && data === true ? user.id : null);
+      } catch {
+        if (active) setAdminUserId(null);
+      }
+    })();
+
+    return () => {
+      active = false;
+    };
+  }, [authReady, client, user]);
 
   useEffect(() => {
     if (!client || !storageReady || !user) {
@@ -260,6 +284,7 @@ export function useLearningAccount({
     }
     activeSyncUserRef.current = null;
     lastSyncedStateRef.current = "";
+    setAdminUserId(null);
     setUser(null);
     setSyncStatus("local");
   }, [client]);
@@ -286,6 +311,7 @@ export function useLearningAccount({
     configured: Boolean(client),
     authReady,
     user: user?.email ? { id: user.id, email: user.email } : null,
+    isAdmin: Boolean(user && adminUserId === user.id),
     syncStatus,
     error,
     signInOrCreate,

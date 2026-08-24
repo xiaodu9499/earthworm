@@ -1,7 +1,7 @@
 "use client";
 
 /* eslint-disable @next/next/no-img-element */
-import type { KeyboardEvent as ReactKeyboardEvent } from "react";
+import type { CSSProperties, KeyboardEvent as ReactKeyboardEvent } from "react";
 
 import UiIcon from "@/components/UiIcon";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
@@ -64,6 +64,7 @@ export type PracticeCompletion = {
 
 export type PracticeExperienceProps = {
   compact?: boolean;
+  autoFocusInput?: boolean;
   statement: PracticeStatement;
   index: number;
   total: number;
@@ -73,6 +74,9 @@ export type PracticeExperienceProps = {
   onFamiliarityChange: (familiarity: Familiarity) => void;
   onPrevious: () => void;
   onNext: () => void;
+  onCourseComplete?: () => void;
+  courseCompleteLabel?: string;
+  nextCourseTitle?: string;
   onComplete?: (completion: PracticeCompletion) => void;
   canPrevious?: boolean;
   canNext?: boolean;
@@ -87,11 +91,21 @@ type AnnotatedWordGroup = {
   words: AnnotatedWord[];
 };
 
+type WordSlotStyle = CSSProperties & {
+  "--word-slot-width": string;
+};
+
 function normalizeWord(value: string) {
   return value
-    .toLowerCase()
+    .normalize("NFKC")
+    .toLocaleLowerCase("en-US")
     .replace(/[.,!?;:'"“”‘’()[\]{}\-—_]/g, "")
     .trim();
+}
+
+function resolveSpeechText(text: string) {
+  const normalized = text.normalize("NFKC").trim();
+  return normalized === "I" ? "eye" : normalized;
 }
 
 function formatTime(seconds: number) {
@@ -133,6 +147,7 @@ function shuffleTokens(words: string[], seedText: string): ReorderToken[] {
 
 export default function PracticeExperience({
   compact = false,
+  autoFocusInput = true,
   statement,
   index,
   total,
@@ -142,6 +157,9 @@ export default function PracticeExperience({
   onFamiliarityChange,
   onPrevious,
   onNext,
+  onCourseComplete,
+  courseCompleteLabel = "返回课程目录",
+  nextCourseTitle,
   onComplete,
   canPrevious = index > 0,
   canNext = index < total - 1,
@@ -199,23 +217,57 @@ export default function PracticeExperience({
   const [showSentenceAnalysis, setShowSentenceAnalysis] = useState(false);
   const [elapsedSeconds, setElapsedSeconds] = useState(0);
   const [paused, setPaused] = useState(false);
-  const inputRef = useRef<HTMLInputElement>(null);
+  const inputRefs = useRef<Array<HTMLInputElement | null>>([]);
+  const activeWordRef = useRef(0);
+  const wordCommitInFlightRef = useRef(false);
   const typingAudioRef = useRef<HTMLAudioElement | null>(null);
   const rightAudioRef = useRef<HTMLAudioElement | null>(null);
   const speechAudioRef = useRef<HTMLAudioElement | null>(null);
   const completionRef = useRef<string | null>(null);
 
-  const focusInput = useCallback(() => {
-    requestAnimationFrame(() => inputRef.current?.focus({ preventScroll: true }));
+  const focusInput = useCallback((wordIndex = activeWordRef.current) => {
+    requestAnimationFrame(() => inputRefs.current[wordIndex]?.focus({ preventScroll: true }));
   }, []);
+
+  const activateWordInputFromGesture = useCallback(
+    (wordIndex: number, input: HTMLInputElement) => {
+      if (paused || status !== "active") return;
+
+      activeWordRef.current = wordIndex;
+      inputRefs.current.forEach((candidate, candidateIndex) => {
+        if (candidate) candidate.readOnly = candidateIndex !== wordIndex;
+      });
+      input.readOnly = false;
+      setActiveWord(wordIndex);
+      setHintVisible(false);
+      setErrorMessage("");
+
+      // iOS and embedded browsers only open the software keyboard when an
+      // editable control is focused inside the original touch gesture. React's
+      // state update alone lands too late when the tapped slot was read-only.
+      input.focus({ preventScroll: true });
+    },
+    [paused, status],
+  );
+
+  useEffect(() => {
+    activeWordRef.current = activeWord;
+  }, [activeWord]);
 
   const speakText = useCallback((text: string, rate = 0.82) => {
     if (typeof window === "undefined") return;
+    const spokenText = resolveSpeechText(text);
+    if (!spokenText) return;
     speechAudioRef.current?.pause();
     if ("speechSynthesis" in window) {
       window.speechSynthesis.cancel();
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = "en-US";
+      const utterance = new SpeechSynthesisUtterance(spokenText);
+      const voices = window.speechSynthesis.getVoices();
+      const englishVoice =
+        voices.find((voice) => voice.lang.toLowerCase() === "en-us") ??
+        voices.find((voice) => voice.lang.toLowerCase().startsWith("en-"));
+      if (englishVoice) utterance.voice = englishVoice;
+      utterance.lang = englishVoice?.lang || "en-US";
       utterance.rate = rate;
       window.speechSynthesis.speak(utterance);
       return;
@@ -226,7 +278,7 @@ export default function PracticeExperience({
     // also relies on a remote pronunciation service.
     const audio = speechAudioRef.current ?? new Audio();
     speechAudioRef.current = audio;
-    audio.src = `https://fanyi.baidu.com/gettts?lan=en&spd=3&source=web&text=${encodeURIComponent(text)}`;
+    audio.src = `https://fanyi.baidu.com/gettts?lan=en&spd=3&source=web&text=${encodeURIComponent(spokenText)}`;
     audio.preload = "auto";
     void audio.play().catch(() => undefined);
   }, []);
@@ -286,15 +338,9 @@ export default function PracticeExperience({
     (method: PracticeCompletion["method"]) => {
       const completionKey = `${statement.id}:${method}`;
       if (completionRef.current) return;
-      const scrollPosition = window.scrollY;
       completionRef.current = completionKey;
       setStatus(method === "revealed" ? "revealed" : "complete");
       setErrorMessage("");
-      requestAnimationFrame(() =>
-        requestAnimationFrame(() => {
-          window.scrollTo({ top: scrollPosition, behavior: "instant" });
-        }),
-      );
       if (method !== "revealed") playRightSound();
       if (preferences.autoSpeak) window.setTimeout(speak, 180);
       onComplete?.({ statementId: statement.id, method });
@@ -306,6 +352,7 @@ export default function PracticeExperience({
     const resetTimer = window.setTimeout(() => {
       completionRef.current = null;
       setWordInputs(words.map(() => ""));
+      activeWordRef.current = 0;
       setActiveWord(0);
       setHintVisible(false);
       setShowImage(true);
@@ -315,10 +362,11 @@ export default function PracticeExperience({
       setExpandedPart(null);
       setShowSentenceAnalysis(false);
       setPaused(false);
-      focusInput();
+      wordCommitInFlightRef.current = false;
+      if (autoFocusInput) focusInput(0);
     }, 0);
     return () => window.clearTimeout(resetTimer);
-  }, [focusInput, statement.id, words]);
+  }, [autoFocusInput, focusInput, statement.id, words]);
 
   useEffect(() => {
     if (!preferences.autoSpeak || typeof window === "undefined") return;
@@ -337,8 +385,10 @@ export default function PracticeExperience({
   }, [paused]);
 
   useEffect(() => {
-    if (preferences.mode === "word-input" && status === "active" && !paused) focusInput();
-  }, [focusInput, paused, preferences.mode, status]);
+    if (autoFocusInput && preferences.mode === "word-input" && status === "active" && !paused) {
+      focusInput();
+    }
+  }, [autoFocusInput, focusInput, paused, preferences.mode, status]);
 
   const reportError = useCallback(
     (message: string) => {
@@ -351,11 +401,17 @@ export default function PracticeExperience({
   );
 
   const submitCurrentWord = useCallback(() => {
-    if (paused || status !== "active" || !words[activeWord]) return;
+    if (paused || status !== "active" || !words[activeWord] || wordCommitInFlightRef.current)
+      return;
     if (normalizeWord(wordInputs[activeWord] ?? "") !== normalizeWord(words[activeWord])) {
       reportError("再想一想，这个单词还不对");
       return;
     }
+
+    wordCommitInFlightRef.current = true;
+    window.requestAnimationFrame(() => {
+      wordCommitInFlightRef.current = false;
+    });
 
     const nextInputs = [...wordInputs];
     nextInputs[activeWord] = words[activeWord];
@@ -375,30 +431,35 @@ export default function PracticeExperience({
     if (allCorrect) {
       finish("typed");
     } else {
-      setActiveWord(
-        nextUnanswered >= 0 ? nextUnanswered : Math.min(activeWord + 1, words.length - 1),
-      );
-      focusInput();
+      const nextWord =
+        nextUnanswered >= 0 ? nextUnanswered : Math.min(activeWord + 1, words.length - 1);
+      activeWordRef.current = nextWord;
+      setActiveWord(nextWord);
+      focusInput(nextWord);
     }
   }, [activeWord, finish, focusInput, paused, reportError, status, wordInputs, words]);
 
   const moveActiveWord = useCallback(
     (direction: -1 | 1) => {
-      setActiveWord((current) => Math.max(0, Math.min(words.length - 1, current + direction)));
+      const nextWord = Math.max(0, Math.min(words.length - 1, activeWordRef.current + direction));
+      activeWordRef.current = nextWord;
+      setActiveWord(nextWord);
       setHintVisible(false);
       setErrorMessage("");
-      focusInput();
+      focusInput(nextWord);
     },
     [focusInput, words.length],
   );
 
   const onTypingKeyDown = useCallback(
     (event: ReactKeyboardEvent<HTMLInputElement>) => {
+      if (event.nativeEvent.isComposing || event.repeat) return;
       if (event.shiftKey && (event.key === "ArrowLeft" || event.key === "ArrowRight")) {
         return;
       }
       if (event.key === "Enter" || event.key === " ") {
         event.preventDefault();
+        event.stopPropagation();
         submitCurrentWord();
         return;
       }
@@ -419,8 +480,9 @@ export default function PracticeExperience({
           inputs.map((value, wordIndex) => (wordIndex >= previous ? "" : value)),
         );
         setActiveWord(previous);
+        activeWordRef.current = previous;
         setErrorMessage("");
-        focusInput();
+        focusInput(previous);
       }
     },
     [activeWord, focusInput, moveActiveWord, submitCurrentWord, wordInputs],
@@ -476,7 +538,9 @@ export default function PracticeExperience({
     setSelectedTokens([]);
     setExpandedPart(null);
     setShowSentenceAnalysis(false);
-    focusInput();
+    wordCommitInFlightRef.current = false;
+    activeWordRef.current = 0;
+    focusInput(0);
   }, [focusInput, words]);
 
   const setFamiliarity = useCallback(
@@ -516,11 +580,11 @@ export default function PracticeExperience({
         !event.metaKey &&
         !event.altKey &&
         !event.shiftKey &&
-        status !== "active" &&
-        canNext
+        status !== "active"
       ) {
         event.preventDefault();
-        onNext();
+        if (canNext) onNext();
+        else onCourseComplete?.();
       } else if (event.key === "ArrowUp" && status === "active") {
         event.preventDefault();
         setHintVisible(true);
@@ -535,7 +599,7 @@ export default function PracticeExperience({
 
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [canNext, canPrevious, onNext, onPrevious, setFamiliarity, speak, status]);
+  }, [canNext, canPrevious, onCourseComplete, onNext, onPrevious, setFamiliarity, speak, status]);
 
   const percentage = total > 0 ? Math.round(((index + 1) / total) * 100) : 0;
   const answered = status !== "active";
@@ -543,8 +607,23 @@ export default function PracticeExperience({
 
   return (
     <section
-      className={`${styles.experience} ${compact ? styles.keyboardCompact : ""}`}
+      className={`${styles.experience} ${compact ? styles.keyboardCompact : ""} ${answered ? styles.answerVisible : ""}`}
       aria-label="英语句子练习"
+      onPointerDown={(event) => {
+        if (
+          preferences.mode !== "word-input" ||
+          status !== "active" ||
+          paused ||
+          (event.target instanceof Element &&
+            event.target.closest("input, button, a, select, textarea, [role='button']"))
+        ) {
+          return;
+        }
+
+        const wordIndex = activeWordRef.current;
+        const input = inputRefs.current[wordIndex];
+        if (input) activateWordInputFromGesture(wordIndex, input);
+      }}
     >
       <div className={styles.topbar}>
         <div className={styles.progressCopy}>
@@ -750,12 +829,35 @@ export default function PracticeExperience({
                 <div
                   className={`${styles.wordSlot} ${isActive ? styles.activeSlot : ""} ${isCorrect ? styles.correctSlot : ""}`}
                   key={`${word}-${wordIndex}`}
+                  style={
+                    {
+                      "--word-slot-width": `${Math.max(6, Math.min(word.length + 3, 20))}ch`,
+                    } as WordSlotStyle
+                  }
                 >
-                  {isActive ? (
+                  {status === "active" ? (
                     <input
-                      ref={inputRef}
+                      ref={(element) => {
+                        inputRefs.current[wordIndex] = element;
+                      }}
+                      type="text"
+                      inputMode="text"
+                      enterKeyHint={wordIndex === words.length - 1 ? "done" : "next"}
+                      autoFocus={autoFocusInput && wordIndex === 0}
                       value={wordInputs[wordIndex] ?? ""}
+                      readOnly={!isActive}
+                      tabIndex={isActive ? 0 : -1}
+                      placeholder={
+                        isCorrect ? "" : "·".repeat(Math.max(2, Math.min(word.length, 8)))
+                      }
+                      onPointerDown={(event) => {
+                        activateWordInputFromGesture(wordIndex, event.currentTarget);
+                      }}
+                      onTouchStart={(event) => {
+                        activateWordInputFromGesture(wordIndex, event.currentTarget);
+                      }}
                       onChange={(event) => {
+                        if (!isActive) return;
                         const value = event.target.value.replace(/\s/g, "");
                         if (value.length > (wordInputs[wordIndex] ?? "").length) playTypingSound();
                         setWordInputs((inputs) =>
@@ -765,22 +867,35 @@ export default function PracticeExperience({
                         );
                         setErrorMessage("");
                       }}
+                      onBeforeInput={(event) => {
+                        const inputEvent = event.nativeEvent as InputEvent;
+                        if (!inputEvent.data || !/\s/.test(inputEvent.data)) return;
+                        event.preventDefault();
+                        event.stopPropagation();
+                        submitCurrentWord();
+                      }}
                       onKeyDown={onTypingKeyDown}
+                      onFocus={() => {
+                        if (isActive) return;
+                        activeWordRef.current = wordIndex;
+                        setActiveWord(wordIndex);
+                        setHintVisible(false);
+                      }}
                       autoComplete="off"
                       autoCapitalize="off"
                       spellCheck={false}
                       disabled={paused}
                       aria-label={`第 ${wordIndex + 1} 个单词`}
-                      style={{ width: `${Math.max(4, word.length + 1)}ch` }}
                     />
                   ) : (
                     <button
                       type="button"
                       onClick={() => {
                         if (status !== "active") return;
+                        activeWordRef.current = wordIndex;
                         setActiveWord(wordIndex);
                         setHintVisible(false);
-                        focusInput();
+                        focusInput(wordIndex);
                       }}
                       disabled={status !== "active" || paused}
                       aria-label={`切换到第 ${wordIndex + 1} 个单词`}
@@ -976,18 +1091,44 @@ export default function PracticeExperience({
             上一题
           </button>
           <span>Shift + 方向键切题</span>
-          <button
-            type="button"
-            className={styles.nextButton}
-            onClick={onNext}
-            disabled={!canNext}
-          >
-            下一题 <kbd>Enter</kbd>
-            <UiIcon
-              name="arrow-right"
-              size={15}
-            />
-          </button>
+          {canNext ? (
+            <button
+              type="button"
+              className={styles.nextButton}
+              onClick={onNext}
+            >
+              下一题 <kbd>Enter</kbd>
+              <UiIcon
+                name="arrow-right"
+                size={15}
+              />
+            </button>
+          ) : answered && onCourseComplete ? (
+            <button
+              type="button"
+              className={`${styles.nextButton} ${styles.courseCompleteButton}`}
+              onClick={onCourseComplete}
+              title={nextCourseTitle}
+            >
+              {courseCompleteLabel} <kbd>Enter</kbd>
+              <UiIcon
+                name="arrow-right"
+                size={15}
+              />
+            </button>
+          ) : (
+            <button
+              type="button"
+              className={styles.nextButton}
+              disabled
+            >
+              下一题 <kbd>Enter</kbd>
+              <UiIcon
+                name="arrow-right"
+                size={15}
+              />
+            </button>
+          )}
         </nav>
       </div>
     </section>
