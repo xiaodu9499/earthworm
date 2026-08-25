@@ -37,6 +37,7 @@ export type Course = {
   description: string;
   order: number;
   coursePackId: string;
+  statementCount?: number;
   statements: Statement[];
 };
 
@@ -44,6 +45,7 @@ export type CoursePack = {
   id: string;
   title: string;
   description: string;
+  dataUrl?: string;
   courses: Course[];
 };
 
@@ -62,6 +64,8 @@ export type LearningView = "home" | "courses" | "practice" | "review-empty";
 export type LearningAppController = {
   catalog: Catalog | null;
   catalogError: boolean;
+  packLoading: boolean;
+  packLoadError: boolean;
   visiblePacks: CoursePack[];
   activePack: CoursePack | undefined;
   activeCourse: Course | undefined;
@@ -123,6 +127,7 @@ function pushRoute(packId: string | null, courseId: string | null, reviewOnly = 
 export function useLearningApp(): LearningAppController {
   const [catalog, setCatalog] = useState<Catalog | null>(null);
   const [catalogError, setCatalogError] = useState(false);
+  const [packLoadErrorId, setPackLoadErrorId] = useState<string | null>(null);
   const [activePackId, setActivePackId] = useState<string | null>(null);
   const [activeCourseId, setActiveCourseId] = useState<string | null>(null);
   const [query, setQuery] = useState("");
@@ -135,13 +140,16 @@ export function useLearningApp(): LearningAppController {
   useEffect(() => {
     const controller = new AbortController();
     void Promise.all(
-      ["/course-data.json", "/new-concept-authorized.json", "/new-concept-original-trial.json"].map(
-        async (source) => {
-          const response = await fetch(source, { signal: controller.signal });
-          if (!response.ok) throw new Error(`课程数据加载失败（${source}）：${response.status}`);
-          return (await response.json()) as Catalog;
-        },
-      ),
+      [
+        "/course-data.json",
+        "/new-concept-authorized.json",
+        "/new-concept-original-trial.json",
+        "/oral-english-all-index.json",
+      ].map(async (source) => {
+        const response = await fetch(source, { signal: controller.signal });
+        if (!response.ok) throw new Error(`课程数据加载失败（${source}）：${response.status}`);
+        return (await response.json()) as Catalog;
+      }),
     )
       .then((catalogs) => {
         setCatalog({ packs: catalogs.flatMap((item) => item.packs) });
@@ -205,6 +213,46 @@ export function useLearningApp(): LearningAppController {
     [activeCourseId, activePack],
   );
 
+  useEffect(() => {
+    if (!activePack?.dataUrl) return;
+    const needsContent = activePack.courses.some(
+      (course) => (course.statementCount ?? 0) > 0 && course.statements.length === 0,
+    );
+    if (!needsContent || packLoadErrorId === activePack.id) return;
+
+    const controller = new AbortController();
+    void fetch(activePack.dataUrl, { signal: controller.signal })
+      .then(async (response) => {
+        if (!response.ok) {
+          throw new Error(`课程正文加载失败（${activePack.dataUrl}）：${response.status}`);
+        }
+        return (await response.json()) as Catalog;
+      })
+      .then((loadedCatalog) => {
+        const loadedPack = loadedCatalog.packs.find((pack) => pack.id === activePack.id);
+        if (!loadedPack) throw new Error(`课程正文缺少课程包：${activePack.id}`);
+        setCatalog((current) =>
+          current
+            ? {
+                packs: current.packs.map((pack) => (pack.id === loadedPack.id ? loadedPack : pack)),
+              }
+            : current,
+        );
+      })
+      .catch((error: unknown) => {
+        if (error instanceof DOMException && error.name === "AbortError") return;
+        setPackLoadErrorId(activePack.id);
+      });
+    return () => controller.abort();
+  }, [activePack, packLoadErrorId]);
+
+  const activePackNeedsContent =
+    activePack?.courses.some(
+      (course) => (course.statementCount ?? 0) > 0 && course.statements.length === 0,
+    ) ?? false;
+  const packLoadError = activePack?.id === packLoadErrorId;
+  const packLoading = activePackNeedsContent && !packLoadError;
+
   const learningLexicon = useMemo(() => {
     const beginnerPack = catalog?.packs.find((pack) => pack.title.includes("星荣零基础"));
     if (!beginnerPack) return {};
@@ -226,7 +274,7 @@ export function useLearningApp(): LearningAppController {
   }, [activeCourse, reviewStatementIds]);
 
   useEffect(() => {
-    if (!activeCourse || !storageReady) return;
+    if (!activeCourse || !storageReady || activeCourse.statements.length === 0) return;
     const initializationKey = `${activeCourse.id}:${reviewOnly ? "review" : "learn"}`;
     if (initializedCourseRef.current === initializationKey) return;
     const savedIndex = reviewOnly
@@ -247,7 +295,10 @@ export function useLearningApp(): LearningAppController {
     catalog?.packs.reduce(
       (packSum, pack) =>
         packSum +
-        pack.courses.reduce((courseSum, course) => courseSum + course.statements.length, 0),
+        pack.courses.reduce(
+          (courseSum, course) => courseSum + (course.statementCount ?? course.statements.length),
+          0,
+        ),
       0,
     ) ?? 0;
 
@@ -279,18 +330,20 @@ export function useLearningApp(): LearningAppController {
     (course: Course): CourseStats => {
       const savedIndex = Math.min(
         Math.max(stored.progress[course.id] ?? 0, 0),
-        Math.max(course.statements.length - 1, 0),
+        Math.max((course.statementCount ?? course.statements.length) - 1, 0),
       );
       const started = course.id in stored.progress || stored.recentCourseId === course.id;
+      const statementCount = course.statementCount ?? course.statements.length;
       const percentage =
-        started && course.statements.length
-          ? Math.round(((savedIndex + 1) / course.statements.length) * 100)
-          : 0;
-      const masteredCount = course.statements.filter(
-        (item) => stored.statementFamiliarity[item.id] === "mastered",
+        started && statementCount ? Math.round(((savedIndex + 1) / statementCount) * 100) : 0;
+      const familiarityEntries = Object.entries(stored.statementFamiliarity).filter(([id]) =>
+        id.startsWith(`${course.id}-statement-`),
+      );
+      const masteredCount = familiarityEntries.filter(
+        ([, familiarity]) => familiarity === "mastered",
       ).length;
-      const unfamiliarCount = course.statements.filter(
-        (item) => stored.statementFamiliarity[item.id] === "unfamiliar",
+      const unfamiliarCount = familiarityEntries.filter(
+        ([, familiarity]) => familiarity === "unfamiliar",
       ).length;
       return { savedIndex, percentage, masteredCount, unfamiliarCount, started };
     },
@@ -311,7 +364,10 @@ export function useLearningApp(): LearningAppController {
     (course: Course, shouldReviewOnly = false) => {
       const savedIndex = shouldReviewOnly
         ? 0
-        : Math.min(stored.progress[course.id] ?? 0, course.statements.length - 1);
+        : Math.min(
+            stored.progress[course.id] ?? 0,
+            (course.statementCount ?? course.statements.length) - 1,
+          );
       setActivePackId(course.coursePackId);
       setActiveCourseId(course.id);
       setReviewOnly(shouldReviewOnly);
@@ -416,6 +472,8 @@ export function useLearningApp(): LearningAppController {
   return {
     catalog,
     catalogError,
+    packLoading,
+    packLoadError,
     visiblePacks,
     activePack,
     activeCourse,

@@ -26,9 +26,10 @@ pnpm -F @earthworm/website build:vercel
 
 ## 数据范围
 
-- 13 个课程包
-- 462 节课程
-- 22,899 条中英文练习
+- 21 个课程包
+- 1,240 节课程
+- 100,678 条中英文练习
+- 英语口语开放语料全量版共 8 卷、778 课、77,779 条可解析的中英文直译关系；不做内容筛选，每条保留 Tatoeba 原始句子 ID，进入单卷时才按需加载正文
 - 获授权的新概念英语四册课程共 276 个课文单元、4,795 条逐句练习：第一册 72 个单元、第二册 96 课、第三册 60 课、第四册 48 课
 - 新概念路线原创补充课程共 4 个阶段、60 节课、720 条练习；保留已评审的前 5 课，不包含教材原文、答案或原版音频
 - 逐词输入和拆句重组两种练习模式
@@ -40,6 +41,8 @@ pnpm -F @earthworm/website build:vercel
 - 邮箱和密码一体化登录，首次登录自动注册；课程进度、不熟悉/掌握标记与偏好设置跨设备云同步
 
 获授权课程数据由 `scripts/import-new-concept-authorized.mjs` 从固定版本的双语 LRC 生成，原创补充课程由 `scripts/generate-new-concept-original.mjs` 生成。执行 `pnpm -F @earthworm/website courses:generate:new-concept` 可重新生成两类课程；生成器会校验四册课数、空课程和重复 ID。
+
+英语口语开放语料全量版由 `scripts/import-oral-english-all.mjs` 从已固定的 Tatoeba 中英直译关系快照生成。执行 `pnpm -F @earthworm/website courses:generate:oral-all` 可重新生成索引和 8 个按需加载的数据卷。语料采用 [CC BY 2.0 FR](https://creativecommons.org/licenses/by/2.0/fr/) 许可，详情和署名见 `THIRD_PARTY_NOTICES.md`。该课程不是同名商业出版物的复制或改编。
 
 ## 登录与云同步配置
 

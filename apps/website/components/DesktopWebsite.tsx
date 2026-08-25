@@ -171,8 +171,12 @@ function HomeView({ controller }: ControllerViewProps) {
             </div>
             <div className={styles.continueMeta}>
               <span>
-                上次学到第 {Math.min(recentIndex + 1, recentCourse.statements.length)} /{" "}
-                {recentCourse.statements.length} 句
+                上次学到第{" "}
+                {Math.min(
+                  recentIndex + 1,
+                  recentCourse.statementCount ?? recentCourse.statements.length,
+                )}{" "}
+                / {recentCourse.statementCount ?? recentCourse.statements.length} 句
               </span>
               <button
                 type="button"
@@ -251,7 +255,7 @@ function HomeView({ controller }: ControllerViewProps) {
           <div className={styles.packGrid}>
             {controller.visiblePacks.map((pack, packIndex) => {
               const statementCount = pack.courses.reduce(
-                (sum, course) => sum + course.statements.length,
+                (sum, course) => sum + (course.statementCount ?? course.statements.length),
                 0,
               );
               const isRecentPack = recentPack?.id === pack.id;
@@ -368,7 +372,7 @@ function CourseListView({ controller }: ControllerViewProps) {
               <strong>{recentCourseInPack.title}</strong>
               <small>
                 第 {(stored.progress[recentCourseInPack.id] ?? 0) + 1} /{" "}
-                {recentCourseInPack.statements.length} 句
+                {recentCourseInPack.statementCount ?? recentCourseInPack.statements.length} 句
               </small>
             </div>
             <button
@@ -417,7 +421,11 @@ function CourseListView({ controller }: ControllerViewProps) {
           <span className={styles.resultCount}>{courses.length} 节</span>
         </div>
 
-        {courses.length ? (
+        {controller.packLoadError ? (
+          <div className={styles.emptyState}>课程正文加载失败，请刷新页面后重试。</div>
+        ) : controller.packLoading ? (
+          <div className={styles.emptyState}>正在按需加载本卷课程正文…</div>
+        ) : courses.length ? (
           <div className={styles.courseGrid}>
             {courses.map((course) => {
               const courseStats = controller.getCourseStats(course);
@@ -437,7 +445,10 @@ function CourseListView({ controller }: ControllerViewProps) {
                     <div>
                       {isRecent && <span className={styles.recentLabel}>最近学习</span>}
                       <h2>{course.title}</h2>
-                      <p>{course.description || `${course.statements.length} 条句子练习`}</p>
+                      <p>
+                        {course.description ||
+                          `${course.statementCount ?? course.statements.length} 条句子练习`}
+                      </p>
                     </div>
                     <strong>{progress}%</strong>
                   </div>
@@ -448,7 +459,7 @@ function CourseListView({ controller }: ControllerViewProps) {
                     <span style={{ width: `${progress}%` }} />
                   </div>
                   <div className={styles.courseFacts}>
-                    <span>{course.statements.length} 句</span>
+                    <span>{course.statementCount ?? course.statements.length} 句</span>
                     {masteredCount > 0 && (
                       <span className={styles.masteredFact}>✓ {masteredCount} 已掌握</span>
                     )}

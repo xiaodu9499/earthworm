@@ -522,61 +522,67 @@ export default function MobileWebsite() {
             <span>{activePack.description}</span>
           </div>
 
-          <div className={styles.courseList}>
-            {activePack.courses.map((course, index) => {
-              const { percentage, masteredCount, unfamiliarCount } = getCourseStats(course);
-              return (
-                <article
-                  className={styles.courseRow}
-                  key={course.id}
-                >
-                  <button
-                    className={styles.courseMainAction}
-                    type="button"
-                    onClick={() => openCourse(course)}
+          {controller.packLoadError ? (
+            <div className={styles.loading}>课程正文加载失败，请刷新页面后重试。</div>
+          ) : controller.packLoading ? (
+            <div className={styles.loading}>正在按需加载本卷课程正文…</div>
+          ) : (
+            <div className={styles.courseList}>
+              {activePack.courses.map((course, index) => {
+                const { percentage, masteredCount, unfamiliarCount } = getCourseStats(course);
+                return (
+                  <article
+                    className={styles.courseRow}
+                    key={course.id}
                   >
-                    <span className={styles.courseNumber}>
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <span className={styles.courseCopy}>
-                      <strong>{course.title}</strong>
-                      <small>{course.statements.length} 条练习</small>
-                    </span>
-                    <span className={styles.rowArrow}>›</span>
-                  </button>
+                    <button
+                      className={styles.courseMainAction}
+                      type="button"
+                      onClick={() => openCourse(course)}
+                    >
+                      <span className={styles.courseNumber}>
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <span className={styles.courseCopy}>
+                        <strong>{course.title}</strong>
+                        <small>{course.statementCount ?? course.statements.length} 条练习</small>
+                      </span>
+                      <span className={styles.rowArrow}>›</span>
+                    </button>
 
-                  {(percentage > 0 || masteredCount > 0 || unfamiliarCount > 0) && (
-                    <div className={styles.courseMeta}>
-                      <div
-                        className={styles.miniProgress}
-                        aria-label={`学习进度 ${percentage}%`}
-                      >
-                        <span style={{ width: `${percentage}%` }} />
-                      </div>
-                      <div className={styles.statusLine}>
-                        {percentage > 0 && <span>已学 {percentage}%</span>}
-                        {masteredCount > 0 && (
-                          <span className={styles.mastered}>✓ {masteredCount}</span>
-                        )}
-                        {unfamiliarCount > 0 && (
-                          <span className={styles.unfamiliar}>● {unfamiliarCount}</span>
-                        )}
-                      </div>
-                      {unfamiliarCount > 0 && (
-                        <button
-                          className={styles.reviewButton}
-                          type="button"
-                          onClick={() => openCourse(course, true)}
+                    {(percentage > 0 || masteredCount > 0 || unfamiliarCount > 0) && (
+                      <div className={styles.courseMeta}>
+                        <div
+                          className={styles.miniProgress}
+                          aria-label={`学习进度 ${percentage}%`}
                         >
-                          复习不熟悉
-                        </button>
-                      )}
-                    </div>
-                  )}
-                </article>
-              );
-            })}
-          </div>
+                          <span style={{ width: `${percentage}%` }} />
+                        </div>
+                        <div className={styles.statusLine}>
+                          {percentage > 0 && <span>已学 {percentage}%</span>}
+                          {masteredCount > 0 && (
+                            <span className={styles.mastered}>✓ {masteredCount}</span>
+                          )}
+                          {unfamiliarCount > 0 && (
+                            <span className={styles.unfamiliar}>● {unfamiliarCount}</span>
+                          )}
+                        </div>
+                        {unfamiliarCount > 0 && (
+                          <button
+                            className={styles.reviewButton}
+                            type="button"
+                            onClick={() => openCourse(course, true)}
+                          >
+                            复习不熟悉
+                          </button>
+                        )}
+                      </div>
+                    )}
+                  </article>
+                );
+              })}
+            </div>
+          )}
         </section>
         <MobileFooter onSwitchDesktop={switchToDesktop} />
       </main>

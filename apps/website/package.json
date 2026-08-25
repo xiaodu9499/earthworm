@@ -11,6 +11,7 @@
     "build": "vinext build",
     "build:vercel": "VERCEL_STATIC_EXPORT=true next build",
     "courses:generate:new-concept": "node scripts/generate-new-concept-original.mjs && node scripts/import-new-concept-authorized.mjs",
+    "courses:generate:oral-all": "node scripts/import-oral-english-all.mjs",
     "start": "vinext start",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next"
   },

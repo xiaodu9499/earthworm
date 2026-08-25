@@ -123,7 +123,10 @@ export default function AdminDashboard() {
     const index = new Map<string, CourseInfo>();
     for (const pack of catalog?.packs ?? []) {
       for (const course of pack.courses) {
-        index.set(course.id, { title: course.title, statementCount: course.statements.length });
+        index.set(course.id, {
+          title: course.title,
+          statementCount: course.statementCount ?? course.statements.length,
+        });
       }
     }
     return index;
